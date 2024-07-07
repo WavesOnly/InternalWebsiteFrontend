@@ -1,0 +1,4770 @@
+{
+    "songHistory": [
+        {
+            "id": 1,
+            "song": {
+                "name": "GO OFF",
+                "id": "2BVybO0IKCbtUu2ZI2VfiZ"
+            },
+            "artists": [
+                {
+                    "name": "Bipolar Sunshine",
+                    "id": "0CjWKoS55T7DOt0HJuwF1H"
+                },
+                {
+                    "name": "NEZ",
+                    "id": "2Mwy2BwAUT3WU1cZa3pvEW"
+                }
+            ],
+            "playlist": {
+                "name": "House Shuffle",
+                "id": "5tX8EV33Sp8LcgpPxNFuAP",
+                "position": 1,
+                "duration": 30,
+                "removed": false
+            },
+            "dateAdded": "2024-05-20T12:00:00Z",
+            "comment": "Sent by Bradley, $ video in exchange for placement"
+        },
+        {
+            "id": 2,
+            "song": {
+                "name": "In Your Love",
+                "id": "7BV8CsffhfHomUsFrZNuJn"
+            },
+            "artists": [
+                {
+                    "name": "Jerre",
+                    "id": "3i37K6v75zc4mXfERO8lf9"
+                }
+            ],
+            "playlist": {
+                "name": "House Shuffle",
+                "id": "5tX8EV33Sp8LcgpPxNFuAP",
+                "position": 2,
+                "duration": 60,
+                "removed": false
+            },
+            "dateAdded": "2024-05-15T12:00:00Z",
+            "comment": "Nice groove"
+        },
+        {
+            "id": 3,
+            "song": {
+                "name": "In Your Love",
+                "id": "7BV8CsffhfHomUsFrZNuJn"
+            },
+            "artists": [
+                {
+                    "name": "Jerre",
+                    "id": "3i37K6v75zc4mXfERO8lf9"
+                }
+            ],
+            "playlist": {
+                "name": "Rave Fit: Workout Bangers",
+                "id": "0EbV5cAsSo6WLLucoumG16",
+                "position": 1,
+                "duration": 60,
+                "removed": false
+            },
+            "dateAdded": "2024-05-15T12:00:00Z",
+            "comment": "Nice groove"
+        },
+        {
+            "id": 4,
+            "song": {
+                "name": "On My Mind",
+                "id": "5lXY6PTuWXOludKy4zDQwM"
+            },
+            "artists": [
+                {
+                    "name": "Diplo",
+                    "id": "5fMUXHkw8R8eOP2RNVYEZX"
+                },
+                {
+                    "name": "Sidepiece",
+                    "id": "5czbzNZZfWpyFgZyfT3Mkk"
+                }
+            ],
+            "playlist": {
+                "name": "House Shuffle",
+                "id": "5tX8EV33Sp8LcgpPxNFuAP",
+                "position": 3,
+                "duration": 90,
+                "removed": false
+            },
+            "dateAdded": "2024-05-10T12:00:00Z",
+            "comment": "Classic song!"
+        },
+        {
+            "id": 5,
+            "song": {
+                "name": "Edge of Seventeen",
+                "id": "5IFSvSEeCAvvBEQ85poqKB"
+            },
+            "artists": [
+                {
+                    "name": "Wuki",
+                    "id": "6Se1y4vDcu9fVHLqdj1N3q"
+                }
+            ],
+            "playlist": {
+                "name": "House Shuffle",
+                "id": "5tX8EV33Sp8LcgpPxNFuAP",
+                "position": 4,
+                "duration": 90,
+                "removed": false
+            },
+            "dateAdded": "2024-05-10T12:00:00Z",
+            "comment": "Not usually a fan of covers, but this one is dope - $ video in return"
+        },
+        {
+            "id": 6,
+            "song": {
+                "name": "Edge of Seventeen",
+                "id": "5IFSvSEeCAvvBEQ85poqKB"
+            },
+            "artists": [
+                {
+                    "name": "Wuki",
+                    "id": "6Se1y4vDcu9fVHLqdj1N3q"
+                }
+            ],
+            "playlist": {
+                "name": "RaveFit: Workout Bangers",
+                "id": "0EbV5cAsSo6WLLucoumG16",
+                "position": 2,
+                "duration": 60,
+                "removed": false
+            },
+            "dateAdded": "2024-05-10T12:00:00Z",
+            "comment": "Not usually a fan of covers, but this one is dope - $ video in return"
+        },
+        {
+            "id": 7,
+            "song": {
+                "name": "All Day, All Night",
+                "id": "4PSq1vPPpzEpVfwLCadN9j"
+            },
+            "artists": [
+                {
+                    "name": "Odd Mob",
+                    "id": "4qLwtWhlhyAoQ4S9mSrDW9"
+                },
+                {
+                    "name": "OMNOM",
+                    "id": "3PYRXP25JcbqhvNaJYcnWy"
+                },
+                {
+                    "name": "HYPERBEAM",
+                    "id": "1b4DIAooTye6qmHHYRck9n"
+                }
+            ],
+            "playlist": {
+                "name": "House Shuffle",
+                "id": "0EbV5cAsSo6WLLucoumG16",
+                "position": 5,
+                "duration": 90,
+                "removed": false
+            },
+            "dateAdded": "2024-05-10T12:00:00Z",
+            "comment": "People in Spain love to party"
+        },
+        {
+            "id": 8,
+            "song": {
+                "name": "V I B R A T I O N",
+                "id": "2t3FV5IpL1uWeMjt7vOomW"
+            },
+            "artists": [
+                {
+                    "name": "Kaleena Zanders",
+                    "id": "0Sz2jslaxjcw2VM5zYh2jK"
+                },
+                {
+                    "name": "Shift K3Y",
+                    "id": "26OrZl5U3VNGHU9qUj8EcM"
+                }
+            ],
+            "playlist": {
+                "name": "House Shuffle",
+                "id": "0EbV5cAsSo6WLLucoumG16",
+                "position": 6,
+                "duration": 30,
+                "removed": false
+            },
+            "dateAdded": "2024-05-30T12:00:00Z",
+            "comment": "Paid $10 for placement"
+        },
+        {
+            "id": 9,
+            "song": {
+                "name": "Don't Say Goodbye",
+                "id": "6thBFNZvOqCtN4fU2lDGPs"
+            },
+            "artists": [
+                {
+                    "name": "MashBit",
+                    "id": "2ZUktxXMg0flZ5HGHSd5HZ"
+                }
+            ],
+            "playlist": {
+                "name": "Chill Electronic",
+                "id": "7hiHFkppqh87eQj9OaOmvm",
+                "position": 8,
+                "duration": 90,
+                "removed": false
+            },
+            "dateAdded": "2024-06-30T12:00:00Z",
+            "comment": "DJ Hato"
+        },
+        {
+            "id": 10,
+            "song": {
+                "name": "3 Malas",
+                "id": "7hcsfB62NBGaBHdin3V2o5"
+            },
+            "artists": [
+                {
+                    "name": "BADDIES ONLY",
+                    "id": "1aRWWqUGxjgTSGQYHGZbot"
+                }
+            ],
+            "playlist": {
+                "name": "House Shuffle",
+                "id": "0EbV5cAsSo6WLLucoumG16",
+                "position": 12,
+                "duration": 60,
+                "removed": false
+            },
+            "dateAdded": "2024-06-15T12:00:00Z",
+            "comment": "Artist name says it all..."
+        },
+        {
+            "id": 11,
+            "song": {
+                "name": "Isla de Mujeres",
+                "id": "2rsfaefWEwBkgoOr57SW9U"
+            },
+            "artists": [
+                {
+                    "name": "BADDIES ONLY",
+                    "id": "1aRWWqUGxjgTSGQYHGZbot"
+                }
+            ],
+            "playlist": {
+                "name": "House Shuffle",
+                "id": "0EbV5cAsSo6WLLucoumG16",
+                "position": 24,
+                "duration": 60,
+                "removed": false
+            },
+            "dateAdded": "2024-06-18T12:00:00Z",
+            "comment": "Every man's dream"
+        },
+        {
+            "id": 12,
+            "song": {
+                "name": "Dreamers",
+                "id": "0IFjoiGX4xtKNaUdz53rII"
+            },
+            "artists": [
+                {
+                    "name": "Lipless",
+                    "id": "0XmmX4fE4SiRMu3ICsP5sA"
+                }
+            ],
+            "playlist": {
+                "name": "Chill Electronic",
+                "id": "7hiHFkppqh87eQj9OaOmvm",
+                "position": 14,
+                "duration": 60,
+                "removed": false
+            },
+            "dateAdded": "2024-06-25T12:00:00Z",
+            "comment": "Nice song"
+        }
+    ],
+    "user": {
+        "followers": 406,
+        "followerHistory": [
+            {
+                "date": "2024-06-24",
+                "followers": 406
+            },
+            {
+                "date": "2024-06-23",
+                "followers": 405
+            },
+            {
+                "date": "2024-06-22",
+                "followers": 403
+            },
+            {
+                "date": "2024-06-21",
+                "followers": 401
+            },
+            {
+                "date": "2024-06-20",
+                "followers": 400
+            },
+            {
+                "date": "2024-06-19",
+                "followers": 400
+            },
+            {
+                "date": "2024-06-18",
+                "followers": 399
+            },
+            {
+                "date": "2024-06-17",
+                "followers": 398
+            },
+            {
+                "date": "2024-06-16",
+                "followers": 396
+            },
+            {
+                "date": "2024-06-15",
+                "followers": 394
+            },
+            {
+                "date": "2024-06-14",
+                "followers": 394
+            },
+            {
+                "date": "2024-06-13",
+                "followers": 392
+            },
+            {
+                "date": "2024-06-12",
+                "followers": 391
+            },
+            {
+                "date": "2024-06-11",
+                "followers": 391
+            },
+            {
+                "date": "2024-06-10",
+                "followers": 391
+            },
+            {
+                "date": "2024-06-09",
+                "followers": 391
+            },
+            {
+                "date": "2024-06-08",
+                "followers": 390
+            },
+            {
+                "date": "2024-06-07",
+                "followers": 390
+            },
+            {
+                "date": "2024-06-06",
+                "followers": 388
+            },
+            {
+                "date": "2024-06-05",
+                "followers": 387
+            },
+            {
+                "date": "2024-06-04",
+                "followers": 387
+            },
+            {
+                "date": "2024-06-03",
+                "followers": 387
+            },
+            {
+                "date": "2024-06-02",
+                "followers": 386
+            },
+            {
+                "date": "2024-06-01",
+                "followers": 386
+            },
+            {
+                "date": "2024-05-31",
+                "followers": 385
+            },
+            {
+                "date": "2024-05-30",
+                "followers": 383
+            },
+            {
+                "date": "2024-05-29",
+                "followers": 381
+            },
+            {
+                "date": "2024-05-28",
+                "followers": 380
+            }
+        ],
+        "playlistFollowers": 14205,
+        "playlistFollowerHistory": [
+            {
+                "date": "2024-06-25",
+                "followers": 14205
+            },
+            {
+                "date": "2024-06-24",
+                "followers": 14200
+            },
+            {
+                "date": "2024-06-23",
+                "followers": 14197
+            },
+            {
+                "date": "2024-06-22",
+                "followers": 14193
+            },
+            {
+                "date": "2024-06-21",
+                "followers": 14184
+            },
+            {
+                "date": "2024-06-20",
+                "followers": 14180
+            },
+            {
+                "date": "2024-06-19",
+                "followers": 14176
+            },
+            {
+                "date": "2024-06-18",
+                "followers": 14170
+            },
+            {
+                "date": "2024-06-17",
+                "followers": 14168
+            },
+            {
+                "date": "2024-06-16",
+                "followers": 14162
+            },
+            {
+                "date": "2024-06-15",
+                "followers": 14154
+            },
+            {
+                "date": "2024-06-14",
+                "followers": 14145
+            },
+            {
+                "date": "2024-06-13",
+                "followers": 14144
+            },
+            {
+                "date": "2024-06-12",
+                "followers": 14139
+            },
+            {
+                "date": "2024-06-11",
+                "followers": 14129
+            },
+            {
+                "date": "2024-06-10",
+                "followers": 14118
+            },
+            {
+                "date": "2024-06-09",
+                "followers": 14109
+            },
+            {
+                "date": "2024-06-08",
+                "followers": 14099
+            },
+            {
+                "date": "2024-06-07",
+                "followers": 14098
+            },
+            {
+                "date": "2024-06-06",
+                "followers": 14092
+            },
+            {
+                "date": "2024-06-05",
+                "followers": 14087
+            },
+            {
+                "date": "2024-06-04",
+                "followers": 14086
+            },
+            {
+                "date": "2024-06-03",
+                "followers": 14076
+            },
+            {
+                "date": "2024-06-02",
+                "followers": 14072
+            },
+            {
+                "date": "2024-06-01",
+                "followers": 14068
+            },
+            {
+                "date": "2024-05-31",
+                "followers": 14065
+            },
+            {
+                "date": "2024-05-30",
+                "followers": 14057
+            },
+            {
+                "date": "2024-05-29",
+                "followers": 14047
+            }
+        ],
+        "playlists": [
+            {
+                "id": "7hiHFkppqh87eQj9OaOmvm",
+                "name": "Chill Electronic 🌊",
+                "followers": 6658,
+                "trackCount": 59,
+                "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000da84c178b7aef637637094defa0e",
+                "playlistFollowerHistory": [
+                    {
+                        "date": "2024-06-24",
+                        "followers": 6658
+                    },
+                    {
+                        "date": "2024-06-23",
+                        "followers": 6655
+                    },
+                    {
+                        "date": "2024-06-22",
+                        "followers": 6651
+                    },
+                    {
+                        "date": "2024-06-21",
+                        "followers": 6648
+                    },
+                    {
+                        "date": "2024-06-20",
+                        "followers": 6640
+                    },
+                    {
+                        "date": "2024-06-19",
+                        "followers": 6635
+                    },
+                    {
+                        "date": "2024-06-18",
+                        "followers": 6634
+                    },
+                    {
+                        "date": "2024-06-17",
+                        "followers": 6634
+                    },
+                    {
+                        "date": "2024-06-16",
+                        "followers": 6625
+                    },
+                    {
+                        "date": "2024-06-15",
+                        "followers": 6625
+                    },
+                    {
+                        "date": "2024-06-14",
+                        "followers": 6615
+                    },
+                    {
+                        "date": "2024-06-13",
+                        "followers": 6607
+                    },
+                    {
+                        "date": "2024-06-12",
+                        "followers": 6607
+                    },
+                    {
+                        "date": "2024-06-11",
+                        "followers": 6607
+                    },
+                    {
+                        "date": "2024-06-10",
+                        "followers": 6604
+                    },
+                    {
+                        "date": "2024-06-09",
+                        "followers": 6604
+                    },
+                    {
+                        "date": "2024-06-08",
+                        "followers": 6599
+                    },
+                    {
+                        "date": "2024-06-07",
+                        "followers": 6596
+                    },
+                    {
+                        "date": "2024-06-06",
+                        "followers": 6592
+                    },
+                    {
+                        "date": "2024-06-05",
+                        "followers": 6587
+                    },
+                    {
+                        "date": "2024-06-04",
+                        "followers": 6579
+                    },
+                    {
+                        "date": "2024-06-03",
+                        "followers": 6575
+                    },
+                    {
+                        "date": "2024-06-02",
+                        "followers": 6574
+                    },
+                    {
+                        "date": "2024-06-01",
+                        "followers": 6570
+                    },
+                    {
+                        "date": "2024-05-31",
+                        "followers": 6562
+                    },
+                    {
+                        "date": "2024-05-30",
+                        "followers": 6556
+                    },
+                    {
+                        "date": "2024-05-29",
+                        "followers": 6548
+                    },
+                    {
+                        "date": "2024-05-28",
+                        "followers": 6546
+                    }
+                ]
+            },
+            {
+                "id": "5tX8EV33Sp8LcgpPxNFuAP",
+                "name": "House Shuffle 🔥",
+                "followers": 5724,
+                "trackCount": 42,
+                "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000da8408764d1aeec0adf01b4e1a67",
+                "playlistFollowerHistory": [
+                    {
+                        "date": "2024-06-24",
+                        "followers": 5724
+                    },
+                    {
+                        "date": "2024-06-23",
+                        "followers": 5719
+                    },
+                    {
+                        "date": "2024-06-22",
+                        "followers": 5714
+                    },
+                    {
+                        "date": "2024-06-21",
+                        "followers": 5707
+                    },
+                    {
+                        "date": "2024-06-20",
+                        "followers": 5701
+                    },
+                    {
+                        "date": "2024-06-19",
+                        "followers": 5698
+                    },
+                    {
+                        "date": "2024-06-18",
+                        "followers": 5693
+                    },
+                    {
+                        "date": "2024-06-17",
+                        "followers": 5692
+                    },
+                    {
+                        "date": "2024-06-16",
+                        "followers": 5692
+                    },
+                    {
+                        "date": "2024-06-15",
+                        "followers": 5684
+                    },
+                    {
+                        "date": "2024-06-14",
+                        "followers": 5674
+                    },
+                    {
+                        "date": "2024-06-13",
+                        "followers": 5674
+                    },
+                    {
+                        "date": "2024-06-12",
+                        "followers": 5672
+                    },
+                    {
+                        "date": "2024-06-11",
+                        "followers": 5670
+                    },
+                    {
+                        "date": "2024-06-10",
+                        "followers": 5661
+                    },
+                    {
+                        "date": "2024-06-09",
+                        "followers": 5651
+                    },
+                    {
+                        "date": "2024-06-08",
+                        "followers": 5648
+                    },
+                    {
+                        "date": "2024-06-07",
+                        "followers": 5648
+                    },
+                    {
+                        "date": "2024-06-06",
+                        "followers": 5643
+                    },
+                    {
+                        "date": "2024-06-05",
+                        "followers": 5634
+                    },
+                    {
+                        "date": "2024-06-04",
+                        "followers": 5628
+                    },
+                    {
+                        "date": "2024-06-03",
+                        "followers": 5620
+                    },
+                    {
+                        "date": "2024-06-02",
+                        "followers": 5611
+                    },
+                    {
+                        "date": "2024-06-01",
+                        "followers": 5609
+                    },
+                    {
+                        "date": "2024-05-31",
+                        "followers": 5606
+                    },
+                    {
+                        "date": "2024-05-30",
+                        "followers": 5606
+                    },
+                    {
+                        "date": "2024-05-29",
+                        "followers": 5605
+                    },
+                    {
+                        "date": "2024-05-28",
+                        "followers": 5596
+                    }
+                ]
+            },
+            {
+                "id": "0EbV5cAsSo6WLLucoumG16",
+                "name": "Rave Fit: Workout Bangers",
+                "followers": 693,
+                "trackCount": 33,
+                "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000da843c0f35fc2f675593b57fc0fb",
+                "playlistFollowerHistory": [
+                    {
+                        "date": "2024-06-24",
+                        "followers": 693
+                    },
+                    {
+                        "date": "2024-06-23",
+                        "followers": 684
+                    },
+                    {
+                        "date": "2024-06-22",
+                        "followers": 682
+                    },
+                    {
+                        "date": "2024-06-21",
+                        "followers": 676
+                    },
+                    {
+                        "date": "2024-06-20",
+                        "followers": 667
+                    },
+                    {
+                        "date": "2024-06-19",
+                        "followers": 665
+                    },
+                    {
+                        "date": "2024-06-18",
+                        "followers": 662
+                    },
+                    {
+                        "date": "2024-06-17",
+                        "followers": 655
+                    },
+                    {
+                        "date": "2024-06-16",
+                        "followers": 648
+                    },
+                    {
+                        "date": "2024-06-15",
+                        "followers": 646
+                    },
+                    {
+                        "date": "2024-06-14",
+                        "followers": 645
+                    },
+                    {
+                        "date": "2024-06-13",
+                        "followers": 643
+                    },
+                    {
+                        "date": "2024-06-12",
+                        "followers": 638
+                    },
+                    {
+                        "date": "2024-06-11",
+                        "followers": 632
+                    },
+                    {
+                        "date": "2024-06-10",
+                        "followers": 632
+                    },
+                    {
+                        "date": "2024-06-09",
+                        "followers": 629
+                    },
+                    {
+                        "date": "2024-06-08",
+                        "followers": 628
+                    },
+                    {
+                        "date": "2024-06-07",
+                        "followers": 627
+                    },
+                    {
+                        "date": "2024-06-06",
+                        "followers": 620
+                    },
+                    {
+                        "date": "2024-06-05",
+                        "followers": 613
+                    },
+                    {
+                        "date": "2024-06-04",
+                        "followers": 603
+                    },
+                    {
+                        "date": "2024-06-03",
+                        "followers": 599
+                    },
+                    {
+                        "date": "2024-06-02",
+                        "followers": 599
+                    },
+                    {
+                        "date": "2024-06-01",
+                        "followers": 590
+                    },
+                    {
+                        "date": "2024-05-31",
+                        "followers": 582
+                    },
+                    {
+                        "date": "2024-05-30",
+                        "followers": 578
+                    },
+                    {
+                        "date": "2024-05-29",
+                        "followers": 568
+                    },
+                    {
+                        "date": "2024-05-28",
+                        "followers": 563
+                    }
+                ]
+            },
+            {
+                "id": "6iJE4v0TREauDvddk5a84D",
+                "name": "Pop & EDM: Party Starters",
+                "followers": 538,
+                "trackCount": 44,
+                "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000da84b6764624f54f968c7b674c40",
+                "playlistFollowerHistory": [
+                    {
+                        "date": "2024-06-24",
+                        "followers": 538
+                    },
+                    {
+                        "date": "2024-06-23",
+                        "followers": 536
+                    },
+                    {
+                        "date": "2024-06-22",
+                        "followers": 526
+                    },
+                    {
+                        "date": "2024-06-21",
+                        "followers": 524
+                    },
+                    {
+                        "date": "2024-06-20",
+                        "followers": 519
+                    },
+                    {
+                        "date": "2024-06-19",
+                        "followers": 519
+                    },
+                    {
+                        "date": "2024-06-18",
+                        "followers": 515
+                    },
+                    {
+                        "date": "2024-06-17",
+                        "followers": 506
+                    },
+                    {
+                        "date": "2024-06-16",
+                        "followers": 506
+                    },
+                    {
+                        "date": "2024-06-15",
+                        "followers": 500
+                    },
+                    {
+                        "date": "2024-06-14",
+                        "followers": 492
+                    },
+                    {
+                        "date": "2024-06-13",
+                        "followers": 490
+                    },
+                    {
+                        "date": "2024-06-12",
+                        "followers": 480
+                    },
+                    {
+                        "date": "2024-06-11",
+                        "followers": 476
+                    },
+                    {
+                        "date": "2024-06-10",
+                        "followers": 469
+                    },
+                    {
+                        "date": "2024-06-09",
+                        "followers": 468
+                    },
+                    {
+                        "date": "2024-06-08",
+                        "followers": 468
+                    },
+                    {
+                        "date": "2024-06-07",
+                        "followers": 463
+                    },
+                    {
+                        "date": "2024-06-06",
+                        "followers": 460
+                    },
+                    {
+                        "date": "2024-06-05",
+                        "followers": 460
+                    },
+                    {
+                        "date": "2024-06-04",
+                        "followers": 456
+                    },
+                    {
+                        "date": "2024-06-03",
+                        "followers": 451
+                    },
+                    {
+                        "date": "2024-06-02",
+                        "followers": 446
+                    },
+                    {
+                        "date": "2024-06-01",
+                        "followers": 446
+                    },
+                    {
+                        "date": "2024-05-31",
+                        "followers": 444
+                    },
+                    {
+                        "date": "2024-05-30",
+                        "followers": 444
+                    },
+                    {
+                        "date": "2024-05-29",
+                        "followers": 439
+                    },
+                    {
+                        "date": "2024-05-28",
+                        "followers": 432
+                    }
+                ]
+            },
+            {
+                "id": "2nAvLSgGMkSijrwf0nshDc",
+                "name": "Lounge Chillout: Summer Vibes",
+                "followers": 138,
+                "trackCount": 33,
+                "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000da8482497e6cb1280476daebe4b4",
+                "playlistFollowerHistory": [
+                    {
+                        "date": "2024-06-24",
+                        "followers": 138
+                    },
+                    {
+                        "date": "2024-06-23",
+                        "followers": 136
+                    },
+                    {
+                        "date": "2024-06-22",
+                        "followers": 135
+                    },
+                    {
+                        "date": "2024-06-21",
+                        "followers": 133
+                    },
+                    {
+                        "date": "2024-06-20",
+                        "followers": 132
+                    },
+                    {
+                        "date": "2024-06-19",
+                        "followers": 132
+                    },
+                    {
+                        "date": "2024-06-18",
+                        "followers": 132
+                    },
+                    {
+                        "date": "2024-06-17",
+                        "followers": 132
+                    },
+                    {
+                        "date": "2024-06-16",
+                        "followers": 132
+                    },
+                    {
+                        "date": "2024-06-15",
+                        "followers": 131
+                    },
+                    {
+                        "date": "2024-06-14",
+                        "followers": 130
+                    },
+                    {
+                        "date": "2024-06-13",
+                        "followers": 128
+                    },
+                    {
+                        "date": "2024-06-12",
+                        "followers": 127
+                    },
+                    {
+                        "date": "2024-06-11",
+                        "followers": 126
+                    },
+                    {
+                        "date": "2024-06-10",
+                        "followers": 125
+                    },
+                    {
+                        "date": "2024-06-09",
+                        "followers": 124
+                    },
+                    {
+                        "date": "2024-06-08",
+                        "followers": 122
+                    },
+                    {
+                        "date": "2024-06-07",
+                        "followers": 120
+                    },
+                    {
+                        "date": "2024-06-06",
+                        "followers": 118
+                    },
+                    {
+                        "date": "2024-06-05",
+                        "followers": 118
+                    },
+                    {
+                        "date": "2024-06-04",
+                        "followers": 117
+                    },
+                    {
+                        "date": "2024-06-03",
+                        "followers": 115
+                    },
+                    {
+                        "date": "2024-06-02",
+                        "followers": 114
+                    },
+                    {
+                        "date": "2024-06-01",
+                        "followers": 112
+                    },
+                    {
+                        "date": "2024-05-31",
+                        "followers": 111
+                    },
+                    {
+                        "date": "2024-05-30",
+                        "followers": 109
+                    },
+                    {
+                        "date": "2024-05-29",
+                        "followers": 107
+                    },
+                    {
+                        "date": "2024-05-28",
+                        "followers": 107
+                    }
+                ]
+            },
+            {
+                "id": "5C3FWKvmvXWSyXHzSK4quv",
+                "name": "Booty Bass: Reggaeton & Moombahton",
+                "followers": 326,
+                "trackCount": 37,
+                "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000da8455d30801f14d962a24459ba4",
+                "playlistFollowerHistory": [
+                    {
+                        "date": "2024-06-24",
+                        "followers": 326
+                    },
+                    {
+                        "date": "2024-06-23",
+                        "followers": 326
+                    },
+                    {
+                        "date": "2024-06-22",
+                        "followers": 325
+                    },
+                    {
+                        "date": "2024-06-21",
+                        "followers": 324
+                    },
+                    {
+                        "date": "2024-06-20",
+                        "followers": 322
+                    },
+                    {
+                        "date": "2024-06-19",
+                        "followers": 320
+                    },
+                    {
+                        "date": "2024-06-18",
+                        "followers": 320
+                    },
+                    {
+                        "date": "2024-06-17",
+                        "followers": 318
+                    },
+                    {
+                        "date": "2024-06-16",
+                        "followers": 316
+                    },
+                    {
+                        "date": "2024-06-15",
+                        "followers": 314
+                    },
+                    {
+                        "date": "2024-06-14",
+                        "followers": 312
+                    },
+                    {
+                        "date": "2024-06-13",
+                        "followers": 310
+                    },
+                    {
+                        "date": "2024-06-12",
+                        "followers": 309
+                    },
+                    {
+                        "date": "2024-06-11",
+                        "followers": 308
+                    },
+                    {
+                        "date": "2024-06-10",
+                        "followers": 308
+                    },
+                    {
+                        "date": "2024-06-09",
+                        "followers": 307
+                    },
+                    {
+                        "date": "2024-06-08",
+                        "followers": 306
+                    },
+                    {
+                        "date": "2024-06-07",
+                        "followers": 304
+                    },
+                    {
+                        "date": "2024-06-06",
+                        "followers": 303
+                    },
+                    {
+                        "date": "2024-06-05",
+                        "followers": 301
+                    },
+                    {
+                        "date": "2024-06-04",
+                        "followers": 301
+                    },
+                    {
+                        "date": "2024-06-03",
+                        "followers": 301
+                    },
+                    {
+                        "date": "2024-06-02",
+                        "followers": 300
+                    },
+                    {
+                        "date": "2024-06-01",
+                        "followers": 298
+                    },
+                    {
+                        "date": "2024-05-31",
+                        "followers": 297
+                    },
+                    {
+                        "date": "2024-05-30",
+                        "followers": 297
+                    },
+                    {
+                        "date": "2024-05-29",
+                        "followers": 296
+                    },
+                    {
+                        "date": "2024-05-28",
+                        "followers": 296
+                    }
+                ]
+            },
+            {
+                "id": "27HM9uEyHACY1jEFeH8KqI",
+                "name": "Melodic Electronic: Future Waves",
+                "followers": 87,
+                "trackCount": 40,
+                "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000da8453d382abb39859a9471bceda",
+                "playlistFollowerHistory": [
+                    {
+                        "date": "2024-06-24",
+                        "followers": 87
+                    },
+                    {
+                        "date": "2024-06-23",
+                        "followers": 86
+                    },
+                    {
+                        "date": "2024-06-22",
+                        "followers": 85
+                    },
+                    {
+                        "date": "2024-06-21",
+                        "followers": 84
+                    },
+                    {
+                        "date": "2024-06-20",
+                        "followers": 83
+                    },
+                    {
+                        "date": "2024-06-19",
+                        "followers": 82
+                    },
+                    {
+                        "date": "2024-06-18",
+                        "followers": 81
+                    },
+                    {
+                        "date": "2024-06-17",
+                        "followers": 80
+                    },
+                    {
+                        "date": "2024-06-16",
+                        "followers": 79
+                    },
+                    {
+                        "date": "2024-06-15",
+                        "followers": 78
+                    },
+                    {
+                        "date": "2024-06-14",
+                        "followers": 78
+                    },
+                    {
+                        "date": "2024-06-13",
+                        "followers": 77
+                    },
+                    {
+                        "date": "2024-06-12",
+                        "followers": 76
+                    },
+                    {
+                        "date": "2024-06-11",
+                        "followers": 75
+                    },
+                    {
+                        "date": "2024-06-10",
+                        "followers": 75
+                    },
+                    {
+                        "date": "2024-06-09",
+                        "followers": 75
+                    },
+                    {
+                        "date": "2024-06-08",
+                        "followers": 74
+                    },
+                    {
+                        "date": "2024-06-07",
+                        "followers": 74
+                    },
+                    {
+                        "date": "2024-06-06",
+                        "followers": 74
+                    },
+                    {
+                        "date": "2024-06-05",
+                        "followers": 74
+                    },
+                    {
+                        "date": "2024-06-04",
+                        "followers": 74
+                    },
+                    {
+                        "date": "2024-06-03",
+                        "followers": 74
+                    },
+                    {
+                        "date": "2024-06-02",
+                        "followers": 74
+                    },
+                    {
+                        "date": "2024-06-01",
+                        "followers": 73
+                    },
+                    {
+                        "date": "2024-05-31",
+                        "followers": 73
+                    },
+                    {
+                        "date": "2024-05-30",
+                        "followers": 73
+                    },
+                    {
+                        "date": "2024-05-29",
+                        "followers": 73
+                    },
+                    {
+                        "date": "2024-05-28",
+                        "followers": 72
+                    }
+                ]
+            },
+            {
+                "id": "2l8uDQ7N5Cq7UqOD3XxIM7",
+                "name": "Bass Music: Rail Riders",
+                "followers": 35,
+                "trackCount": 43,
+                "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000da846391bec5638f32020584fd75",
+                "playlistFollowerHistory": [
+                    {
+                        "date": "2024-06-24",
+                        "followers": 35
+                    },
+                    {
+                        "date": "2024-06-23",
+                        "followers": 34
+                    },
+                    {
+                        "date": "2024-06-22",
+                        "followers": 34
+                    },
+                    {
+                        "date": "2024-06-21",
+                        "followers": 34
+                    },
+                    {
+                        "date": "2024-06-20",
+                        "followers": 34
+                    },
+                    {
+                        "date": "2024-06-19",
+                        "followers": 33
+                    },
+                    {
+                        "date": "2024-06-18",
+                        "followers": 33
+                    },
+                    {
+                        "date": "2024-06-17",
+                        "followers": 32
+                    },
+                    {
+                        "date": "2024-06-16",
+                        "followers": 31
+                    },
+                    {
+                        "date": "2024-06-15",
+                        "followers": 30
+                    },
+                    {
+                        "date": "2024-06-14",
+                        "followers": 30
+                    },
+                    {
+                        "date": "2024-06-13",
+                        "followers": 30
+                    },
+                    {
+                        "date": "2024-06-12",
+                        "followers": 29
+                    },
+                    {
+                        "date": "2024-06-11",
+                        "followers": 28
+                    },
+                    {
+                        "date": "2024-06-10",
+                        "followers": 27
+                    },
+                    {
+                        "date": "2024-06-09",
+                        "followers": 26
+                    },
+                    {
+                        "date": "2024-06-08",
+                        "followers": 25
+                    },
+                    {
+                        "date": "2024-06-07",
+                        "followers": 25
+                    },
+                    {
+                        "date": "2024-06-06",
+                        "followers": 24
+                    },
+                    {
+                        "date": "2024-06-05",
+                        "followers": 24
+                    },
+                    {
+                        "date": "2024-06-04",
+                        "followers": 23
+                    },
+                    {
+                        "date": "2024-06-03",
+                        "followers": 22
+                    },
+                    {
+                        "date": "2024-06-02",
+                        "followers": 22
+                    },
+                    {
+                        "date": "2024-06-01",
+                        "followers": 22
+                    },
+                    {
+                        "date": "2024-05-31",
+                        "followers": 22
+                    },
+                    {
+                        "date": "2024-05-30",
+                        "followers": 21
+                    },
+                    {
+                        "date": "2024-05-29",
+                        "followers": 21
+                    },
+                    {
+                        "date": "2024-05-28",
+                        "followers": 20
+                    }
+                ]
+            },
+            {
+                "id": "47m0rRKfTHSNVCRsRNFkKb",
+                "name": "Throwback Thursday: EDM Nostalgia",
+                "followers": 6,
+                "trackCount": 18,
+                "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000da846ba901d49d19b3bee64ddf83",
+                "playlistFollowerHistory": [
+                    {
+                        "date": "2024-06-24",
+                        "followers": 6
+                    },
+                    {
+                        "date": "2024-06-23",
+                        "followers": 6
+                    },
+                    {
+                        "date": "2024-06-22",
+                        "followers": 6
+                    },
+                    {
+                        "date": "2024-06-21",
+                        "followers": 6
+                    },
+                    {
+                        "date": "2024-06-20",
+                        "followers": 6
+                    },
+                    {
+                        "date": "2024-06-19",
+                        "followers": 6
+                    },
+                    {
+                        "date": "2024-06-18",
+                        "followers": 6
+                    },
+                    {
+                        "date": "2024-06-17",
+                        "followers": 5
+                    },
+                    {
+                        "date": "2024-06-16",
+                        "followers": 5
+                    },
+                    {
+                        "date": "2024-06-15",
+                        "followers": 5
+                    },
+                    {
+                        "date": "2024-06-14",
+                        "followers": 5
+                    },
+                    {
+                        "date": "2024-06-13",
+                        "followers": 5
+                    },
+                    {
+                        "date": "2024-06-12",
+                        "followers": 5
+                    },
+                    {
+                        "date": "2024-06-11",
+                        "followers": 5
+                    },
+                    {
+                        "date": "2024-06-10",
+                        "followers": 5
+                    },
+                    {
+                        "date": "2024-06-09",
+                        "followers": 4
+                    },
+                    {
+                        "date": "2024-06-08",
+                        "followers": 4
+                    },
+                    {
+                        "date": "2024-06-07",
+                        "followers": 3
+                    },
+                    {
+                        "date": "2024-06-06",
+                        "followers": 3
+                    },
+                    {
+                        "date": "2024-06-05",
+                        "followers": 2
+                    },
+                    {
+                        "date": "2024-06-04",
+                        "followers": 2
+                    },
+                    {
+                        "date": "2024-06-03",
+                        "followers": 2
+                    },
+                    {
+                        "date": "2024-06-02",
+                        "followers": 1
+                    },
+                    {
+                        "date": "2024-06-01",
+                        "followers": 1
+                    },
+                    {
+                        "date": "2024-05-31",
+                        "followers": 1
+                    },
+                    {
+                        "date": "2024-05-30",
+                        "followers": 1
+                    },
+                    {
+                        "date": "2024-05-29",
+                        "followers": 1
+                    },
+                    {
+                        "date": "2024-05-28",
+                        "followers": 1
+                    }
+                ]
+            }
+        ]
+    },
+    "playlistItems": [
+        {
+            "id": "7hiHFkppqh87eQj9OaOmvm",
+            "items": [
+                {
+                    "dateAdded": "2024-05-24T16:38:31Z",
+                    "releaseDate": "2024-05-17",
+                    "artists": [
+                        {
+                            "id": "2ZUktxXMg0flZ5HGHSd5HZ",
+                            "name": "MashBit"
+                        }
+                    ],
+                    "id": "6thBFNZvOqCtN4fU2lDGPs",
+                    "name": "Don't Say Goodbye",
+                    "albumId": "1Unb6I8rlEgLeWSHgftLRA",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-05-24T16:39:35Z",
+                    "releaseDate": "2024-04-11",
+                    "artists": [
+                        {
+                            "id": "2vf4pRsEY6LpL5tKmqWb64",
+                            "name": "Elderbrook"
+                        },
+                        {
+                            "id": "3KOHpygRuo1ruQAbEneR3t",
+                            "name": "George FitzGerald"
+                        }
+                    ],
+                    "id": "4D7WGniYHsapNrosDX8KDK",
+                    "name": "Glad I Found You",
+                    "albumId": "5zB2w539G0UD6sGpnevP07",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2023-12-01T22:25:04Z",
+                    "releaseDate": "2023-10-13",
+                    "artists": [
+                        {
+                            "id": "4oLeXFyACqeem2VImYeBFe",
+                            "name": "Fred again.."
+                        },
+                        {
+                            "id": "6Ja6zFB5d7XRihhfMo6KzY",
+                            "name": "Jozzy"
+                        },
+                        {
+                            "id": "7IrBqZo6diq3hV3GpUhrs2",
+                            "name": "Jim Legxacy"
+                        }
+                    ],
+                    "id": "5QOBT97OmYCZo1W5u7tRrB",
+                    "name": "ten",
+                    "albumId": "0GuEvq4vzB9QqUaU8lVL0F",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-05-24T16:40:12Z",
+                    "releaseDate": "2024-04-19",
+                    "artists": [
+                        {
+                            "id": "5oJvmyeWzyeahRtjup3Oys",
+                            "name": "AVAION"
+                        }
+                    ],
+                    "id": "2uYYSVWxRZiN8W8K23J2ai",
+                    "name": "Stop the time",
+                    "albumId": "3Ab4BR06hO8qx1NCZ1seog",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-03-07T12:30:07Z",
+                    "releaseDate": "2024-01-26",
+                    "artists": [
+                        {
+                            "id": "1725qONdsi9Vajd66ATXaz",
+                            "name": "tindra"
+                        }
+                    ],
+                    "id": "6PsgcxBtARfPe5H74ryKO5",
+                    "name": "tokyo drift",
+                    "albumId": "11eROOnprpuIpbOJvshz4E",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-05-24T16:38:28Z",
+                    "releaseDate": "2024-03-01",
+                    "artists": [
+                        {
+                            "id": "2ZUktxXMg0flZ5HGHSd5HZ",
+                            "name": "MashBit"
+                        }
+                    ],
+                    "id": "3U88n6ha0Tq3Y5el5vV6is",
+                    "name": "Light",
+                    "albumId": "7yO4wdgapBR9bhMDF6j9WW",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2023-12-01T22:47:30Z",
+                    "releaseDate": "2023-08-04",
+                    "artists": [
+                        {
+                            "id": "24V5UY0nChKpnb1TBPJhCw",
+                            "name": "Jai Wolf"
+                        },
+                        {
+                            "id": "2xe8IXgCTpwHE3eA9hTs4n",
+                            "name": "BANKS"
+                        }
+                    ],
+                    "id": "0NUsMgXjITsbxk5WC4aleu",
+                    "name": "Don't Look Down (feat. BANKS)",
+                    "albumId": "1tBi2zMsVkQYk8VBkdCNnu",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-06-18T15:33:02Z",
+                    "releaseDate": "2019-11-22",
+                    "artists": [
+                        {
+                            "id": "1mPhxEYDJTVsRepwmYYoch",
+                            "name": "wvntd"
+                        },
+                        {
+                            "id": "6uyOPg8XtAFSiozRoCw04d",
+                            "name": "Keegan Fordyce"
+                        }
+                    ],
+                    "id": "0LqLT86gOzL6e339Dfnc8k",
+                    "name": "What I Feel",
+                    "albumId": "28T31K0VNgax4xDn5TX9Jz",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-06-14T07:07:56Z",
+                    "releaseDate": "2024-06-14",
+                    "artists": [
+                        {
+                            "id": "5E1FAGKopxyWqEREQblCDA",
+                            "name": "Monika Santucci"
+                        }
+                    ],
+                    "id": "1bV4ItPFauxW2DwrKALbkx",
+                    "name": "Gone in the Morning",
+                    "albumId": "4wM1q7XjqjDeVlnceuYdra",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2023-12-01T22:21:09Z",
+                    "releaseDate": "2023-10-11",
+                    "artists": [
+                        {
+                            "id": "5tDjiBYUsTqzd0RkTZxK7u",
+                            "name": "Ben B\u00f6hmer"
+                        },
+                        {
+                            "id": "4nknUpUYu4baxWwkunq81Z",
+                            "name": "Felix Raphael"
+                        }
+                    ],
+                    "id": "30nygP64gBZqbLoWC72vNq",
+                    "name": "One Last Call",
+                    "albumId": "4P5fu99YdeoP7K29RyOvyy",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2023-12-01T22:21:27Z",
+                    "releaseDate": "2023-08-10",
+                    "artists": [
+                        {
+                            "id": "1Zz6NBe8UIZjm88TvehFtx",
+                            "name": "Le Youth"
+                        },
+                        {
+                            "id": "27gtK7m9vYwCyJ04zz0kIb",
+                            "name": "Lane 8"
+                        },
+                        {
+                            "id": "255QhVPytbdcbgCbHJ5rNe",
+                            "name": "Jyll"
+                        }
+                    ],
+                    "id": "2xlSM0k9SCoG6UMaZWWRiC",
+                    "name": "I Will Leave a Light On",
+                    "albumId": "2KSD7hHUDnXcgTO56Zhwi2",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2023-12-01T22:21:50Z",
+                    "releaseDate": "2022-11-11",
+                    "artists": [
+                        {
+                            "id": "74xeHqz5Ap8ZHq69TkxI0r",
+                            "name": "BONNIE X CLYDE"
+                        }
+                    ],
+                    "id": "0GZ6PpNaMiViu3J0MDZztp",
+                    "name": "Another You",
+                    "albumId": "3KxCBxlG7udmxLbU4SI1LE",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-06-23T22:30:37Z",
+                    "releaseDate": "2024-06-07",
+                    "artists": [
+                        {
+                            "id": "5HYYXGs19FM9JuSjmoE88Y",
+                            "name": "Hyperbits"
+                        },
+                        {
+                            "id": "2zEASt0PHuI24e3JlAe17d",
+                            "name": "Kate McGill"
+                        }
+                    ],
+                    "id": "3dI6PwqMBjEmT87qdxwJVX",
+                    "name": "Unseen",
+                    "albumId": "3tZN6wC3tNQwHJ7RcPtbhY",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2023-12-01T22:25:18Z",
+                    "releaseDate": "2023-08-11",
+                    "artists": [
+                        {
+                            "id": "4oLeXFyACqeem2VImYeBFe",
+                            "name": "Fred again.."
+                        },
+                        {
+                            "id": "6l7R1jntPahGxwJt7Tky8h",
+                            "name": "Obongjayar"
+                        }
+                    ],
+                    "id": "3YgtkOxZsTuaZdL8McA1FQ",
+                    "name": "adore u",
+                    "albumId": "7K3BWpksmH4L7BoqUdhZrL",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2023-12-01T22:23:42Z",
+                    "releaseDate": "2022-01-21",
+                    "artists": [
+                        {
+                            "id": "0XmmX4fE4SiRMu3ICsP5sA",
+                            "name": "Lipless"
+                        }
+                    ],
+                    "id": "0dmXGQ2zRVOm6N60S0UdHK",
+                    "name": "Cimmerian",
+                    "albumId": "1a0g4P7lv4e9Mw9IjNxNLf",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2023-12-01T22:26:05Z",
+                    "releaseDate": "2023-05-17",
+                    "artists": [
+                        {
+                            "id": "42KUul1wLmOdQCEYf3MweS",
+                            "name": "Lonely in the Rain"
+                        },
+                        {
+                            "id": "7HIN13S8A6wfupCwXRNv6U",
+                            "name": "Saavan"
+                        }
+                    ],
+                    "id": "3YDjXk0eiQm2Qd8cr5ssBV",
+                    "name": "All The Stars",
+                    "albumId": "1A3tS1C0LZrWHa8FyTm8lK",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-06-09T20:05:26Z",
+                    "releaseDate": "2024-05-24",
+                    "artists": [
+                        {
+                            "id": "7puTH2JaAsyNBhdGHbiRid",
+                            "name": "HOMALS"
+                        }
+                    ],
+                    "id": "24xuGlrmKvxMY66bMZ50lH",
+                    "name": "Empress Of The Sun",
+                    "albumId": "0sK6Nv5acxtE5cl3HuLRIK",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2023-12-01T22:27:34Z",
+                    "releaseDate": "2023-11-15",
+                    "artists": [
+                        {
+                            "id": "01qbSocTDAe2DmKayS89A5",
+                            "name": "pluko"
+                        }
+                    ],
+                    "id": "0LtDM3ttfZsmzmNgm8aAtm",
+                    "name": "pullmecloser",
+                    "albumId": "165941zH2zxcRPR9rP8PK2",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-06-02T16:35:27Z",
+                    "releaseDate": "2024-05-24",
+                    "artists": [
+                        {
+                            "id": "1XLjkBxFokuDTlHt0mQkRe",
+                            "name": "Thomas Gold"
+                        },
+                        {
+                            "id": "6w9Xp3JyuJcHJ6C4ywTH4s",
+                            "name": "SVNSETS"
+                        }
+                    ],
+                    "id": "6D6ffBfX2Aik4Vldu7jrQh",
+                    "name": "The Game Of Love",
+                    "albumId": "1opNb6ERKA8CtuiiGtRdcx",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2023-12-01T22:34:42Z",
+                    "releaseDate": "2021-07-14",
+                    "artists": [
+                        {
+                            "id": "1XcPIHqirx1Jaxm2bAxMeV",
+                            "name": "gardenstate"
+                        },
+                        {
+                            "id": "2uodbv2953Z7R1ipwucK2A",
+                            "name": "Bien"
+                        },
+                        {
+                            "id": "3sZvCZHU2V2idOYyUl3fBi",
+                            "name": "anam\u0113"
+                        }
+                    ],
+                    "id": "04BNQFaBlFF7WDeTb1V0AP",
+                    "name": "The Best Part",
+                    "albumId": "71f51ihuW0oVdl2s4yFzSU",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-06-20T17:22:16Z",
+                    "releaseDate": "2024-06-12",
+                    "artists": [
+                        {
+                            "id": "0xIrZp36YYSHSm5J5BKKW4",
+                            "name": "Blugazer"
+                        }
+                    ],
+                    "id": "61PU4SmJ92j1CPUyrjVImY",
+                    "name": "Borrowed Memories",
+                    "albumId": "0VfA0G7NhjoIvLEDo7BywE",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2023-12-01T22:47:56Z",
+                    "releaseDate": "2023-06-27",
+                    "artists": [
+                        {
+                            "id": "21mKp7DqtSNHhCAU2ugvUw",
+                            "name": "ODESZA"
+                        },
+                        {
+                            "id": "2jAzx88tHo3KNYauXANisl",
+                            "name": "Yellow House"
+                        }
+                    ],
+                    "id": "5KPYMz7DUZc6ZdcxNgfL18",
+                    "name": "Heavier",
+                    "albumId": "2f7U1Mz1SxgAr88KdCRT1a",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2023-12-01T22:34:56Z",
+                    "releaseDate": "2023-04-28",
+                    "artists": [
+                        {
+                            "id": "6YPmhC6xckfcUiw4undxAb",
+                            "name": "Tudor"
+                        }
+                    ],
+                    "id": "736VDbKKgjzvPOoKjjti4R",
+                    "name": "Bonfire",
+                    "albumId": "7uyq1nL0DNCkotUWloVM0F",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-06-16T19:41:34Z",
+                    "releaseDate": "2024-06-07",
+                    "artists": [
+                        {
+                            "id": "4ZXKj2dRsUpU66IrMIxU50",
+                            "name": "Superdream"
+                        },
+                        {
+                            "id": "4OZ0VK1N3PDtGhY2d6sqhI",
+                            "name": "Clem Beatz"
+                        },
+                        {
+                            "id": "6GdAYfQVlByh3CUmlMsswc",
+                            "name": "Francis On My Mind"
+                        }
+                    ],
+                    "id": "7sR0ExCla6dzjgySjEWsqO",
+                    "name": "The One",
+                    "albumId": "6fYYEKEgVUsacvlQuC7hoM",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-06-25T14:14:30Z",
+                    "releaseDate": "2024-06-21",
+                    "artists": [
+                        {
+                            "id": "0l9ymNLUakebec39MWLAuE",
+                            "name": "elsaaa"
+                        }
+                    ],
+                    "id": "4wgw9tILtt2wV5pSJMlPCC",
+                    "name": "remedy",
+                    "albumId": "7qR3PpvBpSUR9Ah8UzGTs1",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-06-25T14:02:49Z",
+                    "releaseDate": "2024-06-13",
+                    "artists": [
+                        {
+                            "id": "38u5tDrWqAZsGySZL5OB3b",
+                            "name": "Salvo"
+                        }
+                    ],
+                    "id": "7oHf1iLw7AAbXYB50n6Q7M",
+                    "name": "Metamorphosis",
+                    "albumId": "0zTcs77JHwvvAUOCuZBBAC",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2023-12-01T22:35:30Z",
+                    "releaseDate": "2023-03-17",
+                    "artists": [
+                        {
+                            "id": "4NhRml5ZOfNaYJAHUE0XwT",
+                            "name": "Nu Aspect"
+                        },
+                        {
+                            "id": "40DuSzxFswBymk0cjFnuqL",
+                            "name": "Coach Harrison"
+                        }
+                    ],
+                    "id": "3U8zXNz1x6QRo8N6KYv9ZR",
+                    "name": "If You Wanna",
+                    "albumId": "6xdH62cWsnkSNb1KrstnEA",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-06-09T20:03:06Z",
+                    "releaseDate": "2024-06-07",
+                    "artists": [
+                        {
+                            "id": "1I9HNoVK6kOQGVZfulXVnm",
+                            "name": "TENDER"
+                        }
+                    ],
+                    "id": "29kTSgO3YHSArvtVZwiX2r",
+                    "name": "go steady",
+                    "albumId": "3zKPxCnOoNvoDKAElJAvI3",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-05-24T16:40:36Z",
+                    "releaseDate": "2024-03-15",
+                    "artists": [
+                        {
+                            "id": "0faVSLrVTvEXkpSVBUQ3Wt",
+                            "name": "Killen."
+                        }
+                    ],
+                    "id": "3H2PFJYTxPH03IwYygXnlW",
+                    "name": "Die For You",
+                    "albumId": "1DdU3xbZUfE7KaGjpfWAgx",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2023-12-01T22:35:50Z",
+                    "releaseDate": "2023-01-25",
+                    "artists": [
+                        {
+                            "id": "42KUul1wLmOdQCEYf3MweS",
+                            "name": "Lonely in the Rain"
+                        },
+                        {
+                            "id": "1X2sRzO3K7Uvry9JWbG2iO",
+                            "name": "Oaks"
+                        }
+                    ],
+                    "id": "1nWydPjxaHwae1T4DMhOMf",
+                    "name": "Chemicals",
+                    "albumId": "2IPq21A71Ap2s5noX13PkV",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2023-12-01T22:36:17Z",
+                    "releaseDate": "2023-03-28",
+                    "artists": [
+                        {
+                            "id": "5x0R3zoC09GMiRJomoexLV",
+                            "name": "nimino"
+                        }
+                    ],
+                    "id": "4wySt0Tw3gCiybsPeXScGA",
+                    "name": "No Sympathy",
+                    "albumId": "48140dThJ2fdFQpcvO0x5B",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2023-12-01T22:37:49Z",
+                    "releaseDate": "2023-09-22",
+                    "artists": [
+                        {
+                            "id": "5x0R3zoC09GMiRJomoexLV",
+                            "name": "nimino"
+                        },
+                        {
+                            "id": "3uuKpwmr7SsX9lVp4AGG5x",
+                            "name": "Tori Romo"
+                        }
+                    ],
+                    "id": "04d4GzuAcytdLP2M3U9hiu",
+                    "name": "Killing Me Slowly",
+                    "albumId": "5CfsdEREZS2gS16RsxrKI9",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2023-12-01T22:38:14Z",
+                    "releaseDate": "2023-12-01",
+                    "artists": [
+                        {
+                            "id": "6sOEMfvCfHQ9dhSWyamXVb",
+                            "name": "Nils Hoffmann"
+                        },
+                        {
+                            "id": "1ikID9RZZMvkuBGDWrqajq",
+                            "name": "Kasbo"
+                        },
+                        {
+                            "id": "77BznF1Dr1k5KyEZ6Nn3jB",
+                            "name": "Vancouver Sleep Clinic"
+                        }
+                    ],
+                    "id": "4wXTePdTVHsFKowOVLVCbs",
+                    "name": "Running In A Dream",
+                    "albumId": "0QwLVfeowQtETeolwF7V5x",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-05-24T16:41:25Z",
+                    "releaseDate": "2024-04-19",
+                    "artists": [
+                        {
+                            "id": "5JQ1XqKJ2Art01rF4tu1Ra",
+                            "name": "Daniel Allan"
+                        },
+                        {
+                            "id": "0QkgnHpxSCOYdTnhUR9S5k",
+                            "name": "RIZ LA VIE"
+                        },
+                        {
+                            "id": "4k5j2KkfsE7yGO46C0Hm1G",
+                            "name": "Emilia Ali"
+                        }
+                    ],
+                    "id": "7JAroptXIwH4bIiB6ZcgVD",
+                    "name": "Spaceman (ft. RIZ LA VIE)",
+                    "albumId": "2WYjahILyeTDaKKkSUh7I8",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-05-24T16:40:46Z",
+                    "releaseDate": "2024-05-09",
+                    "artists": [
+                        {
+                            "id": "4fu0Er7pG6kZZa7Awf3NMI",
+                            "name": "ATRIP"
+                        }
+                    ],
+                    "id": "4bLujgDSlHpsPaMZDuc59i",
+                    "name": "Rainbow",
+                    "albumId": "45XxHc9UCdtq7htlaBFiE1",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2023-12-01T22:38:46Z",
+                    "releaseDate": "2023-10-27",
+                    "artists": [
+                        {
+                            "id": "7C3Cbtr2PkH2l4tOGhtCsk",
+                            "name": "Shallou"
+                        }
+                    ],
+                    "id": "3uBukmF5QcHj4RjX7EV5wU",
+                    "name": "Let Go",
+                    "albumId": "1tTTWPiuqDvopsS3bY1pj1",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2023-12-01T22:40:57Z",
+                    "releaseDate": "2023-11-10",
+                    "artists": [
+                        {
+                            "id": "5JQ1XqKJ2Art01rF4tu1Ra",
+                            "name": "Daniel Allan"
+                        }
+                    ],
+                    "id": "3cXX26hB3R4lHbZC2LFBao",
+                    "name": "I Just Need (with Lyrah)",
+                    "albumId": "4qQVdqYI0FMB8A9UoXSorx",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2023-12-01T22:41:29Z",
+                    "releaseDate": "2023-06-30",
+                    "artists": [
+                        {
+                            "id": "1FzBO5erQh8xC6qT6tY3tO",
+                            "name": "Tomatow"
+                        }
+                    ],
+                    "id": "6EIayrpMAOZ1abM4V4NAq2",
+                    "name": "In My Head",
+                    "albumId": "2woCOwlYLLiLxw9bxaG4V3",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2023-12-01T22:41:36Z",
+                    "releaseDate": "2023-11-17",
+                    "artists": [
+                        {
+                            "id": "7hOGhpa8RMSuDOWntGIAJt",
+                            "name": "A R I Z O N A"
+                        }
+                    ],
+                    "id": "2N0FdOSAWTUp5Vny0xEvPr",
+                    "name": "Out Of My Hands - Angrybaby Remix",
+                    "albumId": "3ab2NFkx4nCfOmgh8VFz7P",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2023-12-01T22:48:33Z",
+                    "releaseDate": "2023-05-05",
+                    "artists": [
+                        {
+                            "id": "2FwJwEswyIUAljqgjNSHgP",
+                            "name": "Snakehips"
+                        }
+                    ],
+                    "id": "09MduMD14OZjmAxd6u1Qfi",
+                    "name": "Sometimes\u2026 (with Daya & Earthgang)",
+                    "albumId": "1ZXC6ylnVeo9H0jAu5ri4r",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-06-23T15:03:53Z",
+                    "releaseDate": "2024-06-21",
+                    "artists": [
+                        {
+                            "id": "2KjxvxgJvbwweNVRMSuIRG",
+                            "name": "Hoang"
+                        },
+                        {
+                            "id": "3bIDVpODlxr80Gj7EAEXkV",
+                            "name": "niko rain"
+                        }
+                    ],
+                    "id": "17IFTfD85UPJH968QjEHMq",
+                    "name": "Hurts Me Too",
+                    "albumId": "5tOZ5X8lrtIRmJt4Ur4g9T",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-06-21T00:05:15Z",
+                    "releaseDate": "2024-06-10",
+                    "artists": [
+                        {
+                            "id": "793hRxjXyRIHMuM8oRTlLZ",
+                            "name": "ASYM"
+                        }
+                    ],
+                    "id": "5cXP5e2U4nA1wtypcDOZo3",
+                    "name": "Breaking Myself",
+                    "albumId": "5THkhGIu6C7lCnpwB9trsX",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-06-20T23:50:51Z",
+                    "releaseDate": "2024-06-10",
+                    "artists": [
+                        {
+                            "id": "7k7XlKhPBZ7m8bh9wxd4UA",
+                            "name": "Horzeman"
+                        }
+                    ],
+                    "id": "4Wen1BXtJmipG5VqiXcaO9",
+                    "name": "Back With You",
+                    "albumId": "2o31m3Owc99TBwz3lJzuya",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-06-12T18:24:13Z",
+                    "releaseDate": "2024-06-07",
+                    "artists": [
+                        {
+                            "id": "1FAe23gB6feByMu2oQUI4J",
+                            "name": "Archie Holmes"
+                        }
+                    ],
+                    "id": "6xXYxANbfZF4LlUNaXST7D",
+                    "name": "Sunstone",
+                    "albumId": "4VWLsyv8Zxv5sjyqNc2ttS",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2023-12-01T22:38:56Z",
+                    "releaseDate": "2023-10-27",
+                    "artists": [
+                        {
+                            "id": "7C3Cbtr2PkH2l4tOGhtCsk",
+                            "name": "Shallou"
+                        }
+                    ],
+                    "id": "3Rt5LQSDsS2VizOnrOWYRO",
+                    "name": "Losing Focus",
+                    "albumId": "1tTTWPiuqDvopsS3bY1pj1",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2023-12-01T22:41:49Z",
+                    "releaseDate": "2023-10-20",
+                    "artists": [
+                        {
+                            "id": "5xR2U3IJuuJP89isSMnxtd",
+                            "name": "STAR SEED"
+                        },
+                        {
+                            "id": "5HDqj7lexto9EPJ42uS2dM",
+                            "name": "Dreweybear"
+                        },
+                        {
+                            "id": "0S3LxjopMZF875k3QbpzFt",
+                            "name": "skye silansky"
+                        }
+                    ],
+                    "id": "2tlWlnksUAcN8Hz9rs8mWZ",
+                    "name": "Echoes",
+                    "albumId": "3Cw66FroV4L8jYmb1v5zIf",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-06-20T17:27:50Z",
+                    "releaseDate": "2024-06-19",
+                    "artists": [
+                        {
+                            "id": "6ejyZKJqfU1trzNHiAA3Ro",
+                            "name": "Luxe Agoris"
+                        },
+                        {
+                            "id": "2SQ1tSS4VYusXGC4qqVcpD",
+                            "name": "Kryoman"
+                        },
+                        {
+                            "id": "4S1EXenN3a8icOr9keFIG8",
+                            "name": "Samuel Miller"
+                        }
+                    ],
+                    "id": "5bO7tqqa4PL5627xhk5cyd",
+                    "name": "Save Your Tears",
+                    "albumId": "1o9kqZ6MWYJDZQ0T9uUjCd",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2023-12-01T22:42:09Z",
+                    "releaseDate": "2023-08-25",
+                    "artists": [
+                        {
+                            "id": "1y3Oast3vwTEiLKq9YJxF3",
+                            "name": "sadHAPPY"
+                        }
+                    ],
+                    "id": "26qbmJQeCIysv6NMLkeDCl",
+                    "name": "Love Me Like I'm Nothing",
+                    "albumId": "7yUapTz3AsOeB61iASc25q",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2023-12-01T22:42:35Z",
+                    "releaseDate": "2023-02-10",
+                    "artists": [
+                        {
+                            "id": "2omD1KpGe8jnFaXqHoE5MO",
+                            "name": "Matt Mems"
+                        }
+                    ],
+                    "id": "0Dxp3xpBwCRLDHmWbhv2PZ",
+                    "name": "Don't Know",
+                    "albumId": "0Dc7e2Rh2FQ7deGGYlqrUt",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2023-12-01T22:49:07Z",
+                    "releaseDate": "2023-09-29",
+                    "artists": [
+                        {
+                            "id": "2QlABGwVVmqOu8SHMyyZMq",
+                            "name": "Klo"
+                        }
+                    ],
+                    "id": "5gqb9NkwpxZtm8Zxi6BBLX",
+                    "name": "Running (in my mind)",
+                    "albumId": "5voibYsjdA4piZu58wTbkC",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2023-12-01T22:49:22Z",
+                    "releaseDate": "2023-03-17",
+                    "artists": [
+                        {
+                            "id": "18HNzDVt4zxoq7Ejsxbp1x",
+                            "name": "Ekonovah"
+                        },
+                        {
+                            "id": "1YJ3ctvTUAazEIPETDDSUI",
+                            "name": "Rampant"
+                        }
+                    ],
+                    "id": "1ZPE09CGAXKoenNkOU16TN",
+                    "name": "Up All Night (Extended) [feat. Rampant]",
+                    "albumId": "1hq0SPj0PUUxN0x0pYSe1r",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2023-12-01T22:51:00Z",
+                    "releaseDate": "2023-03-22",
+                    "artists": [
+                        {
+                            "id": "24V5UY0nChKpnb1TBPJhCw",
+                            "name": "Jai Wolf"
+                        },
+                        {
+                            "id": "68WwJXWrpo1yVOOIZjLSeT",
+                            "name": "Evalyn"
+                        }
+                    ],
+                    "id": "32IMgcVhysYW12NRvMLp8c",
+                    "name": "Want It All (feat. Evalyn)",
+                    "albumId": "22MkBC5l2Zi9atm66fE0Jq",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2023-12-01T22:52:02Z",
+                    "releaseDate": "2023-02-17",
+                    "artists": [
+                        {
+                            "id": "5oJvmyeWzyeahRtjup3Oys",
+                            "name": "AVAION"
+                        }
+                    ],
+                    "id": "68Pr1RFCmybF7eK7m99a1n",
+                    "name": "Broken",
+                    "albumId": "4ZBR5lkFXiVqI1oCehQZVO",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-03-17T22:17:36Z",
+                    "releaseDate": "2024-01-19",
+                    "artists": [
+                        {
+                            "id": "2CpLIMBoE2ZzyY3ZBCRZ7j",
+                            "name": "BUNT."
+                        }
+                    ],
+                    "id": "3zPco1u9i9bCjkG5pngR5t",
+                    "name": "Clouds",
+                    "albumId": "3hXx9qkxsHdQ1oyeqOvUAJ",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-03-17T22:17:48Z",
+                    "releaseDate": "2023-02-10",
+                    "artists": [
+                        {
+                            "id": "0PEuLoQbEWYdlKV3YLByF7",
+                            "name": "Fells"
+                        },
+                        {
+                            "id": "7vbAs9frQTkhTyOWWIwsSL",
+                            "name": "Medyk"
+                        }
+                    ],
+                    "id": "4qthHCfI3PqI9dhvblRN8o",
+                    "name": "Suffocate (with Medyk)",
+                    "albumId": "1pHm35ouv4EZTRKG16BivY",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-03-17T22:18:53Z",
+                    "releaseDate": "2024-03-15",
+                    "artists": [
+                        {
+                            "id": "1oC7D0CrT7bABXQXFCGltP",
+                            "name": "Lost In Pacific"
+                        },
+                        {
+                            "id": "28Upea6Tkq0l5oTu0dtX1c",
+                            "name": "ALLKNIGHT"
+                        }
+                    ],
+                    "id": "74XYlXpZduKh6EuC52L5X9",
+                    "name": "Talk To",
+                    "albumId": "154npAKpB9izt8Q2yffP0A",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-03-17T22:19:12Z",
+                    "releaseDate": "2022-08-05",
+                    "artists": [
+                        {
+                            "id": "3hbSPR20qXyguwznb4qggf",
+                            "name": "Stefandr\u00e9"
+                        }
+                    ],
+                    "id": "50spW9v9ecyNu5BsJ7UHPA",
+                    "name": "Lighthouse",
+                    "albumId": "2oVdN6ojgFSxEKnhllvebg",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-03-17T22:21:11Z",
+                    "releaseDate": "2024-03-01",
+                    "artists": [
+                        {
+                            "id": "3VVLqeEqQQqTgT8YhfY9Z6",
+                            "name": "Emmit Fenn"
+                        },
+                        {
+                            "id": "5UUdxfBMwm0hLlLgnZtBFv",
+                            "name": "Madism"
+                        }
+                    ],
+                    "id": "1XNU5jds8sbv4pP7Ex8I4L",
+                    "name": "Beautiful Life - Madism Remix",
+                    "albumId": "5ccbEPV2dA4TYUvs2yeo81",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-03-17T22:21:23Z",
+                    "releaseDate": "2024-02-23",
+                    "artists": [
+                        {
+                            "id": "1Zz6NBe8UIZjm88TvehFtx",
+                            "name": "Le Youth"
+                        },
+                        {
+                            "id": "1X2sRzO3K7Uvry9JWbG2iO",
+                            "name": "Oaks"
+                        }
+                    ],
+                    "id": "3w9Y8pn8IslbbCL970xMcy",
+                    "name": "Paradise",
+                    "albumId": "03JjqwDRiH4zqkIwyUTxKo",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-03-17T22:21:49Z",
+                    "releaseDate": "2024-02-09",
+                    "artists": [
+                        {
+                            "id": "5oJvmyeWzyeahRtjup3Oys",
+                            "name": "AVAION"
+                        }
+                    ],
+                    "id": "1mPhj6VWS4BsLQumiXcQXG",
+                    "name": "Call my name",
+                    "albumId": "7H88S76wmy2qFTX8TqM9we",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-05-24T16:40:22Z",
+                    "releaseDate": "2024-05-15",
+                    "artists": [
+                        {
+                            "id": "1ikID9RZZMvkuBGDWrqajq",
+                            "name": "Kasbo"
+                        }
+                    ],
+                    "id": "52X1cIBlLJVDH88gP7ipnQ",
+                    "name": "I\u2019m In Trouble",
+                    "albumId": "0rXnYHHbN5WHypCKPC9Yk6",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-05-24T16:42:18Z",
+                    "releaseDate": "2023-08-18",
+                    "artists": [
+                        {
+                            "id": "3GxiyVFhM1CWoYBMfZ9hYG",
+                            "name": "Lincoln Jesser"
+                        },
+                        {
+                            "id": "6PocWR7Lrnl51WeaMuypfg",
+                            "name": "Dallin Dance"
+                        },
+                        {
+                            "id": "7rAAky3Us8APY8OK9W2S03",
+                            "name": "Lizzy Small"
+                        }
+                    ],
+                    "id": "5XzJJRbqJRNKwNjoahwRD7",
+                    "name": "Endlessly",
+                    "albumId": "1osfIPZeLwqmvuBs78EtQm",
+                    "addedByCuration": false
+                }
+            ]
+        },
+        {
+            "id": "5tX8EV33Sp8LcgpPxNFuAP",
+            "items": [
+                {
+                    "dateAdded": "2024-05-31T19:17:56Z",
+                    "releaseDate": "2024-05-31",
+                    "artists": [
+                        {
+                            "id": "0CjWKoS55T7DOt0HJuwF1H",
+                            "name": "Bipolar Sunshine"
+                        },
+                        {
+                            "id": "2Mwy2BwAUT3WU1cZa3pvEW",
+                            "name": "NEZ"
+                        }
+                    ],
+                    "id": "2BVybO0IKCbtUu2ZI2VfiZ",
+                    "name": "GO OFF",
+                    "albumId": "795AOVTX1vBJBP1xKbJLrw",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-02-24T12:13:57Z",
+                    "releaseDate": "2021-11-30",
+                    "artists": [
+                        {
+                            "id": "3i37K6v75zc4mXfERO8lf9",
+                            "name": "Jerre"
+                        },
+                        {
+                            "id": "04EKnKMvq5C20x5aLOWvJO",
+                            "name": "Marcelino"
+                        }
+                    ],
+                    "id": "7BV8CsffhfHomUsFrZNuJn",
+                    "name": "In Your Love",
+                    "albumId": "0MvdMxorWvZh1Slcz0u69T",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-02-24T12:14:10Z",
+                    "releaseDate": "2023-03-03",
+                    "artists": [
+                        {
+                            "id": "3i37K6v75zc4mXfERO8lf9",
+                            "name": "Jerre"
+                        }
+                    ],
+                    "id": "6PvxeHpS8D3dwkV9wl1qEq",
+                    "name": "Underground",
+                    "albumId": "5rUkRZ4KeONGV41I8ypcyp",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-02-24T12:08:48Z",
+                    "releaseDate": "2023-06-16",
+                    "artists": [
+                        {
+                            "id": "6EqFMCnVGBRNmwPlk2f3Uc",
+                            "name": "AC Slater"
+                        }
+                    ],
+                    "id": "4rKQA3rD8ytaoaRABz9CL6",
+                    "name": "Night Rider",
+                    "albumId": "0IGWaTyOw4z04uUdh38QLf",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-05-17T21:04:33Z",
+                    "releaseDate": "2024-05-17",
+                    "artists": [
+                        {
+                            "id": "5LGa1U6Mwiib6ocVuJItcG",
+                            "name": "Gettoblaster"
+                        },
+                        {
+                            "id": "33eoqQdCfwtPl1hPS1Xlt4",
+                            "name": "Nathan Barato"
+                        }
+                    ],
+                    "id": "2xbqTrJF39YwEeNKadnMaX",
+                    "name": "The Move (feat. Tony Duke)",
+                    "albumId": "1xDebsZ7SxyJXXrE12i3mG",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-02-24T12:06:42Z",
+                    "releaseDate": "2024-01-26",
+                    "artists": [
+                        {
+                            "id": "0w1sbtZVQoK6GzV4A4OkCv",
+                            "name": "Mau P"
+                        }
+                    ],
+                    "id": "62bjfb5YMLvZU44vfjJVxp",
+                    "name": "BEATS FOR THE UNDERGROUND",
+                    "albumId": "79kzvy6zqbSZsSIxVK3flH",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-02-24T12:14:03Z",
+                    "releaseDate": "2023-05-19",
+                    "artists": [
+                        {
+                            "id": "3i37K6v75zc4mXfERO8lf9",
+                            "name": "Jerre"
+                        },
+                        {
+                            "id": "1m8JjjZiY4ABJQiWz7jvPg",
+                            "name": "Siroch"
+                        }
+                    ],
+                    "id": "4YB8zXMwrI3aL3TvksHIic",
+                    "name": "God Damn",
+                    "albumId": "7BL74PYKRUd0go11eSrv8J",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-06-04T07:43:19Z",
+                    "releaseDate": "2024-06-04",
+                    "artists": [
+                        {
+                            "id": "4puWXySdNLeDetOFeTmdjS",
+                            "name": "POLOVICH"
+                        }
+                    ],
+                    "id": "0wehkJZNkj1aydxzArF9M6",
+                    "name": "Up & Down",
+                    "albumId": "6E1ioLvsPxrsoFggjm6jt9",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-04-01T18:44:29Z",
+                    "releaseDate": "2024-03-29",
+                    "artists": [
+                        {
+                            "id": "1lAwVq9MxNJkB0dEY6xNoV",
+                            "name": "Walker & Royce"
+                        }
+                    ],
+                    "id": "5fqzAlhEUdPCWkLGiKajUU",
+                    "name": "Motivashun",
+                    "albumId": "3buVlngArH6e0boFoaH58f",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-06-25T13:58:32Z",
+                    "releaseDate": "2024-06-25",
+                    "artists": [
+                        {
+                            "id": "4dJbkK58s6mj9RGElqCNhm",
+                            "name": "Amal Nemer"
+                        }
+                    ],
+                    "id": "0km0A6BTTXrtd4Dkl7cPPb",
+                    "name": "Burning",
+                    "albumId": "1E7xsPpNr0j4wNM29zaCVo",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-06-14T21:18:16Z",
+                    "releaseDate": "2024-06-09",
+                    "artists": [
+                        {
+                            "id": "6ayFcwFaiXzKYBw0QAefBD",
+                            "name": "Alex Karelia"
+                        },
+                        {
+                            "id": "4M7YgVEOtYwKXdM2FLXhsj",
+                            "name": "Psytech"
+                        },
+                        {
+                            "id": "0u3FsnthC9bFUtzQ24VAJr",
+                            "name": "Xiiav"
+                        }
+                    ],
+                    "id": "0GduAxGs0rGCOnCLAPUeFu",
+                    "name": "Feel",
+                    "albumId": "7667ch2z9OaQlvfjXSFgKD",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-03-21T10:58:20Z",
+                    "releaseDate": "2022-01-28",
+                    "artists": [
+                        {
+                            "id": "052B9SONfhoScw7dgYWw5o",
+                            "name": "Biscits"
+                        }
+                    ],
+                    "id": "2axewNoOiyGrtELfrTHv9r",
+                    "name": "Locco",
+                    "albumId": "3fl99omc9CaAzeq1CKckcO",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-05-26T11:44:41Z",
+                    "releaseDate": "2024-05-24",
+                    "artists": [
+                        {
+                            "id": "7kNqXtgeIwFtelmRjWv205",
+                            "name": "John Summit"
+                        },
+                        {
+                            "id": "4yX6mpMyBGf9UfvBB8JJrc",
+                            "name": "HAYLA"
+                        },
+                        {
+                            "id": "1ChtRJ3f4rbv4vtz87i6CD",
+                            "name": "Cassian"
+                        }
+                    ],
+                    "id": "2F7SSzMbICn522yxy6JZt7",
+                    "name": "Shiver - Cassian Remix",
+                    "albumId": "1CrX8LvopfetcSOwlLwhni",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-02-24T12:00:53Z",
+                    "releaseDate": "2024-02-23",
+                    "artists": [
+                        {
+                            "id": "1lAwVq9MxNJkB0dEY6xNoV",
+                            "name": "Walker & Royce"
+                        },
+                        {
+                            "id": "154uf79BQbw6Q4C5dPzWdW",
+                            "name": "James Patterson"
+                        }
+                    ],
+                    "id": "0rDs5KmugTtfchE7ho2iHH",
+                    "name": "Might Just",
+                    "albumId": "3QkQmQFGIw9p2QAO0XQVXg",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-06-07T07:09:06Z",
+                    "releaseDate": "2024-06-07",
+                    "artists": [
+                        {
+                            "id": "09iEIVQVBtTVjiuEdqqkIR",
+                            "name": "Wade"
+                        }
+                    ],
+                    "id": "12zQfnvVvxduyDUfxlw65T",
+                    "name": "Hurricane",
+                    "albumId": "3EEAqP0bIuSmsXEFmxzjFj",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-06-02T16:38:41Z",
+                    "releaseDate": "2024-05-31",
+                    "artists": [
+                        {
+                            "id": "3KQWdNzEwAMedviqUBAodQ",
+                            "name": "KARBON"
+                        }
+                    ],
+                    "id": "5ynoiNNX0lqgQA8qOweoUI",
+                    "name": "Certified G",
+                    "albumId": "5qy3PXpwyFHMvfHX5EGWYt",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2023-03-03T09:45:13Z",
+                    "releaseDate": "2023-02-17",
+                    "artists": [
+                        {
+                            "id": "45lcbTsX07JWzmTIjcdyBz",
+                            "name": "Matroda"
+                        }
+                    ],
+                    "id": "1T7fTFxkosqEF8AZzDvm6I",
+                    "name": "Can\u2019t Fight The Feeling",
+                    "albumId": "0UDIxo8rh9AcO7oGHjaETt",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-02-24T12:06:36Z",
+                    "releaseDate": "2024-02-16",
+                    "artists": [
+                        {
+                            "id": "7LJSAfWhO7jhjnewy6pKyZ",
+                            "name": "Kyle Watson"
+                        }
+                    ],
+                    "id": "7mGhqK1VAvlwfCe2ZT5NhT",
+                    "name": "The Afterhours",
+                    "albumId": "4LG0u43Eqo0FgZpq5SikRE",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-02-24T12:18:48Z",
+                    "releaseDate": "2022-09-30",
+                    "artists": [
+                        {
+                            "id": "5PlfkPxwCpRRWQJBxCa0By",
+                            "name": "HUGEL"
+                        },
+                        {
+                            "id": "72zmP13MQQhZHt4Kl0FOTs",
+                            "name": "Cumbiafrica"
+                        },
+                        {
+                            "id": "45lcbTsX07JWzmTIjcdyBz",
+                            "name": "Matroda"
+                        }
+                    ],
+                    "id": "4Qa9y4SXsLBAhcRZUdtpOw",
+                    "name": "Morenita - Matroda Remix",
+                    "albumId": "1tNmIcWQWpkkGq2Jb7yJMR",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-02-24T12:03:07Z",
+                    "releaseDate": "2023-10-20",
+                    "artists": [
+                        {
+                            "id": "3kWLEfykUXgiuhbR2NwnLI",
+                            "name": "OOTORO"
+                        }
+                    ],
+                    "id": "6X3FtTmLqzlrVTZYMiNhCq",
+                    "name": "What You Heard Bout Me",
+                    "albumId": "0fUwmLBkYe1GHvGZBz252u",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-03-07T12:33:01Z",
+                    "releaseDate": "2023-04-07",
+                    "artists": [
+                        {
+                            "id": "5G1S3UDl45hYFHLRkz3EVE",
+                            "name": "RadWulf"
+                        }
+                    ],
+                    "id": "1Yg1HRSvOCBHnCbNtjtssY",
+                    "name": "Addicted",
+                    "albumId": "3wvNfHZUuXtTM3YjMNiK5r",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-02-24T12:08:07Z",
+                    "releaseDate": "2023-07-21",
+                    "artists": [
+                        {
+                            "id": "5jBerZvTAajwYvdxt3UhgU",
+                            "name": "San Pacho"
+                        },
+                        {
+                            "id": "1RyEwwco6XV0jQnxLgCU34",
+                            "name": "No Thanks"
+                        }
+                    ],
+                    "id": "6LDoJdEJW4NTOTOLTH71IL",
+                    "name": "Freak",
+                    "albumId": "1LStsedQUVmTDXp9xGVMyp",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-02-24T12:14:15Z",
+                    "releaseDate": "2023-06-30",
+                    "artists": [
+                        {
+                            "id": "3i37K6v75zc4mXfERO8lf9",
+                            "name": "Jerre"
+                        }
+                    ],
+                    "id": "2WugTI5qQjBDvTL9ROBMfj",
+                    "name": "Bad Habits",
+                    "albumId": "6Fj92CzxSmLvf4fD8bFmLp",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-02-24T12:02:31Z",
+                    "releaseDate": "2023-04-07",
+                    "artists": [
+                        {
+                            "id": "45lcbTsX07JWzmTIjcdyBz",
+                            "name": "Matroda"
+                        },
+                        {
+                            "id": "3WJeKjQBTbEjR9psopu0Si",
+                            "name": "Dino DZ"
+                        }
+                    ],
+                    "id": "2jGlVbdMM7pzUl5RyeSJrX",
+                    "name": "Saturday Love",
+                    "albumId": "4Heb9ISUmA1d3h9VMGY9a6",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-02-24T12:14:19Z",
+                    "releaseDate": "2023-09-15",
+                    "artists": [
+                        {
+                            "id": "5r4lVYYPWIvbRMH4rlAeFj",
+                            "name": "TRYPBOX"
+                        }
+                    ],
+                    "id": "3PTA36BydAAbWBkEE8CC3A",
+                    "name": "My Mind",
+                    "albumId": "0JbGDhqgc7GrQRujJFmOc0",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-02-24T12:16:06Z",
+                    "releaseDate": "2021-07-16",
+                    "artists": [
+                        {
+                            "id": "1m8JjjZiY4ABJQiWz7jvPg",
+                            "name": "Siroch"
+                        },
+                        {
+                            "id": "3i37K6v75zc4mXfERO8lf9",
+                            "name": "Jerre"
+                        }
+                    ],
+                    "id": "753mNfOCoWwQJ1N10IeUfB",
+                    "name": "Don't Forget",
+                    "albumId": "4AluhL05Kk3OTvfMw2r17v",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-02-24T12:14:33Z",
+                    "releaseDate": "2022-11-18",
+                    "artists": [
+                        {
+                            "id": "0LyfQWJT6nXafLPZqxe9Of",
+                            "name": "Various Artists"
+                        }
+                    ],
+                    "id": "3F8tgTENixbUybPlMlG4q3",
+                    "name": "Do Dat",
+                    "albumId": "6BZdpMocRKugo0C9zKRCWz",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-02-24T12:12:53Z",
+                    "releaseDate": "2023-07-07",
+                    "artists": [
+                        {
+                            "id": "7zm3aSdmGiOkTt0aZFSO8R",
+                            "name": "Wax Motif"
+                        },
+                        {
+                            "id": "3NwcP2GO2sZZS2BVvWcc9T",
+                            "name": "Kura"
+                        }
+                    ],
+                    "id": "3d4lGcDN1FISRTBeBeGRoJ",
+                    "name": "Lo Que Soy",
+                    "albumId": "2L6QpGW5Wz3ohn7sxUMbqu",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-02-24T12:06:31Z",
+                    "releaseDate": "2024-02-16",
+                    "artists": [
+                        {
+                            "id": "4FCzCS0KEgb0rgySWINItO",
+                            "name": "CID"
+                        },
+                        {
+                            "id": "1wIiZwCIGDvM3YfYqo33Ui",
+                            "name": "Chris Moody"
+                        }
+                    ],
+                    "id": "6OcuhfJvy3rZZIaLeDxlcW",
+                    "name": "Better World",
+                    "albumId": "18ytwDEGWlQ7siXzpTi9Rh",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-02-24T12:12:50Z",
+                    "releaseDate": "2022-11-04",
+                    "artists": [
+                        {
+                            "id": "7zm3aSdmGiOkTt0aZFSO8R",
+                            "name": "Wax Motif"
+                        },
+                        {
+                            "id": "4Euia7UzdRshy1DJOSMTcs",
+                            "name": "220 KID"
+                        }
+                    ],
+                    "id": "2RxDAFchouApF3yUwE6gxE",
+                    "name": "See In Color",
+                    "albumId": "6JK0ooMtZxPQakH2bJJ5Yj",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-02-24T12:15:59Z",
+                    "releaseDate": "2023-02-10",
+                    "artists": [
+                        {
+                            "id": "3i37K6v75zc4mXfERO8lf9",
+                            "name": "Jerre"
+                        }
+                    ],
+                    "id": "6ye5TYzGlqA4qzTYqLN1H0",
+                    "name": "Know About",
+                    "albumId": "0yHRKlLGT8jvZ5LrrzkE5A",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-02-24T12:11:13Z",
+                    "releaseDate": "2023-10-20",
+                    "artists": [
+                        {
+                            "id": "3VRyybsQu0MDG0F2LBxnv7",
+                            "name": "Noizu"
+                        },
+                        {
+                            "id": "7DhdJhd6DrxeJlUajwttd1",
+                            "name": "Martin Ikin"
+                        }
+                    ],
+                    "id": "55NFZV4mg6VcXvoB0M65d0",
+                    "name": "Burnin'",
+                    "albumId": "1ZDMO0PcbHNL0Tdx3ysi9U",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-02-24T12:12:59Z",
+                    "releaseDate": "2023-11-17",
+                    "artists": [
+                        {
+                            "id": "28j8lBWDdDSHSSt5oPlsX2",
+                            "name": "ZHU"
+                        },
+                        {
+                            "id": "7zm3aSdmGiOkTt0aZFSO8R",
+                            "name": "Wax Motif"
+                        }
+                    ],
+                    "id": "1ME5pFc81YOLOrcV1Z4Ovb",
+                    "name": "Better Recognize",
+                    "albumId": "3E3fHTWpI3VSYUZpVO1Eag",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-02-24T12:08:40Z",
+                    "releaseDate": "2023-09-29",
+                    "artists": [
+                        {
+                            "id": "6EqFMCnVGBRNmwPlk2f3Uc",
+                            "name": "AC Slater"
+                        },
+                        {
+                            "id": "7tm9Tuc70geXOOyKhtZHIj",
+                            "name": "Chris Lorenzo"
+                        }
+                    ],
+                    "id": "7pZJ7jGR6skYEkIYpjIE8b",
+                    "name": "Seismic",
+                    "albumId": "0YzIqCBSxVyubwfHwJX4IQ",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-02-24T12:08:01Z",
+                    "releaseDate": "2022-04-01",
+                    "artists": [
+                        {
+                            "id": "5jBerZvTAajwYvdxt3UhgU",
+                            "name": "San Pacho"
+                        }
+                    ],
+                    "id": "0XP4jb9IjvliEXDt8rK3XY",
+                    "name": "Amor",
+                    "albumId": "35qXT0ucEHiPyXoBaVoIFT",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-03-21T10:58:25Z",
+                    "releaseDate": "2023-09-15",
+                    "artists": [
+                        {
+                            "id": "052B9SONfhoScw7dgYWw5o",
+                            "name": "Biscits"
+                        },
+                        {
+                            "id": "5mNpMP01Co4vXZ3U0fWP3C",
+                            "name": "Camden Cox"
+                        }
+                    ],
+                    "id": "5roFM0I1K6um2yIYL6kGq2",
+                    "name": "365",
+                    "albumId": "2Wt63cwVvjqezpEdQcmlkI",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-03-21T10:58:33Z",
+                    "releaseDate": "2024-03-01",
+                    "artists": [
+                        {
+                            "id": "0EdUwJSqkMmsH6Agg3G8Ls",
+                            "name": "Marten H\u00f8rger"
+                        },
+                        {
+                            "id": "4nKvbonPefiFmshjpHENVU",
+                            "name": "SLVR"
+                        }
+                    ],
+                    "id": "2go7lGAZXOmynlwL3aEwvg",
+                    "name": "PURPLE PILL",
+                    "albumId": "3Iy42DENBhSkdJFFg8SHuY",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-04-12T10:22:02Z",
+                    "releaseDate": "2024-04-12",
+                    "artists": [
+                        {
+                            "id": "6jvotVoCHB9pS8u5BZBceL",
+                            "name": "Andrea Giudice"
+                        }
+                    ],
+                    "id": "2hsLFDR91qQ89UWtuthR9m",
+                    "name": "Dragon",
+                    "albumId": "0VaJYPssRIIs3SJDzEIZRK",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-04-12T10:22:44Z",
+                    "releaseDate": "2024-04-12",
+                    "artists": [
+                        {
+                            "id": "0k8qF9yLQtIcgozNjrIk7f",
+                            "name": "Chicco"
+                        },
+                        {
+                            "id": "508HEnl2cDRksyq8hyQtRh",
+                            "name": "Mia Moretti"
+                        }
+                    ],
+                    "id": "6GQUEgnSqZRZLtUQXhfm2f",
+                    "name": "I Need Some Money (Mia Moretti Remix) - Edit",
+                    "albumId": "0xgBDJbWE9bQwxkofRJZiC",
+                    "addedByCuration": false
+                }
+            ]
+        },
+        {
+            "id": "0EbV5cAsSo6WLLucoumG16",
+            "items": [
+                {
+                    "dateAdded": "2024-05-31T19:18:05Z",
+                    "releaseDate": "2024-05-31",
+                    "artists": [
+                        {
+                            "id": "0CjWKoS55T7DOt0HJuwF1H",
+                            "name": "Bipolar Sunshine"
+                        },
+                        {
+                            "id": "2Mwy2BwAUT3WU1cZa3pvEW",
+                            "name": "NEZ"
+                        }
+                    ],
+                    "id": "2BVybO0IKCbtUu2ZI2VfiZ",
+                    "name": "GO OFF",
+                    "albumId": "795AOVTX1vBJBP1xKbJLrw",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-06-08T14:06:10Z",
+                    "releaseDate": "2024-06-06",
+                    "artists": [
+                        {
+                            "id": "7xihR0iAXmuXt2XJobep51",
+                            "name": "Moses"
+                        },
+                        {
+                            "id": "4HEqK9qS4sZ7ZdFmKIMWnz",
+                            "name": "Sparty"
+                        },
+                        {
+                            "id": "6P4MaYD97c9CnGibMPf4rd",
+                            "name": "Siadou"
+                        }
+                    ],
+                    "id": "5niL4fqeG2GWGY3lzePxQF",
+                    "name": "Thinking of You",
+                    "albumId": "67KRTNPI0KsOH7zWkgPRrP",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2023-05-19T10:31:12Z",
+                    "releaseDate": "2023-05-19",
+                    "artists": [
+                        {
+                            "id": "3i37K6v75zc4mXfERO8lf9",
+                            "name": "Jerre"
+                        },
+                        {
+                            "id": "1m8JjjZiY4ABJQiWz7jvPg",
+                            "name": "Siroch"
+                        }
+                    ],
+                    "id": "4YB8zXMwrI3aL3TvksHIic",
+                    "name": "God Damn",
+                    "albumId": "7BL74PYKRUd0go11eSrv8J",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-05-26T10:41:39Z",
+                    "releaseDate": "2024-05-24",
+                    "artists": [
+                        {
+                            "id": "6rErJmMCoNHUX0Z99uBB8m",
+                            "name": "Darby"
+                        },
+                        {
+                            "id": "7ErksWhMMsmGtgT1l1e159",
+                            "name": "Britt Lari"
+                        }
+                    ],
+                    "id": "5zCKUok6FtVnEN1ATfBEFJ",
+                    "name": "TRUST",
+                    "albumId": "589r4sFNm8R3cETh4lXRRS",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2022-11-18T14:04:57Z",
+                    "releaseDate": "2020-08-21",
+                    "artists": [
+                        {
+                            "id": "4aKdmOXdUKX07HVd3sGgzw",
+                            "name": "Rezz"
+                        },
+                        {
+                            "id": "4fv1OFJywZ7DHCz3mVQQ45",
+                            "name": "Grabbitz"
+                        },
+                        {
+                            "id": "4Ok1Cm5YX5StCQZgH0r2xF",
+                            "name": "PEEKABOO"
+                        }
+                    ],
+                    "id": "1qDOI487GoDlWyvzckhzo4",
+                    "name": "Someone Else - PEEKABOO Remix",
+                    "albumId": "1CxrLWDUvfOaKHNsKGfUQ1",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2023-06-30T13:03:59Z",
+                    "releaseDate": "2023-06-30",
+                    "artists": [
+                        {
+                            "id": "3i37K6v75zc4mXfERO8lf9",
+                            "name": "Jerre"
+                        }
+                    ],
+                    "id": "2WugTI5qQjBDvTL9ROBMfj",
+                    "name": "Bad Habits",
+                    "albumId": "6Fj92CzxSmLvf4fD8bFmLp",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-06-09T20:07:51Z",
+                    "releaseDate": "2024-06-07",
+                    "artists": [
+                        {
+                            "id": "6i2ssO4LVLEFlyn2EMLmKF",
+                            "name": "MANSA"
+                        }
+                    ],
+                    "id": "5iNFhUdXkTEQS95HcqfMUW",
+                    "name": "Spot In Hell",
+                    "albumId": "5uxOMykX3busGa89tEDskH",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2022-11-18T14:02:33Z",
+                    "releaseDate": "2022-02-25",
+                    "artists": [
+                        {
+                            "id": "5czbzNZZfWpyFgZyfT3Mkk",
+                            "name": "SIDEPIECE"
+                        }
+                    ],
+                    "id": "1aEHWqvtZ1JIBUl1loQBDn",
+                    "name": "Don\u2019t Keep Me Waiting",
+                    "albumId": "03fU1mpcpIJ70JaKzwmbbF",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-04-07T11:18:29Z",
+                    "releaseDate": "2022-01-14",
+                    "artists": [
+                        {
+                            "id": "5czbzNZZfWpyFgZyfT3Mkk",
+                            "name": "SIDEPIECE"
+                        }
+                    ],
+                    "id": "7Fbx8mVJy36dsVq9IYTRXu",
+                    "name": "Sextacy",
+                    "albumId": "6QxRE7g3LRK8EW4DKw2nO6",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2023-03-03T09:43:41Z",
+                    "releaseDate": "2023-03-03",
+                    "artists": [
+                        {
+                            "id": "3i37K6v75zc4mXfERO8lf9",
+                            "name": "Jerre"
+                        }
+                    ],
+                    "id": "6PvxeHpS8D3dwkV9wl1qEq",
+                    "name": "Underground",
+                    "albumId": "5rUkRZ4KeONGV41I8ypcyp",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2022-11-18T13:59:54Z",
+                    "releaseDate": "2022-08-05",
+                    "artists": [
+                        {
+                            "id": "6hBrJJrcYoNhvLC6KaFR4b",
+                            "name": "Eliminate"
+                        }
+                    ],
+                    "id": "4lhrJ3QFVhegXsm7Bm9znL",
+                    "name": "Nothing Left",
+                    "albumId": "7dvWGzlpwrcWuNkOTtjk5s",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2022-11-18T13:57:42Z",
+                    "releaseDate": "2022-11-18",
+                    "artists": [
+                        {
+                            "id": "0LyfQWJT6nXafLPZqxe9Of",
+                            "name": "Various Artists"
+                        }
+                    ],
+                    "id": "3F8tgTENixbUybPlMlG4q3",
+                    "name": "Do Dat",
+                    "albumId": "6BZdpMocRKugo0C9zKRCWz",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-06-16T19:41:04Z",
+                    "releaseDate": "2024-06-06",
+                    "artists": [
+                        {
+                            "id": "5rGiKRASfYHuoGV6tXYGMB",
+                            "name": "Buns"
+                        }
+                    ],
+                    "id": "6NvSy3CAEnZk5PFSiBF1Dt",
+                    "name": "LOSTINYOU",
+                    "albumId": "1DVaFXiXBuru8lhGs47vf2",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-06-16T19:37:15Z",
+                    "releaseDate": "2024-06-14",
+                    "artists": [
+                        {
+                            "id": "1ZR5GnPw0Jkb5M4hnBwzuZ",
+                            "name": "AVELLO"
+                        },
+                        {
+                            "id": "1YnoRyG2o1z29JcUkp9kTm",
+                            "name": "MVRII"
+                        },
+                        {
+                            "id": "5avSbzlS5gKrlQ4uc718jA",
+                            "name": "RENN"
+                        }
+                    ],
+                    "id": "4nGlWGgzbuOWDU7rTDEVO1",
+                    "name": "Let Go - RENN Remix",
+                    "albumId": "3zMh0OlBu9oBqnvcBJOFLA",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2022-11-18T14:04:48Z",
+                    "releaseDate": "2022-09-09",
+                    "artists": [
+                        {
+                            "id": "76M2Ekj8bG8W7X2nbx2CpF",
+                            "name": "NGHTMRE"
+                        }
+                    ],
+                    "id": "1dldHTwGWbTXgGmflUQlbC",
+                    "name": "Shady Intentions",
+                    "albumId": "11pjcRObX2pkqo9oczv5Gb",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2022-11-18T14:01:25Z",
+                    "releaseDate": "2021-11-12",
+                    "artists": [
+                        {
+                            "id": "5Igpc9iLZ3YGtKeYfSrrOE",
+                            "name": "Chris Lake"
+                        },
+                        {
+                            "id": "053q0ukIDRgzwTr4vNSwab",
+                            "name": "Grimes"
+                        }
+                    ],
+                    "id": "4skbQNtyjy8A7mo8oqe2oD",
+                    "name": "A Drug From God",
+                    "albumId": "6tZzL3lTVgWhJb2cE2jz1f",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-06-24T00:38:28Z",
+                    "releaseDate": "2024-06-21",
+                    "artists": [
+                        {
+                            "id": "4Zh8RbreKzAmz6ThNMwW6K",
+                            "name": "Kevin Moffat"
+                        }
+                    ],
+                    "id": "3kIdLJ1BIUtmz1dX9VU8iD",
+                    "name": "Do Better",
+                    "albumId": "1AMJtgzEVQaXgOqRaeC8tm",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-06-24T00:35:44Z",
+                    "releaseDate": "2024-05-30",
+                    "artists": [
+                        {
+                            "id": "6hFz7qfv7dt2sgRuGBYnP1",
+                            "name": "ILYAA"
+                        },
+                        {
+                            "id": "5LBnZKMMW8OuMMJLuf9YEv",
+                            "name": "Luupin"
+                        }
+                    ],
+                    "id": "18MmPonFxTIdgoqAlfYDTg",
+                    "name": "Turn It To Feelings",
+                    "albumId": "3bU1W0s7WNbkHLYGT8nr5i",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-06-20T23:50:52Z",
+                    "releaseDate": "2024-06-10",
+                    "artists": [
+                        {
+                            "id": "7k7XlKhPBZ7m8bh9wxd4UA",
+                            "name": "Horzeman"
+                        }
+                    ],
+                    "id": "4Wen1BXtJmipG5VqiXcaO9",
+                    "name": "Back With You",
+                    "albumId": "2o31m3Owc99TBwz3lJzuya",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2022-03-21T12:06:42Z",
+                    "releaseDate": "2022-02-23",
+                    "artists": [
+                        {
+                            "id": "51ZYyNbFsBlD1EHGHaSFz0",
+                            "name": "Mandrazo"
+                        },
+                        {
+                            "id": "3TGC9tGZMxVluBotSInRb3",
+                            "name": "Kysigo"
+                        }
+                    ],
+                    "id": "1sOzK25fn57FPr7Hydfsb3",
+                    "name": "Your Loss",
+                    "albumId": "5tgHbJ5iHEFzfX7RNBD7pW",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2022-11-18T14:02:05Z",
+                    "releaseDate": "2021-07-22",
+                    "artists": [
+                        {
+                            "id": "5c3akKV3CUqAVOnGZqf4S3",
+                            "name": "BARELY ALIVE"
+                        },
+                        {
+                            "id": "4QXFrRNjE1fwA6aHbPUXTP",
+                            "name": "Nyptane"
+                        },
+                        {
+                            "id": "4mNrLQqLseX2Z1sEgvhh11",
+                            "name": "XO ELIZA"
+                        }
+                    ],
+                    "id": "208pNiAVE5sFwtUoQuKu5f",
+                    "name": "Electric Lady",
+                    "albumId": "6bUqpDk7hOlF1XlbAgDBvk",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2022-11-18T14:00:09Z",
+                    "releaseDate": "2021-09-24",
+                    "artists": [
+                        {
+                            "id": "6hBrJJrcYoNhvLC6KaFR4b",
+                            "name": "Eliminate"
+                        }
+                    ],
+                    "id": "3ETynfxvVCozp7I6qnqC17",
+                    "name": "BREAKSH!T",
+                    "albumId": "2GLO4hn59wWApS4uMbKrNe",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2022-11-18T14:00:30Z",
+                    "releaseDate": "2021-02-05",
+                    "artists": [
+                        {
+                            "id": "20DZAfCuP1TKZl5KcY7z3Q",
+                            "name": "SLANDER"
+                        },
+                        {
+                            "id": "40WIa01eubnEVkxUHeDZyF",
+                            "name": "Au5"
+                        },
+                        {
+                            "id": "3J2VNcCwzeJXNFu40evXPE",
+                            "name": "shYbeast"
+                        }
+                    ],
+                    "id": "07ImPoPqKNwqucuPEZooBj",
+                    "name": "Anywhere (feat. shYbeast, PLYA)",
+                    "albumId": "7b517Ob0a6KWytvqSVk6OJ",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-06-02T16:32:29Z",
+                    "releaseDate": "2024-05-31",
+                    "artists": [
+                        {
+                            "id": "2H7goqMNsoDFwE1CfnxU08",
+                            "name": "xoxodubstep"
+                        }
+                    ],
+                    "id": "6JAwyHGvpo90V9QBZ7zIOk",
+                    "name": "Flame",
+                    "albumId": "6ECUgePXFwjINhoFM8jiSw",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2022-11-18T14:00:39Z",
+                    "releaseDate": "2022-10-07",
+                    "artists": [
+                        {
+                            "id": "40WIa01eubnEVkxUHeDZyF",
+                            "name": "Au5"
+                        },
+                        {
+                            "id": "04zy0QJacNRBhI0H3WmkSs",
+                            "name": "EMME"
+                        }
+                    ],
+                    "id": "6sm1OQ89659UUpGctNTXvv",
+                    "name": "Another Way",
+                    "albumId": "2k8sl8eCdvZGmLT2udUJLe",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2022-11-18T14:01:31Z",
+                    "releaseDate": "2021-10-08",
+                    "artists": [
+                        {
+                            "id": "1KpCi9BOfviCVhmpI4G2sY",
+                            "name": "Tchami"
+                        },
+                        {
+                            "id": "1YYJxpOXYk1z1WtqdeLMkn",
+                            "name": "Habstrakt"
+                        },
+                        {
+                            "id": "0izKfMblL8LX6Bv2wG3Cy7",
+                            "name": "Lena Leon"
+                        }
+                    ],
+                    "id": "7DDIVNWlbGJpQjVDDg8rXR",
+                    "name": "Eternity (feat. Lena Leon)",
+                    "albumId": "7AKRqqkDVhqDZMwmcjBPiV",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2022-11-18T14:01:45Z",
+                    "releaseDate": "2022-10-11",
+                    "artists": [
+                        {
+                            "id": "2avRYQUWQpIkzJOEkf0MdY",
+                            "name": "Kx5"
+                        },
+                        {
+                            "id": "2CIMQHirSU0MQqyYHq0eOx",
+                            "name": "deadmau5"
+                        },
+                        {
+                            "id": "6TQj5BFPooTa08A7pk8AQ1",
+                            "name": "Kaskade"
+                        }
+                    ],
+                    "id": "1SETgPENHVzsWoD9g79LYI",
+                    "name": "Alive (feat. The Moth & The Flame)",
+                    "albumId": "5nTSB1dEcWtAtkWnHgOcMR",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-05-31T07:07:05Z",
+                    "releaseDate": "2024-05-31",
+                    "artists": [
+                        {
+                            "id": "0ugBL1a1T65aLKkctOHh2d",
+                            "name": "The Living Proof"
+                        },
+                        {
+                            "id": "3S7OaqLCbH99kcVnZU4kyW",
+                            "name": "BVLVNCE"
+                        }
+                    ],
+                    "id": "4qAeGPcqVavu4BZ9OE1kKr",
+                    "name": "Pieces",
+                    "albumId": "1PKIDEAW62nicgcKTfx8vc",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-06-02T16:37:13Z",
+                    "releaseDate": "2024-04-26",
+                    "artists": [
+                        {
+                            "id": "2yECmCVXrG3VBfqawyeOaL",
+                            "name": "AZ\u00cbE"
+                        }
+                    ],
+                    "id": "29VCztXwZagJDIcakkTZ9r",
+                    "name": "Echoes",
+                    "albumId": "2erA9S2RyLnStH3zkP7LWx",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2023-08-18T10:18:25Z",
+                    "releaseDate": "2023-08-18",
+                    "artists": [
+                        {
+                            "id": "3i37K6v75zc4mXfERO8lf9",
+                            "name": "Jerre"
+                        }
+                    ],
+                    "id": "3Xq8yVPh00q14x2qONdOCD",
+                    "name": "Hell",
+                    "albumId": "23jh5viTI9VlUFcUcqAFK2",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2022-11-18T14:06:00Z",
+                    "releaseDate": "2022-05-13",
+                    "artists": [
+                        {
+                            "id": "6hBrJJrcYoNhvLC6KaFR4b",
+                            "name": "Eliminate"
+                        }
+                    ],
+                    "id": "1GNr8WUfapUW2Eb3lfANIy",
+                    "name": "Open Your Eyes",
+                    "albumId": "5w5SsVRtdLdrhWKTS4QWCV",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2022-11-18T14:06:15Z",
+                    "releaseDate": "2022-08-19",
+                    "artists": [
+                        {
+                            "id": "4Ok1Cm5YX5StCQZgH0r2xF",
+                            "name": "PEEKABOO"
+                        }
+                    ],
+                    "id": "6upXAlN0tlTavXMenVWna9",
+                    "name": "When I'm Gone",
+                    "albumId": "3ATE1QVGkAwClC83f3YeBG",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-03-17T17:21:11Z",
+                    "releaseDate": "2024-02-28",
+                    "artists": [
+                        {
+                            "id": "5RJFJWYgtgWktosLrUDzff",
+                            "name": "Griff"
+                        }
+                    ],
+                    "id": "1sfg5AQ5NFecKm6GO7dkdo",
+                    "name": "Miss Me Too",
+                    "albumId": "3rS947KA8g4uIG5zd5JH7N",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-04-13T10:30:15Z",
+                    "releaseDate": "2024-04-12",
+                    "artists": [
+                        {
+                            "id": "4tCRRxANqaE3qGSGLz0y3Q",
+                            "name": "Medii"
+                        },
+                        {
+                            "id": "6EkmE2hY7VYyfi6uz9BT0L",
+                            "name": "WISNER"
+                        }
+                    ],
+                    "id": "3C6SElOHOorNm7FzZrj09b",
+                    "name": "When U Need Somebody",
+                    "albumId": "0A4i2XmfEfvJMqabwLtlAS",
+                    "addedByCuration": false
+                }
+            ]
+        },
+        {
+            "id": "6iJE4v0TREauDvddk5a84D",
+            "items": [
+                {
+                    "dateAdded": "2024-03-17T17:20:35Z",
+                    "releaseDate": "2024-03-01",
+                    "artists": [
+                        {
+                            "id": "4ETSs924pXMzjIeD6E9b4u",
+                            "name": "Surfaces"
+                        },
+                        {
+                            "id": "164Uj4eKjl6zTBKfJLFKKK",
+                            "name": "JVKE"
+                        }
+                    ],
+                    "id": "046QZ0ociluzd0yjpY1tY4",
+                    "name": "Don't Let Me Down (feat. JVKE)",
+                    "albumId": "2m3RAFfpFPttHJIMBZKKCo",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-03-17T17:19:50Z",
+                    "releaseDate": "2024-03-15",
+                    "artists": [
+                        {
+                            "id": "1scVfBymTr3CeZ4imMj1QJ",
+                            "name": "Forrest Frank"
+                        }
+                    ],
+                    "id": "2MRm76TO0j4VBbyPj6lodc",
+                    "name": "ALWAYS",
+                    "albumId": "5Uja3ZpxQ6cF8IAakytXFP",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-03-17T17:25:37Z",
+                    "releaseDate": "2024-02-09",
+                    "artists": [
+                        {
+                            "id": "1Xylc3o4UrD53lo9CvFvVg",
+                            "name": "Zara Larsson"
+                        }
+                    ],
+                    "id": "4YxCwmfbo4FcAeaK0vFJFV",
+                    "name": "None Of These Guys",
+                    "albumId": "0qqZ6HD72So93exL9rH7zi",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-03-17T17:21:38Z",
+                    "releaseDate": "2024-03-01",
+                    "artists": [
+                        {
+                            "id": "662lI9CXPZ0a6ou4CkLr0G",
+                            "name": "GRAHAM"
+                        },
+                        {
+                            "id": "7osFcSwjlRPwxZdVALIOuC",
+                            "name": "Henrik"
+                        }
+                    ],
+                    "id": "2XKjhJbd57Jiqdy5SCZNWh",
+                    "name": "Call my name",
+                    "albumId": "63h57g2255TS4fojZzu63M",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-03-17T17:19:33Z",
+                    "releaseDate": "2024-01-26",
+                    "artists": [
+                        {
+                            "id": "2gI1WfmpFmmgSRojy4Jup2",
+                            "name": "BL\u00dc EYES"
+                        }
+                    ],
+                    "id": "50dBUXMtWwwN70dhRxDXTw",
+                    "name": "darkest hour",
+                    "albumId": "0BpkOZHYTw1tQkdRHLhu0o",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-03-17T17:20:11Z",
+                    "releaseDate": "2024-02-16",
+                    "artists": [
+                        {
+                            "id": "11p2E654TTU8e0nZWBR4AL",
+                            "name": "Mark Ambor"
+                        }
+                    ],
+                    "id": "5uQ7de4EWjb3rkcFxyEOpu",
+                    "name": "Belong Together",
+                    "albumId": "3PlCMwyq6nuQYtoYproV1o",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-03-17T17:20:28Z",
+                    "releaseDate": "2024-03-13",
+                    "artists": [
+                        {
+                            "id": "1GmsPCcpKgF9OhlNXjOsbS",
+                            "name": "Lizzy McAlpine"
+                        }
+                    ],
+                    "id": "0rkKuNq4U8E8KTLq7RRl1Z",
+                    "name": "I Guess",
+                    "albumId": "0vfrwv3RvGaby6W4gMfh2E",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-06-21T07:09:46Z",
+                    "releaseDate": "2024-06-21",
+                    "artists": [
+                        {
+                            "id": "1rcjWfyRCF09kNQ8cEGdib",
+                            "name": "Brooke Daye"
+                        }
+                    ],
+                    "id": "5jSsGdAbYdFXadrqhn18yZ",
+                    "name": "No Love",
+                    "albumId": "6sLBEQ1CBK4PRVeQ3mJbz2",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-06-20T17:26:54Z",
+                    "releaseDate": "2024-06-18",
+                    "artists": [
+                        {
+                            "id": "3iqjiZkcYFQKkyB4bMJtRN",
+                            "name": "Malbie + Richa"
+                        }
+                    ],
+                    "id": "3Us5M2ub9UUsZ0u5J3nhu3",
+                    "name": "Never Be The One - Radio Edit",
+                    "albumId": "7ElAACAjl733wNG7ojd2V2",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-06-12T18:48:33Z",
+                    "releaseDate": "2024-06-07",
+                    "artists": [
+                        {
+                            "id": "4ZXKj2dRsUpU66IrMIxU50",
+                            "name": "Superdream"
+                        },
+                        {
+                            "id": "4OZ0VK1N3PDtGhY2d6sqhI",
+                            "name": "Clem Beatz"
+                        },
+                        {
+                            "id": "6GdAYfQVlByh3CUmlMsswc",
+                            "name": "Francis On My Mind"
+                        }
+                    ],
+                    "id": "7sR0ExCla6dzjgySjEWsqO",
+                    "name": "The One",
+                    "albumId": "6fYYEKEgVUsacvlQuC7hoM",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-06-07T04:04:15Z",
+                    "releaseDate": "2024-06-07",
+                    "artists": [
+                        {
+                            "id": "5pRX7QGdsCkGQvUTbLnVqN",
+                            "name": "Aerus"
+                        }
+                    ],
+                    "id": "1jJUvTotvvwRImVi6T544W",
+                    "name": "Ease Your Mind",
+                    "albumId": "5HdJ1u3cEstOAtG8fH1hrr",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-05-31T04:39:19Z",
+                    "releaseDate": "2024-05-31",
+                    "artists": [
+                        {
+                            "id": "4SuBL2GsDPfdX1oeOUDvA0",
+                            "name": "Jenny Kern"
+                        }
+                    ],
+                    "id": "0rukW0ShnDjhIYHnWH5Mrz",
+                    "name": "GIRLS!",
+                    "albumId": "3BZE2uR1lI1IW5Q6uDFdsz",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-06-16T19:41:34Z",
+                    "releaseDate": "2024-06-07",
+                    "artists": [
+                        {
+                            "id": "4ZXKj2dRsUpU66IrMIxU50",
+                            "name": "Superdream"
+                        },
+                        {
+                            "id": "4OZ0VK1N3PDtGhY2d6sqhI",
+                            "name": "Clem Beatz"
+                        },
+                        {
+                            "id": "6GdAYfQVlByh3CUmlMsswc",
+                            "name": "Francis On My Mind"
+                        }
+                    ],
+                    "id": "7sR0ExCla6dzjgySjEWsqO",
+                    "name": "The One",
+                    "albumId": "6fYYEKEgVUsacvlQuC7hoM",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-06-20T17:27:34Z",
+                    "releaseDate": "2023-03-10",
+                    "artists": [
+                        {
+                            "id": "5wqaqDigmVwxbb69jlpfOv",
+                            "name": "Kenan Waters"
+                        },
+                        {
+                            "id": "2otxE2w7oR1JHzv5D833qw",
+                            "name": "Sam Harris"
+                        }
+                    ],
+                    "id": "3DqebCp4oPcJkaU6NMlxk6",
+                    "name": "Back In Time",
+                    "albumId": "6L2LCF2zy9mEwdeCGuc9CW",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-03-17T17:21:21Z",
+                    "releaseDate": "2024-03-01",
+                    "artists": [
+                        {
+                            "id": "2tIP7SsRs7vjIcLrU85W8J",
+                            "name": "The Kid LAROI"
+                        }
+                    ],
+                    "id": "7gJr3ockQ0fezUXuUXvaSq",
+                    "name": "Still Yours (From The Doc)",
+                    "albumId": "03uCCaOFlRAJkE6oDInrLz",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-03-17T17:21:43Z",
+                    "releaseDate": "2024-02-16",
+                    "artists": [
+                        {
+                            "id": "662lI9CXPZ0a6ou4CkLr0G",
+                            "name": "GRAHAM"
+                        }
+                    ],
+                    "id": "0qp0PunzBhngp8J0Tg1Orz",
+                    "name": "worth the wait",
+                    "albumId": "2F5dCkOS34jyMvq617DgDN",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-03-17T17:22:24Z",
+                    "releaseDate": "2024-03-15",
+                    "artists": [
+                        {
+                            "id": "5zixe6AbgXPqt4c1uSl94L",
+                            "name": "Connor Price"
+                        }
+                    ],
+                    "id": "4kyfZcirG407sqrF34ZKxR",
+                    "name": "Too Bad",
+                    "albumId": "4v8XPmMKSBUwjz4t7C8Ecn",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-03-17T17:23:22Z",
+                    "releaseDate": "2024-03-15",
+                    "artists": [
+                        {
+                            "id": "1LOB7jTeEV14pHai6EXSzF",
+                            "name": "Cash Cash"
+                        },
+                        {
+                            "id": "1ShZZUjkbXCjhwrb18BA8I",
+                            "name": "Bryce Vine"
+                        }
+                    ],
+                    "id": "456QkXYfOSZrxBjZzfp3dk",
+                    "name": "New Madonna",
+                    "albumId": "5r6GBoCOCrhSOGFfjDxPmr",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-03-17T17:23:49Z",
+                    "releaseDate": "2022-09-16",
+                    "artists": [
+                        {
+                            "id": "5p9HO3XC5P3BLxJs5Mtrhm",
+                            "name": "Djo"
+                        }
+                    ],
+                    "id": "3qhlB30KknSejmIvZZLjOD",
+                    "name": "End of Beginning",
+                    "albumId": "4JDXBZdRPId4devseaAOKH",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-03-17T17:23:55Z",
+                    "releaseDate": "2023-09-08",
+                    "artists": [
+                        {
+                            "id": "1McMsnEElThX1knmY4oliG",
+                            "name": "Olivia Rodrigo"
+                        }
+                    ],
+                    "id": "26QLJMK8G0M06sk7h7Fkse",
+                    "name": "love is embarrassing",
+                    "albumId": "1xJHno7SmdVtZAtXbdbDZp",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-04-04T12:33:52Z",
+                    "releaseDate": "2024-03-29",
+                    "artists": [
+                        {
+                            "id": "3BCouSmFlw2lHBmJmi1umh",
+                            "name": "Deerock"
+                        },
+                        {
+                            "id": "1S9WGrK7SZfXXQtHBYzDle",
+                            "name": "Sammy Adams"
+                        }
+                    ],
+                    "id": "254YUlB1UjsgI1VtswUl9O",
+                    "name": "Used To",
+                    "albumId": "21YEmPimNtM81zYr4h7mfv",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-03-17T17:21:49Z",
+                    "releaseDate": "2024-01-05",
+                    "artists": [
+                        {
+                            "id": "662lI9CXPZ0a6ou4CkLr0G",
+                            "name": "GRAHAM"
+                        }
+                    ],
+                    "id": "5y8U5E5ertyVFqDekecY1C",
+                    "name": "Wrong",
+                    "albumId": "6PoNQEfew6W44pLaYapQGF",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-03-17T17:23:58Z",
+                    "releaseDate": "2017-09-22",
+                    "artists": [
+                        {
+                            "id": "55fhWPvDiMpLnE4ZzNXZyW",
+                            "name": "Noah Cyrus"
+                        }
+                    ],
+                    "id": "2S2od3hT7ceytw7d1pTrue",
+                    "name": "Again (feat. XXXTENTACION)",
+                    "albumId": "5UD36hu4fYZ6R8b8crkKL7",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-03-17T17:24:03Z",
+                    "releaseDate": "2024-02-09",
+                    "artists": [
+                        {
+                            "id": "2kRfqPViCqYdSGhYSM9R0Q",
+                            "name": "Madison Beer"
+                        }
+                    ],
+                    "id": "48vIfHaK7by6x0T6ucpODL",
+                    "name": "Make You Mine",
+                    "albumId": "62g7jm7YqkuQOhfhFpDQXC",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-03-17T17:24:09Z",
+                    "releaseDate": "2024-01-18",
+                    "artists": [
+                        {
+                            "id": "22wbnEMDvgVIAGdFeek6ET",
+                            "name": "Benson Boone"
+                        }
+                    ],
+                    "id": "6tNQ70jh4OwmPGpYy6R2o9",
+                    "name": "Beautiful Things",
+                    "albumId": "29aSKB1qPEbN0Qf9OPSQpw",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-03-17T17:24:12Z",
+                    "releaseDate": "2024-03-12",
+                    "artists": [
+                        {
+                            "id": "3rWZHrfrsPBxVy692yAIxF",
+                            "name": "WILLOW"
+                        }
+                    ],
+                    "id": "63SFAhNnOER587HfPOq4cO",
+                    "name": "symptom of life",
+                    "albumId": "7geRIwdu4x2plurupRu4GA",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-03-17T17:24:18Z",
+                    "releaseDate": "2024-03-15",
+                    "artists": [
+                        {
+                            "id": "6Y64EaNqpqcZYTgs4c76gF",
+                            "name": "jxdn"
+                        }
+                    ],
+                    "id": "7fjd7XOn6Bp8PMNdp7YZDO",
+                    "name": "WHAT THE HELL",
+                    "albumId": "3ipWal9rIQJcZHztmB8tLQ",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-03-17T17:22:02Z",
+                    "releaseDate": "2024-03-15",
+                    "artists": [
+                        {
+                            "id": "1XlLhtgJjC4ROQZilBZAvw",
+                            "name": "Nic D"
+                        },
+                        {
+                            "id": "0S7eN9KAsbAaIZtFyCn1q1",
+                            "name": "Vwillz"
+                        }
+                    ],
+                    "id": "2NlWMMlC0HAXpzmlI6nhN1",
+                    "name": "Daytona",
+                    "albumId": "791LkDYIeDIBX76x9wLdLD",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-03-17T17:25:17Z",
+                    "releaseDate": "2024-01-26",
+                    "artists": [
+                        {
+                            "id": "2w9zwq3AktTeYYMuhMjju8",
+                            "name": "INNA"
+                        }
+                    ],
+                    "id": "7xePsiaOdxT9lkTck9Uv8t",
+                    "name": "Cheeky",
+                    "albumId": "6lLyrH0Und9dYATr4F9Pjh",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-03-17T17:25:27Z",
+                    "releaseDate": "2024-02-14",
+                    "artists": [
+                        {
+                            "id": "0ML3y0iBY1nq7HWAWP0EFm",
+                            "name": "BLANKA"
+                        }
+                    ],
+                    "id": "0lWksohJCovbV8wOSVOT9b",
+                    "name": "Cara Mia",
+                    "albumId": "4MwnzV40HiAD7TYzMEENYk",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-03-17T17:26:15Z",
+                    "releaseDate": "2024-03-08",
+                    "artists": [
+                        {
+                            "id": "45dkTj5sMRSjrmBSBeiHym",
+                            "name": "Tate McRae"
+                        }
+                    ],
+                    "id": "2YyWiAibyL5Eo18x4kkE4b",
+                    "name": "exes - Syn Cole Remix",
+                    "albumId": "7kA1X8P36UnRcUPMngcGiz",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-03-17T17:26:22Z",
+                    "releaseDate": "2024-02-16",
+                    "artists": [
+                        {
+                            "id": "5jAMCwdNHWr7JThxtMuEyy",
+                            "name": "NOTD"
+                        },
+                        {
+                            "id": "5mYakBbBzPMQTfkVMIgiDM",
+                            "name": "Georgia Ku"
+                        }
+                    ],
+                    "id": "73W9I0EIOcw8IW8zEIiyN4",
+                    "name": "Nostalgia",
+                    "albumId": "6hVYf2R4nHBorsLM6Oj2cN",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-03-17T17:26:39Z",
+                    "releaseDate": "2024-01-12",
+                    "artists": [
+                        {
+                            "id": "6kooLP0UvSrUhwWJPyQBF3",
+                            "name": "Danny Suede"
+                        }
+                    ],
+                    "id": "0ZAwsgU4VwW8O6B2gaMBJv",
+                    "name": "hld-me-dwn",
+                    "albumId": "4q7c4aibFiebGlklUTujVR",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-03-17T17:26:45Z",
+                    "releaseDate": "2024-02-23",
+                    "artists": [
+                        {
+                            "id": "7DMveApC7UnC2NPfPvlHSU",
+                            "name": "Cheat Codes"
+                        },
+                        {
+                            "id": "44Ewva5aHOX00EwaX2D2mh",
+                            "name": "Two Friends"
+                        }
+                    ],
+                    "id": "22sFNLCbk7LJ2gWKANf6Ue",
+                    "name": "The Way It Is",
+                    "albumId": "2nrh9MzGMJVt705Q3G47V7",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-03-17T17:26:51Z",
+                    "releaseDate": "2024-02-29",
+                    "artists": [
+                        {
+                            "id": "6gK1Uct5FEdaUWRWpU4Cl2",
+                            "name": "Petit Biscuit"
+                        }
+                    ],
+                    "id": "2GuecXnybAtrx1yq8dJsnw",
+                    "name": "Bad Episode",
+                    "albumId": "2PUG33dXVuyBt8d7oy76km",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-03-17T17:26:53Z",
+                    "releaseDate": "2024-03-01",
+                    "artists": [
+                        {
+                            "id": "5iNrZmtVMtYev5M9yoWpEq",
+                            "name": "Seeb"
+                        }
+                    ],
+                    "id": "2PdR3pwyRy4sgGVfwDzApr",
+                    "name": "Before You Go",
+                    "albumId": "7MBLJ3i29vvsSxr2csVGlX",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-03-17T17:27:08Z",
+                    "releaseDate": "2024-01-05",
+                    "artists": [
+                        {
+                            "id": "0YxNJr7YsY95zd86zCjSYH",
+                            "name": "Lina Cooper"
+                        },
+                        {
+                            "id": "2idZntzccbSKeEzNWqzamb",
+                            "name": "Rian Cult"
+                        }
+                    ],
+                    "id": "7l5cAaCBHKae8m6cqNpQjT",
+                    "name": "Hey!",
+                    "albumId": "3qGBrY1ec9Tis2Vhd3dIbw",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-03-17T17:27:19Z",
+                    "releaseDate": "2024-02-23",
+                    "artists": [
+                        {
+                            "id": "1ShZZUjkbXCjhwrb18BA8I",
+                            "name": "Bryce Vine"
+                        }
+                    ],
+                    "id": "4r2K4hNxpIc21xw2e7PhdF",
+                    "name": "SATURDAY NIGHT",
+                    "albumId": "4EDOoHVfkI7JNsQMfol6sc",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-03-17T17:27:29Z",
+                    "releaseDate": "2024-02-02",
+                    "artists": [
+                        {
+                            "id": "0grj6SCmh4vGKf6r7pbOTk",
+                            "name": "bardz"
+                        }
+                    ],
+                    "id": "2M1HCSSeaLrapAZH8uGdhW",
+                    "name": "candle ends",
+                    "albumId": "5ipOj5UfbEiPKjpTFrQcO8",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-03-17T17:27:35Z",
+                    "releaseDate": "2024-01-12",
+                    "artists": [
+                        {
+                            "id": "1rcjWfyRCF09kNQ8cEGdib",
+                            "name": "Brooke Daye"
+                        }
+                    ],
+                    "id": "38qGwj60d17R6ND1H7vMju",
+                    "name": "Me & My Mania",
+                    "albumId": "5ELfk1FeOkLqdwEyB4ohbh",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-03-17T17:27:49Z",
+                    "releaseDate": "2024-03-08",
+                    "artists": [
+                        {
+                            "id": "6GNi29yEcCDY3idJNAf0Rl",
+                            "name": "HNRY"
+                        }
+                    ],
+                    "id": "2YVpMfllpY0f0R5NRgpgRx",
+                    "name": "Joy Unspeakable",
+                    "albumId": "68095hhlLdpBt4o0Ghxb2Y",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-03-17T17:27:56Z",
+                    "releaseDate": "2024-01-26",
+                    "artists": [
+                        {
+                            "id": "2uV9R4aBeHf2M3ziEakxhP",
+                            "name": "Chasyn"
+                        }
+                    ],
+                    "id": "4Rq1xUynQ8XBkMyREWNlNt",
+                    "name": "Lost",
+                    "albumId": "0SbABIXzbNlC7coRj30jXK",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-03-17T17:28:27Z",
+                    "releaseDate": "2024-03-01",
+                    "artists": [
+                        {
+                            "id": "53M4Iv2RkzzxFFvW2B1jhC",
+                            "name": "Breathe Carolina"
+                        }
+                    ],
+                    "id": "5FEJ6Y21cMidAt1xmZKGtp",
+                    "name": "ALONE TONIGHT",
+                    "albumId": "7kqARMi6Zf0sxVnp11FxvO",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-03-17T17:28:35Z",
+                    "releaseDate": "2024-02-02",
+                    "artists": [
+                        {
+                            "id": "6fWVd57NKTalqvmjRd2t8Z",
+                            "name": "24kGoldn"
+                        }
+                    ],
+                    "id": "54fIT6FB4H6z3BJXQai1hm",
+                    "name": "Clarity",
+                    "albumId": "49WXECyPBx84Kw0E33sjCY",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-03-17T17:28:46Z",
+                    "releaseDate": "2024-02-16",
+                    "artists": [
+                        {
+                            "id": "5ibWbhA0IkPT3xCN0YicRL",
+                            "name": "Gomey"
+                        },
+                        {
+                            "id": "2rRf5V0hAZgB3yLGTE3T69",
+                            "name": "LAYNE"
+                        }
+                    ],
+                    "id": "5cOic0O8Wyz9y8Sn16PSsR",
+                    "name": "Just Once",
+                    "albumId": "724OQgwq9IDVm3huvnWMG5",
+                    "addedByCuration": false
+                },
+                {
+                    "dateAdded": "2024-03-17T17:28:54Z",
+                    "releaseDate": "2023-07-07",
+                    "artists": [
+                        {
+                            "id": "08FHB0pa7F05yP7c7eQp5u",
+                            "name": "Third Vibes"
+                        },
+                        {
+                            "id": "5AzZFipQtJEUXeQ3JJzMX4",
+                            "name": "Nicholas Roberts"
+                        }
+                    ],
+                    "id": "3ofCfwCAI68iE7mpxfbgN4",
+                    "name": "like me or not",
+                    "albumId": "5Tc4ABFuPfmFgdaNx0c6CF",
+                    "addedByCuration": false
+                }
+            ]
+        }
+    ],
+    "youtube": {
+        "viewCount": 1210893,
+        "subscriberCount": 16900,
+        "viewCountPrevious28Days": 181938,
+        "subscribersCountPrevious28Days": 447,
+        "estimatedRevenuePrevious28Days": 58.88,
+        "watchTimePrevious28Days": 6422.52,
+        "revenueByMonth": [
+            {
+                "month": "January",
+                "value": 50
+            },
+            {
+                "month": "February",
+                "value": 60
+            },
+            {
+                "month": "March",
+                "value": 70
+            },
+            {
+                "month": "April",
+                "value": 80
+            },
+            {
+                "month": "May",
+                "value": 90
+            },
+            {
+                "month": "June",
+                "value": 100
+            }
+        ],
+        "topVideos": [
+            "0qPPgnwMfgM",
+            "4Nfmr-oMCCA",
+            "N-xZur0bTMk"
+        ],
+        "playlists": [
+            {
+                "id": "PLgksssmjuag7v25rbAmD7wFdsrcsoFaWV",
+                "name": "WavesOnly: Throwback Thursday"
+            },
+            {
+                "id": "PLgksssmjuag4JiN92MRlMrRd2dMhH_vep",
+                "name": "Workout Hits"
+            },
+            {
+                "id": "PLgksssmjuag5bPQGGvpQLla0wizC2tJ1g",
+                "name": "Chill Hits & Chill Vibes"
+            },
+            {
+                "id": "PLgksssmjuag5-r3roAGmiVqNmWhG9LtN",
+                "name": "WavesOnly: Favorites"
+            },
+            {
+                "id": "PLgksssmjuag649hDuxL_h1FBiV7o7IlxD",
+                "name": "WavesOnly: Pop & EDM"
+            },
+            {
+                "id": "PLgksssmjuag5jtnTBpkn5QNJ10mCJIR0r",
+                "name": "WavesOnly: House"
+            },
+            {
+                "id": "PLgksssmjuag4Ck0kUWYzVYqaGJczIw9gz",
+                "name": "WavesOnly: Trap"
+            },
+            {
+                "id": "PLgksssmjuag4RAVezQHhs3JI8BtxtqWfX",
+                "name": "House Shuffle"
+            },
+            {
+                "id": "PLgksssmjuag7zK2xkQkPy1Nyq0WNSssDR",
+                "name": "Feel Good Vibes"
+            },
+            {
+                "id": "PLgksssmjuag4d3GuS8irqQoVRlhKKcmcr",
+                "name": "WavesOnly: Lyric Videos"
+            },
+            {
+                "id": "PLgksssmjuag6DTt40KhvvMVm4gofd9x7J",
+                "name": "WavesOnly: Rap"
+            },
+            {
+                "id": "PLgksssmjuag6cGKWxXUql8Do9f4k2jb4f",
+                "name": "WavesOnly: Bass"
+            },
+            {
+                "id": "PLgksssmjuag6JkuKti8KRbEliI1UF9Yyy",
+                "name": "WavesOnly: Future Bass"
+            },
+            {
+                "id": "PLgksssmjuag7DFOp2G9O99dzzAmGt_k3C",
+                "name": "WavesOnly: Chill"
+            }
+        ],
+        "subscribersByDay": [
+            {
+                "date": "2024-06-25",
+                "subscribers": 26
+            },
+            {
+                "date": "2024-06-24",
+                "subscribers": 28
+            },
+            {
+                "date": "2024-06-23",
+                "subscribers": 31
+            },
+            {
+                "date": "2024-06-22",
+                "subscribers": 14
+            },
+            {
+                "date": "2024-06-21",
+                "subscribers": 21
+            },
+            {
+                "date": "2024-06-20",
+                "subscribers": 20
+            },
+            {
+                "date": "2024-06-19",
+                "subscribers": 23
+            },
+            {
+                "date": "2024-06-18",
+                "subscribers": 23
+            },
+            {
+                "date": "2024-06-17",
+                "subscribers": 29
+            },
+            {
+                "date": "2024-06-16",
+                "subscribers": 27
+            },
+            {
+                "date": "2024-06-15",
+                "subscribers": 17
+            },
+            {
+                "date": "2024-06-14",
+                "subscribers": 19
+            },
+            {
+                "date": "2024-06-13",
+                "subscribers": 23
+            },
+            {
+                "date": "2024-06-12",
+                "subscribers": 18
+            },
+            {
+                "date": "2024-06-11",
+                "subscribers": 31
+            },
+            {
+                "date": "2024-06-10",
+                "subscribers": 40
+            },
+            {
+                "date": "2024-06-09",
+                "subscribers": 32
+            },
+            {
+                "date": "2024-06-08",
+                "subscribers": 23
+            },
+            {
+                "date": "2024-06-07",
+                "subscribers": 24
+            },
+            {
+                "date": "2024-06-06",
+                "subscribers": 22
+            },
+            {
+                "date": "2024-06-05",
+                "subscribers": 20
+            },
+            {
+                "date": "2024-06-04",
+                "subscribers": 18
+            },
+            {
+                "date": "2024-06-03",
+                "subscribers": 16
+            },
+            {
+                "date": "2024-06-02",
+                "subscribers": 22
+            },
+            {
+                "date": "2024-06-01",
+                "subscribers": 30
+            },
+            {
+                "date": "2024-05-31",
+                "subscribers": 25
+            },
+            {
+                "date": "2024-05-30",
+                "subscribers": 17
+            },
+            {
+                "date": "2024-05-29",
+                "subscribers": 12
+            }
+        ]
+    }
+}
