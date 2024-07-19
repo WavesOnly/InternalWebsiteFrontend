@@ -152,9 +152,6 @@ function ManagePlaylist() {
             sx={{
               minWidth: 335,
               backgroundColor: theme.palette.layer.default,
-              // "& .MuiInputBase-input": {
-              //   backgroundColor: theme.palette.background.paper,
-              // },
               "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
                 borderColor: theme.palette.secondary.main,
               },
