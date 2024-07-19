@@ -65,8 +65,7 @@ function PlaylistSelected(props) {
           label="Position"
           sx={{
             minWidth: "150px",
-            backgroundColor:
-              theme.palette.mode === "dark" ? "" : theme.palette.layer.default,
+            backgroundColor: theme.palette.layer.default,
             "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
               borderColor: theme.palette.secondary.main,
             },
@@ -100,16 +99,9 @@ function PlaylistSelected(props) {
             handleSelectChange(playlist.id, "duration", e.target.value)
           }
           label="Duration"
-          // sx={{
-          //   minWidth: "150px",
-          //   "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-          //     borderColor: theme.palette.secondary.main,
-          //   },
-          // }}
           sx={{
             minWidth: "150px",
-            backgroundColor:
-              theme.palette.mode === "dark" ? "" : theme.palette.layer.default,
+            backgroundColor: theme.palette.layer.default,
             "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
               borderColor: theme.palette.secondary.main,
             },

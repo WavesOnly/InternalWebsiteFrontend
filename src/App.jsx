@@ -2,6 +2,7 @@ import React from "react";
 import { useDisplayMode } from "./theme";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { Routes, Route } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 
 import Topbar from "./pages/global/Topbar";
 import Sidebar from "./pages/global/Sidebar";
@@ -13,10 +14,11 @@ import Monetization from "./pages/spotify/monetization/Monetization";
 import Add from "./pages/spotify/add/Add";
 import SpotifyAnalytics from "./pages/spotify/analytics/SpotifyAnalytics";
 import ManagePlaylist from "./pages/spotify/manage/ManagePlaylist";
+import AlertUser from "./components/AlertUser";
 
 function App() {
   const [theme, displayColorMode] = useDisplayMode();
-  const toggleColorMode = displayColorMode.toggleColorMode;
+  const alert = useSelector((state) => state.user?.alert);
 
   return (
     <ThemeProvider theme={theme}>
@@ -24,7 +26,8 @@ function App() {
       <div className="app" style={{ display: "flex", height: "100vh" }}>
         <Sidebar />
         <main className="content" style={{ flex: 1, overflowY: "auto" }}>
-          <Topbar toggleColorMode={toggleColorMode} />
+          <Topbar toggleColorMode={displayColorMode.toggleColorMode} />
+          {alert && <AlertUser alert={alert} />}
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/upload-video" element={<Upload />} />

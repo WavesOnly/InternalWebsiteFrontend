@@ -169,7 +169,7 @@ function Upload() {
   }, []);
 
   return (
-    <Box m="20px">
+    <Box mt="0px" ml="20px" mr="20px" mb="20px">
       <PageInfo
         title="Upload Video"
         subTitle="Upload a new video to the WavesOnly channel"
@@ -318,15 +318,7 @@ function Upload() {
             }
             label="Throwback Thursday"
           />
-          <Grid
-            container
-            spacing={1}
-            sx={
-              {
-                // ml: "26%",
-              }
-            }
-          >
+          <Grid container spacing={1}>
             {playlists.map((playlist) => (
               <Grid
                 item
@@ -359,6 +351,7 @@ function Upload() {
             onChange={handleChange}
             sx={{ width: isLarge ? "80%" : "45%" }}
             margin="normal"
+            size="small"
             color="secondary"
             InputProps={{
               startAdornment: (
@@ -373,7 +366,7 @@ function Upload() {
             disableElevation
             color="secondary"
             startIcon={<VideoCallIcon />}
-            sx={{ mt: 2, width: isLarge ? "80%" : "45%" }}
+            sx={{ mt: 1, width: isLarge ? "80%" : "45%" }}
           >
             Upload Video
           </Button>

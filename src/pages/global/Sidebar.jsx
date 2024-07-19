@@ -8,6 +8,7 @@ import {
   Typography,
   useTheme,
   useMediaQuery,
+  Link,
 } from "@mui/material";
 import Home from "@mui/icons-material/Home";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
@@ -28,7 +29,7 @@ function Sidebar() {
   const theme = useTheme();
   const colors = colorTokens(theme.palette.mode);
   const dispatch = useDispatch();
-  const collapsed = useSelector((state) => state.user.collapsed);
+  const collapsed = useSelector((state) => state.user?.collapsed);
   const [selected, setSelected] = useState("Home");
   const isSmall = useMediaQuery((theme) => theme.breakpoints.down("sm"));
   const isMedium = useMediaQuery((theme) => theme.breakpoints.down("md"));
@@ -100,16 +101,16 @@ function Sidebar() {
           </MenuItem>
           {!collapsed && (
             <Box
-              mt="25px"
-              mb="25px"
+              mt="20px"
+              mb="20px"
               display="flex"
               justifyContent="center"
               alignItems="center"
             >
               <img
                 alt="WavesOnly Logo"
-                width="125"
-                height="125"
+                width="150"
+                height="150"
                 src={Logo}
                 style={{ cursor: "pointer", borderRadius: "50%" }}
               />

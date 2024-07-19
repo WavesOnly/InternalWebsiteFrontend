@@ -13,7 +13,7 @@ function Topbar(props) {
 
   return (
     <Box display="flex" justifyContent="space-between" p={2}>
-      <Box display="flex" bgcolor={colors.primary[400]} borderRadius={3}>
+      <Box display="flex" bgcolor={colors.primary[400]} borderRadius="4px">
         <InputBase sx={{ ml: 2, flex: 1 }} placeholder="Search"></InputBase>
         <IconButton type="button" sx={{ p: 1 }}>
           <SearchIcon />

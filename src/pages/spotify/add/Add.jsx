@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
-  useTheme,
   useMediaQuery,
   Box,
   Grid,
@@ -134,7 +133,7 @@ function Add() {
   }, [newSong]);
 
   return (
-    <Box m="20px">
+    <Box mt="0px" ml="20px" mr="20px" mb="20px">
       <PageInfo
         title="Add Song"
         subTitle="Add a song to any of your Spotify playlists"
@@ -158,6 +157,8 @@ function Add() {
               variant="outlined"
               name="link"
               type="text"
+              size="small"
+              margin="normal"
               autoComplete="off"
               value={newSong.link}
               onChange={handleChange}
@@ -208,6 +209,8 @@ function Add() {
             name="comment"
             label="Comment"
             multiline
+            margin="normal"
+            size="small"
             onChange={handleChange}
             color="secondary"
             InputProps={{
@@ -217,7 +220,6 @@ function Add() {
                 </InputAdornment>
               ),
             }}
-            sx={{ mt: 2 }}
           />
           {isMedium && (
             <FormControl component="fieldset" error={formValidation.type}>
@@ -247,7 +249,7 @@ function Add() {
             </FormControl>
           )}
           <FormControl component="fieldset" error={formValidation.playlists}>
-            <FormLabel sx={{ mt: 2, mb: 2 }}>Select Playlist(s)</FormLabel>
+            <FormLabel sx={{ mt: 1, mb: 2 }}>Select Playlist(s)</FormLabel>
             <Grid
               container
               spacing={2}

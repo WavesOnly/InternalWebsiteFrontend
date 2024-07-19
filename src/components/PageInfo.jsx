@@ -13,7 +13,7 @@ function PageInfo(props) {
       display="flex"
       flexDirection={isMedium ? "column" : "row"}
       alignItems={isMedium ? "flex-start" : "flex-end"}
-      mb="20px"
+      mb="10px"
     >
       <Header title={title} subTitle={subTitle} />
       {LinkComponent && (

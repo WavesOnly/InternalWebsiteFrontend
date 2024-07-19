@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
-import { useTheme, Box, Grid, Link, CircularProgress } from "@mui/material";
+import { useTheme, Box, Grid, Link } from "@mui/material";
 import GroupIcon from "@mui/icons-material/Group";
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 import HourglassBottomIcon from "@mui/icons-material/HourglassBottom";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 
-import LineGraph from "../../../components/LineGraph";
-import BarGraph from "../../../components/BarGraph";
-import DashboardCard from "../../../components/DashboardCard";
 import { getAnalytics } from "../../../slices/youtube/youtubeSlice";
-
+import DashboardCard from "../../../components/DashboardCard";
 import PageInfo from "../../../components/PageInfo";
+import BarGraph from "../../../components/BarGraph";
+import LineGraph from "../../../components/LineGraph";
+import Spinner from "../../../components/Spinner";
 
 function YouTubeAnalytics() {
   const theme = useTheme();
@@ -24,9 +24,9 @@ function YouTubeAnalytics() {
   }, []);
 
   return (
-    <Box m="20px">
+    <Box mt="0px" ml="20px" mr="20px" mb="20px">
       <PageInfo
-        title="YOUTUBE ANALYTICS"
+        title="YouTube Analytics"
         subTitle="Dive into your YouTube dashboard"
         buttonWidth="200px"
         LinkComponent={() => (
@@ -59,16 +59,24 @@ function YouTubeAnalytics() {
         </Grid>
         <Grid item xs={12} sm={6} lg={3}>
           <DashboardCard
-            title={`$${analytics?.estimatedRevenuePrevious28Days}`}
+            title={
+              analytics?.estimatedRevenuePrevious28Days
+                ? `$${analytics?.estimatedRevenuePrevious28Days}`
+                : ""
+            }
             subtitle="Revenue (28 days)"
             icon={<AttachMoneyIcon />}
           />
         </Grid>
         <Grid item xs={12} sm={6} lg={3}>
           <DashboardCard
-            title={(analytics?.watchTimePrevious28Days / 60)?.toLocaleString(
-              "en-US"
-            )}
+            title={
+              analytics?.watchTimePrevious28Days
+                ? (analytics?.watchTimePrevious28Days / 60)?.toLocaleString(
+                    "en-US"
+                  )
+                : ""
+            }
             subtitle="Watch Time (28 days)"
             icon={<HourglassBottomIcon />}
           />
@@ -94,7 +102,11 @@ function YouTubeAnalytics() {
               borderRadius: "4px",
             }}
           >
-            <BarGraph xAxisLabel="Month" yAxisLabel="Revenue ($)" />
+            {analytics?.revenueByMonth?.length > 0 ? (
+              <BarGraph xAxisLabel="Month" yAxisLabel="Revenue ($)" />
+            ) : (
+              <Spinner />
+            )}
           </Box>
         </Grid>
         <Grid
@@ -118,14 +130,14 @@ function YouTubeAnalytics() {
               borderRadius: "4px",
             }}
           >
-            {analytics?.subscribersByDay ? (
+            {analytics?.subscribersByDay?.length > 0 ? (
               <LineGraph
                 data={analytics?.subscribersByDay}
                 xAxisLabel="Subscribers"
                 yAxisLabel="Date"
               />
             ) : (
-              <CircularProgress />
+              <Spinner />
             )}
           </Box>
         </Grid>

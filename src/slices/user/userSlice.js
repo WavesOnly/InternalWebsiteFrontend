@@ -5,7 +5,7 @@ const initialState = {
     user: {},
     alert: null,
     displayMode: (localStorage.getItem('displayMode') || "dark"),
-    collapsed: localStorage.getItem('collapsed') === 'true',  // Ensure correct initial state
+    collapsed: localStorage.getItem('collapsed') === 'true',
 }
 
 export const userSlice = createSlice({
@@ -19,13 +19,17 @@ export const userSlice = createSlice({
         setCollapsed: (state, action) => {
             state.collapsed = action.payload;
             localStorage.setItem('collapsed', action.payload ? "true" : "false");
+        },
+        setAlert: (state, action) => {
+            state.alert = action.payload;
         }
     }
 });
 
 export const {
     setDisplayMode,
-    setCollapsed
+    setCollapsed,
+    setAlert
 } = userSlice.actions;
 
 export default userSlice.reducer;

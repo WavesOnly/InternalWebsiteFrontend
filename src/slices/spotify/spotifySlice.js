@@ -6,14 +6,12 @@ const initialState = {
     loading: false,
     songHistory: [],
     playlists: [],
-    followers: null,
-    playlistFollowers: null,
     followerHistory: [],
     playlistFollowerHistory: [],
     playlistFollowerHistoryId: "",
     playlistManageId: "",
     playlistItems: [],
-    alert: null,
+    analytics: {},
 }
 
 export const getSongHistory = createAsyncThunk('spotify/getSongHistory', async () => {
@@ -27,6 +25,16 @@ export const getSongHistory = createAsyncThunk('spotify/getSongHistory', async (
 });
 
 export const getPlaylists = createAsyncThunk('spotify/getPlaylists', async () => {
+    try {
+        const response = await axiosPublic.get('/user');
+        return response.data;
+    } catch (error) {
+        console.error('Failed to fetch playlists:', error);
+        throw error;
+    }
+});
+
+export const getAnalytics = createAsyncThunk('spotify/getAnalytics', async () => {
     try {
         const response = await axiosPublic.get('/user');
         return response.data;
@@ -61,6 +69,15 @@ export const getPlaylistItems = createAsyncThunk('spotify/getPlaylistItems', asy
         throw error;
     }
 });
+
+export const updatePlaylistItems = createAsyncThunk('spotify/updatePlaylistItems', async ({ playlistId, playlistItemIds }) => {
+    try {
+        // let response = await axiosPublic.put(``);
+    } catch (error) {
+        console.error('Failed to fetch playlists:', error);
+        throw error;
+    }
+})
 
 export const deletePlaylistItems = createAsyncThunk('spotify/deletePlaylistItems', async ({ playlistId, playlistItemIds }) => {
     try {
@@ -114,8 +131,7 @@ export const spotifySlice = createSlice({
                 state.loading = true
             })
             .addCase(getPlaylistFollowerHistory.fulfilled, (state, action) => {
-                state.playlistFollowerHistory = action.payload?.playlistFollowerHistory
-                state.playlistFollowerHistory = state.playlistFollowerHistory.map(item => ({
+                state.playlistFollowerHistory = action.payload?.playlistFollowerHistory.map(item => ({
                     x: item.date,
                     y: item.followers
                 }));
@@ -139,6 +155,34 @@ export const spotifySlice = createSlice({
                 state.loading = false
             })
             .addCase(getPlaylistItems.rejected, (state) => {
+                state.loading = false
+            })
+
+            .addCase(getAnalytics.pending, (state) => {
+                state.loading = true
+            })
+            .addCase(getAnalytics.fulfilled, (state, action) => {
+                console.log(action.payload)
+                state.loading = false
+                state.analytics = {
+                    accountFollowers: action.payload?.accountFollowers,
+                    playlistFollowers: action.payload?.playlistFollowers,
+                    accountFollowersPrevious28Days: ((action.payload?.accountFollowerHistory[0]?.followers) - (action.payload?.accountFollowerHistory[27]?.followers)),
+                    playlistFollowersPrevious28Days: ((action.payload?.playlistFollowerHistory[0]?.followers) - (action.payload?.playlistFollowerHistory[27]?.followers)),
+                }
+            })
+            .addCase(getAnalytics.rejected, (state) => {
+                state.loading = false
+            })
+
+            .addCase(updatePlaylistItems.pending, (state) => {
+                state.loading = true
+            })
+            .addCase(updatePlaylistItems.fulfilled, (state) => {
+                console.log("Updated")
+                state.loading = false
+            })
+            .addCase(updatePlaylistItems.rejected, (state) => {
                 state.loading = false
             })
 

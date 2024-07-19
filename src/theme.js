@@ -146,10 +146,10 @@ export const themeSettings = (displayMode) => {
             )
         },
         typography: {
-            fontFamily: ["Bebas Neu", "Roboto", "sans-serif"].join(","),
+            fontFamily: ["Roboto", "sans-serif"].join(","),
             fontSize: 12,
             h1: {
-                fontFamily: ["Bebas Neu", "sans-serif"].join(","),
+                fontFamily: ["Roboto", "sans-serif"].join(","),
                 fontSize: 40
             },
             h2: {
@@ -172,6 +172,28 @@ export const themeSettings = (displayMode) => {
                 fontFamily: ["Roboto", "sans-serif"].join(","),
                 fontSize: 14
             },
+        },
+        components: {
+            MuiAlert: {
+                styleOverrides: {
+                    standardSuccess: {
+                        backgroundColor: "rgb(237, 247, 237)",
+                        color: "rgb(30, 70, 32)",
+                    },
+                    standardInfo: {
+                        backgroundColor: "rgb(229, 246, 253)",
+                        color: "rgb(1, 67, 97)",
+                    },
+                    standardWarning: {
+                        backgroundColor: "rgb(255, 244, 229)",
+                        color: "rgb(102, 60, 0)",
+                    },
+                    standardError: {
+                        backgroundColor: "rgb(253, 237, 237)",
+                        color: "rgb(95, 33, 32)",
+                    },
+                }
+            }
         }
     }
 };

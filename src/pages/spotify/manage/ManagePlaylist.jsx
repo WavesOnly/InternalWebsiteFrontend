@@ -25,12 +25,13 @@ import {
   getPlaylistItems,
   setPlaylistManageId,
   setPlaylistItems,
+  updatePlaylistItems,
   deletePlaylistItems,
 } from "../../../slices/spotify/spotifySlice";
-import { colorTokens } from "../../../theme";
 import CheckIcon from "@mui/icons-material/Check";
 import CloseIcon from "@mui/icons-material/Close";
 import PageInfo from "../../../components/PageInfo";
+import { setAlert } from "../../../slices/user/userSlice";
 
 function ManagePlaylist() {
   const dispatch = useDispatch();
@@ -42,6 +43,7 @@ function ManagePlaylist() {
   const playlistManageId = useSelector(
     (state) => state.spotify?.playlistManageId
   );
+  const alert = useSelector((state) => state.user?.alert);
   const colorStyle = `${
     theme.palette.mode === "dark"
       ? theme.palette.secondary.main
@@ -63,6 +65,10 @@ function ManagePlaylist() {
     let [data] = playlistItemsCopy.splice(e.source.index, 1);
     playlistItemsCopy.splice(e.destination.index, 0, data);
     dispatch(setPlaylistItems(playlistItemsCopy));
+    // dispatch(updatePlaylistItems(playlistItemsCopy))
+    // .then(() => dispatch(getPlaylistItems({ playlistId: playlistManageId })))
+    // .then(() => dispatch(setAlert("Playlist updated")));
+    dispatch(setAlert({ alert: "Playlist updated", severity: "success" }));
   };
 
   const handleCheckboxClick = (e, songId) => {
@@ -78,6 +84,14 @@ function ManagePlaylist() {
   const handleRemoveSongs = () => {
     dispatch(deletePlaylistItems(playlistManageId, selectedItems))
       .then(() => dispatch(getPlaylistItems({ playlistId: playlistManageId })))
+      .then(() => {
+        const countSongsDeleted = selectedItems?.length;
+        const alertText =
+          countSongsDeleted > 1
+            ? `${countSongsDeleted} songs deleted`
+            : `${countSongsDeleted} song deleted`;
+        dispatch(setAlert({ alert: alertText, severity: "info" }));
+      })
       .then(() => setSelectedItems([]));
   };
 
@@ -90,7 +104,7 @@ function ManagePlaylist() {
   }, [playlistManageId]);
 
   return (
-    <Box m="20px">
+    <Box mt="0px" ml="20px" mr="20px" mb="20px">
       <PageInfo
         title="Manage Playlists"
         subTitle="Manage all your playlists in one place"
@@ -117,7 +131,7 @@ function ManagePlaylist() {
         justifyContent="space-between"
         alignItems={isMedium ? "flex-start" : "center"}
         flexDirection={isMedium ? "column" : "row"}
-        mb="20px"
+        mb="10px"
       >
         <FormControl sx={{ minWidth: 250 }} size="small">
           <InputLabel
@@ -137,9 +151,10 @@ function ManagePlaylist() {
             label="Playlist"
             sx={{
               minWidth: 335,
-              "& .MuiInputBase-input": {
-                backgroundColor: theme.palette.background.paper,
-              },
+              backgroundColor: theme.palette.layer.default,
+              // "& .MuiInputBase-input": {
+              //   backgroundColor: theme.palette.background.paper,
+              // },
               "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
                 borderColor: theme.palette.secondary.main,
               },
@@ -160,14 +175,15 @@ function ManagePlaylist() {
           disabled={selectedItems.length > 0 ? false : true}
           onClick={handleRemoveSongs}
           sx={{
-            minWidth: 200,
-            mt: isMedium ? "20px" : "0px",
+            minWidth: isMedium ? 335 : 200,
+            mt: isMedium ? "10px" : "0px",
           }}
           size="medium"
         >
           Remove Songs
         </Button>
       </Box>
+
       <DragDropContext onDragEnd={handleDragEnd}>
         <Table
           size="small"

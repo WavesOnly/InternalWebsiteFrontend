@@ -8,8 +8,6 @@ import {
   InputLabel,
   Select,
   MenuItem,
-  CircularProgress,
-  Link,
 } from "@mui/material";
 import HubIcon from "@mui/icons-material/Hub";
 import LibraryMusicIcon from "@mui/icons-material/LibraryMusic";
@@ -24,6 +22,7 @@ import { getAnalytics } from "../../slices/youtube/youtubeSlice";
 import LineGraph from "../../components/LineGraph";
 import PageInfo from "../../components/PageInfo";
 import DashboardCard from "../../components/DashboardCard";
+import Spinner from "../../components/Spinner";
 
 function Home() {
   const theme = useTheme();
@@ -44,6 +43,7 @@ function Home() {
   const handleSelectChange = (event) => {
     const playlistId = event.target.value;
     dispatch(setPlaylistFollowerHistoryId(playlistId));
+    console.log(playlistId);
   };
 
   useEffect(() => {
@@ -61,7 +61,7 @@ function Home() {
   }, [playlistFollowerHistoryId]);
 
   return (
-    <Box m="20px">
+    <Box mt="0px" ml="20px" mr="20px" mb="20px">
       <PageInfo
         title="Welcome Alex & Daniel"
         subTitle="This is your personal dashboard"
@@ -112,10 +112,7 @@ function Home() {
               onChange={handleSelectChange}
               label="Playlist"
               sx={{
-                backgroundColor:
-                  theme.palette.mode === "dark"
-                    ? ""
-                    : theme.palette.layer.default,
+                backgroundColor: theme.palette.layer.default,
                 "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
                   borderColor: theme.palette.secondary.main,
                 },
@@ -146,26 +143,28 @@ function Home() {
             },
           }}
         >
-          {followerData.length > 0 && (
-            <Box
-              sx={{
-                height: "100%",
-                p: "15px",
-                backgroundColor: theme?.palette.layer.default,
-                border:
-                  theme.palette.mode === "dark"
-                    ? ""
-                    : "1px solid rgba(0, 0, 0, 0.23);",
-                borderRadius: "4px",
-              }}
-            >
+          <Box
+            sx={{
+              height: "100%",
+              p: "15px",
+              backgroundColor: theme?.palette.layer.default,
+              border:
+                theme.palette.mode === "dark"
+                  ? ""
+                  : "1px solid rgba(0, 0, 0, 0.23);",
+              borderRadius: "4px",
+            }}
+          >
+            {followerData.length > 0 ? (
               <LineGraph
                 data={followerData}
                 xAxisLabel="Followers"
                 yAxisLabel="Date"
               />
-            </Box>
-          )}
+            ) : (
+              <Spinner />
+            )}
+          </Box>
         </Grid>
         <Grid
           item
@@ -188,14 +187,14 @@ function Home() {
               borderRadius: "4px",
             }}
           >
-            {analytics?.subscribersByDay ? (
+            {analytics?.subscribersByDay?.length > 0 ? (
               <LineGraph
                 data={analytics?.subscribersByDay}
                 xAxisLabel="Subscribers"
                 yAxisLabel="Date"
               />
             ) : (
-              <CircularProgress />
+              <Spinner />
             )}
           </Box>
         </Grid>

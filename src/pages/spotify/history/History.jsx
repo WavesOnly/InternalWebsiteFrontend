@@ -41,7 +41,7 @@ function History() {
   }, []);
 
   return (
-    <Box m="20px">
+    <Box mt="0px" ml="20px" mr="20px" mb="20px">
       <PageInfo
         title="History"
         subTitle="Here's a glimpse of the songs you've added to your playlists"
