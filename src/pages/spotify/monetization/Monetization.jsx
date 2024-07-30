@@ -1,24 +1,31 @@
 import React, { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 import {
   useMediaQuery,
+  useTheme,
   Box,
   FormGroup,
   InputAdornment,
   TextField,
-  Button,
   Link,
 } from "@mui/material";
+import LoadingButton from "@mui/lab/LoadingButton";
 import MonetizationOnIcon from "@mui/icons-material/MonetizationOn";
 import MusicVideoIcon from "@mui/icons-material/MusicVideo";
+import { useDispatch } from "react-redux";
+import { triggerMonetizationPipeline } from "../../../slices/spotify/spotifySlice";
+import { setAlert } from "../../../slices/user/userSlice";
 
 import PageInfo from "../../../components/PageInfo";
 
 function Monetization() {
+  const dispatch = useDispatch();
+  const theme = useTheme();
+  const loading = useSelector((state) => state.spotify.loading);
   const isSmall = useMediaQuery((theme) => theme.breakpoints.down("sm"));
   const [formValidation, setFormValidation] = useState({ link: false });
   const [newMonetization, setNewMonetization] = useState({
     link: "",
-    type: "",
   });
 
   const handleChange = (e) => {
@@ -31,7 +38,7 @@ function Monetization() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!newMonetization?.link) {
@@ -42,6 +49,11 @@ function Monetization() {
         };
       });
     }
+    const result = await dispatch(
+      triggerMonetizationPipeline(newMonetization)
+    ).unwrap();
+    setNewMonetization({ link: "" });
+    dispatch(setAlert({ alert: result.message, severity: "success" }));
   };
 
   useEffect(() => {
@@ -78,6 +90,9 @@ function Monetization() {
             variant="outlined"
             name="link"
             type="text"
+            autoComplete="off"
+            size="small"
+            disabled={loading ? true : false}
             fullWidth
             value={newMonetization?.link}
             margin="normal"
@@ -91,6 +106,12 @@ function Monetization() {
                 </InputAdornment>
               ),
             }}
+            sx={{
+              backgroundColor: theme.palette.layer.default,
+              "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                borderColor: theme.palette.secondary.main,
+              },
+            }}
           />
         </FormGroup>
         <Box
@@ -98,8 +119,9 @@ function Monetization() {
           justifyContent={isSmall ? "center" : "flex-end"}
           mt="5px"
         >
-          <Button
+          <LoadingButton
             variant="contained"
+            loading={loading ? true : false}
             disableElevation
             color="secondary"
             fullWidth={isSmall ? true : false}
@@ -108,7 +130,7 @@ function Monetization() {
             sx={{ minWidth: 200 }}
           >
             Create Videos
-          </Button>
+          </LoadingButton>
         </Box>
       </form>
     </Box>

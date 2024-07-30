@@ -28,9 +28,18 @@ const DashboardCard = (props) => {
       onClick={handleClick}
     >
       <Box display="flex" justifyContent="space-between">
-        <Box>
+        <Box width="100%">
           {icon}
-          <Typography variant="h4" fontWeight="bold">
+          <Typography
+            variant="h4"
+            fontWeight="bold"
+            sx={{
+              width: "100%",
+              whiteSpace: "nowrap",
+              overflow: "hidden",
+              textOverflow: "ellipsis",
+            }}
+          >
             {title}
           </Typography>
         </Box>

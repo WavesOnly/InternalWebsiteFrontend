@@ -57,30 +57,6 @@ function LineGraph(props) {
       pointLabelYOffset={-12}
       enableTouchCrosshair={true}
       useMesh={true}
-      legends={[
-        {
-          anchor: "bottom-right",
-          direction: "column",
-          justify: false,
-          translateX: 95,
-          translateY: 0,
-          itemsSpacing: 2,
-          itemDirection: "left-to-right",
-          itemWidth: 80,
-          itemHeight: 20,
-          symbolSize: 15,
-          symbolShape: "circle",
-          symbolBorderColor: "rgba(0, 0, 0, .5)",
-          effects: [
-            {
-              on: "hover",
-              style: {
-                itemOpacity: 1,
-              },
-            },
-          ],
-        },
-      ]}
       theme={{
         axis: {
           ticks: {

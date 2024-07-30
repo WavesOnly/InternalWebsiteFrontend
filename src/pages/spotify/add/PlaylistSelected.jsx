@@ -5,11 +5,8 @@ import {
   InputLabel,
   Select,
   MenuItem,
-  Button,
   FormControl,
-  Link,
 } from "@mui/material";
-import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 
 function PlaylistSelected(props) {
   const { newSong, playlist, handleSelectChange } = props;
@@ -24,24 +21,7 @@ function PlaylistSelected(props) {
       columnGap="10px"
       sx={{ minWidth: "200px" }}
     >
-      <FormControl variant="outlined" size="small">
-        <Button
-          variant="contained"
-          disableElevation
-          color="secondary"
-          startIcon={<OpenInNewIcon />}
-          sx={{ minWidth: "150px" }}
-        >
-          <Link
-            href={`https://open.spotify.com/playlist/${playlist?.id}`}
-            target="_blank"
-            color="inherit"
-            style={{ textDecoration: "none" }}
-          >
-            Open
-          </Link>
-        </Button>
-      </FormControl>
+      <FormControl variant="outlined" size="small"></FormControl>
       <FormControl variant="outlined" size="small">
         <InputLabel
           id={`position-select-${playlist.id}`}

@@ -1,5 +1,11 @@
 import React from "react";
-import { useTheme, useMediaQuery, Box, Typography } from "@mui/material";
+import {
+  useTheme,
+  useMediaQuery,
+  Box,
+  Typography,
+  Tooltip,
+} from "@mui/material";
 import PlaylistSelected from "./PlaylistSelected";
 
 function PlaylistLabel(props) {
@@ -13,19 +19,35 @@ function PlaylistLabel(props) {
 
   return (
     <Box display="flex" alignItems="center" flexDirection="column">
-      <img
-        src={playlist.imageUrl}
-        alt={playlist.name}
-        style={{
-          width: "90%",
-          height: "90%",
-          border: isPlaylistSelected
-            ? theme.palette.mode === "dark"
-              ? "2px solid white"
-              : `2px solid ${theme.palette.secondary.main}`
-            : "",
+      <Tooltip
+        title="Command click to open playlist on Spotify"
+        slotProps={{
+          popper: {
+            modifiers: [
+              {
+                name: "offset",
+                options: {
+                  offset: [0, -65],
+                },
+              },
+            ],
+          },
         }}
-      />
+      >
+        <img
+          src={playlist.imageUrl}
+          alt={playlist.name}
+          style={{
+            width: "90%",
+            height: "90%",
+            border: isPlaylistSelected
+              ? theme.palette.mode === "dark"
+                ? "2px solid white"
+                : `2px solid ${theme.palette.secondary.main}`
+              : "",
+          }}
+        />
+      </Tooltip>
       <Box
         display="flex"
         flexDirection="column"

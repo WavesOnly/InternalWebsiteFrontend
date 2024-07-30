@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { axiosPublic } from '../../api/axios';
+import { axiosPrivate } from '../../api/axios';
 
 
 const initialState = {
@@ -8,23 +8,51 @@ const initialState = {
     playlists: []
 }
 
-export const getPlaylists = createAsyncThunk('youtube/getPlaylists', async () => {
+export const getAnalytics = createAsyncThunk('youtube/getAnalytics', async () => {
     try {
-        const response = await axiosPublic.get('/youtube');
+        const response = await axiosPrivate.get('/youtube/analytics');
         return response.data;
     } catch (error) {
-        console.error('Failed to fetch song history:', error);
+        console.error('Failed to fetch analytics:', error);
         throw error;
     }
 });
 
-export const getAnalytics = createAsyncThunk('youtube/getAnalytics', async () => {
+export const getSubscribersByDay = createAsyncThunk('youtube/getSubscribersByDay', async () => {
     try {
-        const response = await axiosPublic.get('/youtube');
+        const response = await axiosPrivate.get('/youtube/subscribers-by-day');
         return response.data;
     } catch (error) {
-        console.error('Failed to fetch song history:', error);
+        console.error('Failed to fetch analytics:', error);
         throw error;
+    }
+});
+
+
+export const getPlaylists = createAsyncThunk('youtube/getPlaylists', async () => {
+    try {
+        const response = await axiosPrivate.get('/youtube/playlists');
+        return response.data;
+    } catch (error) {
+        console.error('Failed to fetch playlists:', error);
+        throw error;
+    }
+});
+
+export const uploadVideo = createAsyncThunk('youtube/uploadVideo', async (newUpload, { rejectWithValue }) => {
+    try {
+        const formData = new FormData();
+        formData.append('file', newUpload.file);
+        formData.append('throwbackThursday', newUpload.throwbackThursday);
+        formData.append('playlists', newUpload.playlists);
+        formData.append('comment', newUpload.comment);
+        const response = await axiosPrivate.post('/youtube/upload', formData, { headers: { 'Content-Type': 'multipart/form-data' } });
+        return response.data;
+    } catch (err) {
+        if (!err.response) {
+            throw err;
+        }
+        return rejectWithValue(err.response.data);
     }
 });
 
@@ -36,6 +64,17 @@ export const youtubeSlice = createSlice({
     },
     extraReducers(builder) {
         builder
+            .addCase(uploadVideo.pending, (state) => {
+                state.loading = true
+            })
+            .addCase(uploadVideo.fulfilled, (state) => {
+                console.log("Uploaded")
+                state.loading = false
+            })
+            .addCase(uploadVideo.rejected, (state) => {
+                state.loading = false
+            })
+
             .addCase(getPlaylists.pending, (state) => {
                 state.loading = true
             })
@@ -59,7 +98,6 @@ export const youtubeSlice = createSlice({
                     estimatedRevenuePrevious28Days: action.payload?.estimatedRevenuePrevious28Days,
                     watchTimePrevious28Days: action.payload?.watchTimePrevious28Days,
                     revenueByMonth: action.payload?.revenueByMonth,
-                    topVideos: action.payload?.topVideos,
                     subscribersByDay: [
                         {
                             id: "Subscribers",
@@ -74,6 +112,35 @@ export const youtubeSlice = createSlice({
             })
             .addCase(getAnalytics.rejected, (state) => {
                 state.loading = false
+            })
+
+            .addCase(getSubscribersByDay.pending, (state) => {
+                state.loading = true
+            })
+            .addCase(getSubscribersByDay.fulfilled, (state, action) => {
+                state.loading = false
+                state.analytics = {
+                    subscribersByDay: [
+                        {
+                            id: "Subscribers",
+                            data: action.payload?.subscribersByDay.map(item => ({
+                                x: item.date,
+                                y: item.subscribers
+                            }))
+                        }
+                    ]
+                }
+            })
+            .addCase(getSubscribersByDay.rejected, (state) => {
+                state.loading = false
+                state.analytics = {
+                    subscribersByDay: [
+                        {
+                            id: "Subscribers",
+                            data: []
+                        }
+                    ]
+                }
             })
     }
 });

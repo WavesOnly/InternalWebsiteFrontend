@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { axiosPublic } from '../../api/axios';
+import { axiosPrivate, axiosPublic } from '../../api/axios';
 
 
 const initialState = {
@@ -14,77 +14,95 @@ const initialState = {
     analytics: {},
 }
 
-export const getSongHistory = createAsyncThunk('spotify/getSongHistory', async () => {
-    try {
-        const response = await axiosPublic.get('/songHistory');
-        return response.data;
-    } catch (error) {
-        console.error('Failed to fetch song history:', error);
-        throw error;
-    }
-});
+
 
 export const getPlaylists = createAsyncThunk('spotify/getPlaylists', async () => {
     try {
-        const response = await axiosPublic.get('/user');
+        const response = await axiosPrivate.get('/spotify/playlists');
         return response.data;
     } catch (error) {
-        console.error('Failed to fetch playlists:', error);
         throw error;
     }
 });
 
 export const getAnalytics = createAsyncThunk('spotify/getAnalytics', async () => {
     try {
-        const response = await axiosPublic.get('/user');
+        const response = await axiosPrivate.get('/spotify/analytics');
         return response.data;
     } catch (error) {
-        console.error('Failed to fetch playlists:', error);
         throw error;
     }
 });
 
 export const getPlaylistFollowerHistory = createAsyncThunk('spotify/getPlaylistFollowerHistory', async ({ playlistId }) => {
     try {
-        let response = await axiosPublic.get('/user');
-        if (playlistId) {
-            response = { data: response.data.playlists.filter((playlist) => playlist?.id == playlistId)[0] }
-        }
+        const response = await axiosPrivate.get(`/spotify/playlists/history/${playlistId}`);
         return response.data;
     } catch (error) {
-        console.error('Failed to fetch playlists:', error);
         throw error;
     }
 });
+
+
+export const addSong = createAsyncThunk('spotify/addSong', async (newSong, { rejectWithValue }) => {
+    try {
+        const songData = { ...newSong };
+        songData.promotion = songData.type === "Promotion";
+        delete songData.type;
+        const response = await axiosPrivate.post('/spotify/add-song', songData);
+        return response.data;
+    }
+    catch (error) {
+        if (error.response) {
+            return rejectWithValue(error.response.data);
+        }
+        return rejectWithValue({ message: error.message });
+    }
+});
+
 
 export const getPlaylistItems = createAsyncThunk('spotify/getPlaylistItems', async ({ playlistId }) => {
     try {
-        let response = await axiosPublic.get(`/playlistItems`);
-        if (playlistId) {
-            response = { data: response.data.filter((item) => item?.id === playlistId)[0].items }
-            return response.data
-        }
+        const response = await axiosPrivate.get(`spotify/playlist/items/${playlistId}`);
+        return response.data
     } catch (error) {
-        console.error('Failed to fetch playlists:', error);
         throw error;
     }
 });
 
-export const updatePlaylistItems = createAsyncThunk('spotify/updatePlaylistItems', async ({ playlistId, playlistItemIds }) => {
+export const updatePlaylistItems = createAsyncThunk('spotify/updatePlaylistItems', async ({ playlistId, songIds }) => {
     try {
-        // let response = await axiosPublic.put(``);
+        const response = await axiosPrivate.put(`spotify/playlist/items/${playlistId}`, { playlistId, songIds });
+        return response.data
     } catch (error) {
-        console.error('Failed to fetch playlists:', error);
         throw error;
     }
 })
 
-export const deletePlaylistItems = createAsyncThunk('spotify/deletePlaylistItems', async ({ playlistId, playlistItemIds }) => {
+export const deletePlaylistItems = createAsyncThunk('spotify/deletePlaylistItems', async ({ playlistId, songIds }) => {
     try {
-        // let response = await axiosPublic.delete(`/playlistItems/delete/${playlistId}/${playlistItemIds}`);
-
+        console.log(songIds)
+        const response = await axiosPrivate.delete(`spotify/playlist/${playlistId}/songs?ids=${songIds.join(",")}`);
+        return response.data
     } catch (error) {
-        console.error('Failed to fetch playlists:', error);
+        throw error;
+    }
+})
+
+export const getSongHistory = createAsyncThunk('spotify/getSongHistory', async () => {
+    try {
+        const response = await axiosPrivate.get('/spotify/curation/history');
+        return response.data;
+    } catch (error) {
+        throw error;
+    }
+});
+
+export const triggerMonetizationPipeline = createAsyncThunk('spotify/triggerMonetizationPipeline', async (newMonetization) => {
+    try {
+        const response = await axiosPrivate.post('/spotify/monetization-pipeline', newMonetization)
+        return response.data
+    } catch (error) {
         throw error;
     }
 })
@@ -105,11 +123,20 @@ export const spotifySlice = createSlice({
     },
     extraReducers(builder) {
         builder
+            .addCase(addSong.pending, (state) => {
+                state.loading = true
+            })
+            .addCase(addSong.fulfilled, (state) => {
+                state.loading = false
+            })
+            .addCase(addSong.rejected, (state) => {
+                state.loading = false
+            })
             .addCase(getSongHistory.pending, (state) => {
                 state.loading = true
             })
             .addCase(getSongHistory.fulfilled, (state, action) => {
-                state.songHistory = action.payload
+                state.songHistory = action.payload?.songHistory
                 state.loading = false
             })
             .addCase(getSongHistory.rejected, (state) => {
@@ -151,7 +178,7 @@ export const spotifySlice = createSlice({
                 state.loading = true
             })
             .addCase(getPlaylistItems.fulfilled, (state, action) => {
-                state.playlistItems = action.payload
+                state.playlistItems = action.payload?.playlistItems
                 state.loading = false
             })
             .addCase(getPlaylistItems.rejected, (state) => {
@@ -162,13 +189,12 @@ export const spotifySlice = createSlice({
                 state.loading = true
             })
             .addCase(getAnalytics.fulfilled, (state, action) => {
-                console.log(action.payload)
                 state.loading = false
                 state.analytics = {
                     accountFollowers: action.payload?.accountFollowers,
                     playlistFollowers: action.payload?.playlistFollowers,
-                    accountFollowersPrevious28Days: ((action.payload?.accountFollowerHistory[0]?.followers) - (action.payload?.accountFollowerHistory[27]?.followers)),
-                    playlistFollowersPrevious28Days: ((action.payload?.playlistFollowerHistory[0]?.followers) - (action.payload?.playlistFollowerHistory[27]?.followers)),
+                    accountFollowersPrevious28Days: action.payload?.accountFollowersPrevious28Days,
+                    playlistFollowersPrevious28Days: action.payload?.playlistFollowersPrevious28Days
                 }
             })
             .addCase(getAnalytics.rejected, (state) => {
@@ -179,7 +205,6 @@ export const spotifySlice = createSlice({
                 state.loading = true
             })
             .addCase(updatePlaylistItems.fulfilled, (state) => {
-                console.log("Updated")
                 state.loading = false
             })
             .addCase(updatePlaylistItems.rejected, (state) => {
@@ -190,10 +215,18 @@ export const spotifySlice = createSlice({
                 state.loading = true
             })
             .addCase(deletePlaylistItems.fulfilled, (state) => {
-                console.log("Deleted")
                 state.loading = false
             })
             .addCase(deletePlaylistItems.rejected, (state) => {
+                state.loading = false
+            })
+            .addCase(triggerMonetizationPipeline.pending, (state) => {
+                state.loading = true
+            })
+            .addCase(triggerMonetizationPipeline.fulfilled, (state) => {
+                state.loading = false
+            })
+            .addCase(triggerMonetizationPipeline.rejected, (state) => {
                 state.loading = false
             })
     }

@@ -1,7 +1,8 @@
 import React from "react";
-import { Box, CircularProgress } from "@mui/material";
+import { Box, CircularProgress, useTheme } from "@mui/material";
 
 function Spinner() {
+  const theme = useTheme();
   return (
     <Box
       display="flex"
@@ -9,7 +10,9 @@ function Spinner() {
       alignItems="center"
       justifyContent="center"
     >
-      <CircularProgress />
+      <CircularProgress
+        sx={{ color: theme.palette.mode === "dark" ? "white" : "" }}
+      />
     </Box>
   );
 }

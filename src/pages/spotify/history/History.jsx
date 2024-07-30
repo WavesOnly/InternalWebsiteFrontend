@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Box, useTheme } from "@mui/material";
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableCell from "@mui/material/TableCell";
-import TableHead from "@mui/material/TableHead";
-import TableRow from "@mui/material/TableRow";
-import TableFooter from "@mui/material/TableFooter";
-import TablePagination from "@mui/material/TablePagination";
-import Link from "@mui/material/Link";
-import CircularProgress from "@mui/material/CircularProgress";
+import {
+  Box,
+  useTheme,
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableRow,
+  TableFooter,
+  TablePagination,
+  Link,
+  Skeleton,
+} from "@mui/material";
 
 import { getSongHistory } from "../../../slices/spotify/spotifySlice";
 import PageInfo from "../../../components/PageInfo";
@@ -57,110 +60,135 @@ function History() {
           </Link>
         )}
       />
-      {loading && <CircularProgress />}
-      <Table
-        sx={{
-          minWidth: 650,
-          backgroundColor: theme.palette.layer.default,
-        }}
-      >
-        <TableHead>
-          <TableRow>
-            <TableCell align="center">Song</TableCell>
-            <TableCell align="center">Artist(s)</TableCell>
-            <TableCell align="center">Playlist</TableCell>
-            <TableCell align="center">Date Added</TableCell>
-            <TableCell align="center">Comment</TableCell>
-          </TableRow>
-        </TableHead>
-        {!loading && (
+      {loading ? (
+        <Skeleton
+          variant="rectangular"
+          width="100%"
+          height={rowsPerPage * 51.297 + 52 + 53.063}
+          animation="wave"
+        />
+      ) : (
+        <Table
+          sx={{
+            minWidth: 650,
+            backgroundColor: theme.palette.layer.default,
+          }}
+        >
+          <TableHead>
+            <TableRow>
+              <TableCell align="center" sx={{ fontSize: ".8rem" }}>
+                Song
+              </TableCell>
+              <TableCell align="center" sx={{ fontSize: ".8rem" }}>
+                Artist(s)
+              </TableCell>
+              <TableCell align="center" sx={{ fontSize: ".8rem" }}>
+                Playlist
+              </TableCell>
+              <TableCell align="center" sx={{ fontSize: ".8rem" }}>
+                Date Added
+              </TableCell>
+              <TableCell align="center" sx={{ fontSize: ".8rem" }}>
+                Comment
+              </TableCell>
+            </TableRow>
+          </TableHead>
+
           <TableBody>
-            {(rowsPerPage > 0
-              ? songHistory.slice(
-                  page * rowsPerPage,
-                  page * rowsPerPage + rowsPerPage
-                )
-              : songHistory
-            ).map((row) => (
-              <TableRow
-                key={row.id}
-                sx={{
-                  "&:last-child td, &:last-child th": { border: 0 },
-                  "&:hover": {
-                    backgroundColor: colorStyle,
+            {songHistory.length > 0 &&
+              (rowsPerPage > 0
+                ? songHistory.slice(
+                    page * rowsPerPage,
+                    page * rowsPerPage + rowsPerPage
+                  )
+                : songHistory
+              ).map((row) => (
+                <TableRow
+                  key={row.id}
+                  sx={{
+                    "&:last-child td, &:last-child th": { border: 0 },
+                    "&:hover": {
+                      backgroundColor: colorStyle,
+                    },
+                  }}
+                >
+                  <TableCell
+                    component="th"
+                    scope="row"
+                    sx={{ fontSize: ".8rem" }}
+                  >
+                    <Link
+                      href={`https://open.spotify.com/track/${row?.song?.id}`}
+                      target="_blank"
+                      color="inherit"
+                    >
+                      {row?.song?.name}
+                    </Link>
+                  </TableCell>
+                  <TableCell sx={{ fontSize: ".8rem" }}>
+                    {row?.artists.map((artist, i) => {
+                      return (
+                        <Link
+                          key={artist?.id}
+                          href={`https://open.spotify.com/artist/${artist?.id}`}
+                          target="_blank"
+                          color="inherit"
+                        >
+                          {i === row?.artists?.length - 1
+                            ? artist.name
+                            : `${artist?.name}, `}
+                        </Link>
+                      );
+                    })}
+                  </TableCell>
+                  <TableCell sx={{ fontSize: ".8rem" }}>
+                    <Link
+                      key={row?.playlist?.id}
+                      href={`https://open.spotify.com/playlist/${row?.playlist?.id}`}
+                      target="_blank"
+                      color="inherit"
+                    >
+                      {row?.playlist?.name}
+                    </Link>
+                  </TableCell>
+                  <TableCell align="center" sx={{ fontSize: ".8rem" }}>
+                    {new Date(row?.dateAdded).toLocaleString("en-US", {
+                      year: "numeric",
+                      month: "long",
+                      day: "numeric",
+                    })}
+                  </TableCell>
+                  <TableCell sx={{ fontSize: ".8rem" }}>
+                    {row?.comment}
+                  </TableCell>
+                </TableRow>
+              ))}
+          </TableBody>
+
+          <TableFooter>
+            <TableRow>
+              <TablePagination
+                rowsPerPageOptions={[10, 20, 30]}
+                colSpan={6}
+                count={songHistory.length}
+                rowsPerPage={rowsPerPage}
+                page={page}
+                slotProps={{
+                  select: {
+                    inputProps: {
+                      "aria-label": "rows per page",
+                    },
+                    native: true,
                   },
                 }}
-              >
-                <TableCell component="th" scope="row">
-                  <Link
-                    href={`https://open.spotify.com/track/${row?.song?.id}`}
-                    target="_blank"
-                    color="inherit"
-                  >
-                    {row?.song?.name}
-                  </Link>
-                </TableCell>
-                <TableCell>
-                  {row?.artists.map((artist, i) => {
-                    return (
-                      <Link
-                        key={artist?.id}
-                        href={`https://open.spotify.com/artist/${artist?.id}`}
-                        target="_blank"
-                        color="inherit"
-                      >
-                        {i === row?.artists?.length - 1
-                          ? artist.name
-                          : `${artist?.name}, `}
-                      </Link>
-                    );
-                  })}
-                </TableCell>
-                <TableCell>
-                  <Link
-                    key={row?.playlist?.id}
-                    href={`https://open.spotify.com/playlist/${row?.playlist?.id}`}
-                    target="_blank"
-                    color="inherit"
-                  >
-                    {row?.playlist?.name}
-                  </Link>
-                </TableCell>
-                <TableCell align="center">
-                  {new Date(row?.dateAdded).toLocaleString("en-US", {
-                    year: "numeric",
-                    month: "long",
-                    day: "numeric",
-                  })}
-                </TableCell>
-                <TableCell>{row?.comment}</TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-        )}
-        <TableFooter>
-          <TableRow>
-            <TablePagination
-              rowsPerPageOptions={[10, 20, 30]}
-              colSpan={6}
-              count={songHistory.length}
-              rowsPerPage={rowsPerPage}
-              page={page}
-              slotProps={{
-                select: {
-                  inputProps: {
-                    "aria-label": "rows per page",
-                  },
-                  native: true,
-                },
-              }}
-              onPageChange={handleChangePage}
-              onRowsPerPageChange={handleChangeRowsPerPage}
-              ActionsComponent={TablePaginationActions}
-            />
-          </TableRow>
-        </TableFooter>
-      </Table>
+                onPageChange={handleChangePage}
+                onRowsPerPageChange={handleChangeRowsPerPage}
+                ActionsComponent={TablePaginationActions}
+              />
+            </TableRow>
+          </TableFooter>
+        </Table>
+      )}
     </Box>
   );
 }

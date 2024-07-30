@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
-import { useTheme, Box, Grid, Link } from "@mui/material";
+import { useTheme, Box, Grid, Link, Skeleton } from "@mui/material";
 import GroupIcon from "@mui/icons-material/Group";
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 import HourglassBottomIcon from "@mui/icons-material/HourglassBottom";
@@ -18,6 +18,7 @@ function YouTubeAnalytics() {
   const theme = useTheme();
   const dispatch = useDispatch();
   const analytics = useSelector((state) => state.youtube?.analytics);
+  const loading = useSelector((state) => state.youtube?.loading);
 
   useEffect(() => {
     dispatch(getAnalytics());
@@ -43,16 +44,28 @@ function YouTubeAnalytics() {
       <Grid container spacing={2}>
         <Grid item xs={12} sm={6} lg={3}>
           <DashboardCard
-            title={analytics?.viewCountPrevious28Days?.toLocaleString("en-US")}
+            title={
+              loading && !analytics?.viewCountPrevious28Days ? (
+                <Skeleton width="35%" />
+              ) : (
+                analytics?.viewCountPrevious28Days?.toLocaleString("en-US")
+              )
+            }
             subtitle="Views (28 Days)"
             icon={<YouTubeIcon />}
           />
         </Grid>
         <Grid item xs={12} sm={6} lg={3}>
           <DashboardCard
-            title={analytics?.subscribersCountPrevious28Days?.toLocaleString(
-              "en-US"
-            )}
+            title={
+              loading && !analytics?.subscribersCountPrevious28Days ? (
+                <Skeleton width="35%" />
+              ) : (
+                analytics?.subscribersCountPrevious28Days?.toLocaleString(
+                  "en-US"
+                )
+              )
+            }
             subtitle="Subscribers (28 Days)"
             icon={<GroupIcon />}
           />
@@ -60,9 +73,13 @@ function YouTubeAnalytics() {
         <Grid item xs={12} sm={6} lg={3}>
           <DashboardCard
             title={
-              analytics?.estimatedRevenuePrevious28Days
-                ? `$${analytics?.estimatedRevenuePrevious28Days}`
-                : ""
+              loading && !analytics?.estimatedRevenuePrevious28Days ? (
+                <Skeleton width="35%" />
+              ) : (
+                `$${analytics?.estimatedRevenuePrevious28Days?.toLocaleString(
+                  "en-US"
+                )}`
+              )
             }
             subtitle="Revenue (28 days)"
             icon={<AttachMoneyIcon />}
@@ -71,44 +88,17 @@ function YouTubeAnalytics() {
         <Grid item xs={12} sm={6} lg={3}>
           <DashboardCard
             title={
-              analytics?.watchTimePrevious28Days
-                ? (analytics?.watchTimePrevious28Days / 60)?.toLocaleString(
-                    "en-US"
-                  )
-                : ""
+              loading && !analytics?.watchTimePrevious28Days ? (
+                <Skeleton width="35%" />
+              ) : (
+                analytics?.watchTimePrevious28Days?.toLocaleString("en-US")
+              )
             }
             subtitle="Watch Time (28 days)"
             icon={<HourglassBottomIcon />}
           />
         </Grid>
-        <Grid
-          item
-          xs={12}
-          sm={12}
-          md={12}
-          lg={12}
-          xl={6}
-          sx={{ height: "50vh", p: 0, m: 0 }}
-        >
-          <Box
-            sx={{
-              height: "100%",
-              p: "15px",
-              backgroundColor: theme?.palette.layer.default,
-              border:
-                theme.palette.mode === "dark"
-                  ? ""
-                  : "1px solid rgba(0, 0, 0, 0.23);",
-              borderRadius: "4px",
-            }}
-          >
-            {analytics?.revenueByMonth?.length > 0 ? (
-              <BarGraph xAxisLabel="Month" yAxisLabel="Revenue ($)" />
-            ) : (
-              <Spinner />
-            )}
-          </Box>
-        </Grid>
+
         <Grid
           item
           xs={12}
@@ -141,16 +131,60 @@ function YouTubeAnalytics() {
             )}
           </Box>
         </Grid>
+        <Grid
+          item
+          xs={12}
+          sm={12}
+          md={12}
+          lg={12}
+          xl={6}
+          sx={{ height: "50vh", p: 0, m: 0 }}
+        >
+          <Box
+            sx={{
+              height: "100%",
+              p: "15px",
+              backgroundColor: theme?.palette.layer.default,
+              border:
+                theme.palette.mode === "dark"
+                  ? ""
+                  : "1px solid rgba(0, 0, 0, 0.23);",
+              borderRadius: "4px",
+            }}
+          >
+            {analytics?.revenueByMonth?.length > 0 ? (
+              <BarGraph
+                data={analytics?.revenueByMonth}
+                xAxisLabel="Month"
+                yAxisLabel="Revenue ($)"
+              />
+            ) : (
+              <Spinner />
+            )}
+          </Box>
+        </Grid>
         <Grid item xs={12} sm={6} lg={6}>
           <DashboardCard
-            title={analytics?.viewCount?.toLocaleString("en-US")}
+            title={
+              loading && !analytics?.viewCount ? (
+                <Skeleton width="35%" />
+              ) : (
+                analytics?.viewCount?.toLocaleString("en-US")
+              )
+            }
             subtitle="Total Views"
             icon={<YouTubeIcon />}
           />
         </Grid>
         <Grid item xs={12} sm={6} lg={6}>
           <DashboardCard
-            title={analytics?.subscriberCount?.toLocaleString("en-US")}
+            title={
+              loading && !analytics?.subscriberCount ? (
+                <Skeleton width="35%" />
+              ) : (
+                analytics?.subscriberCount?.toLocaleString("en-US")
+              )
+            }
             subtitle="Total Subscribers"
             icon={<GroupIcon />}
           />

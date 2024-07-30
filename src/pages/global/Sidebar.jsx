@@ -8,7 +8,6 @@ import {
   Typography,
   useTheme,
   useMediaQuery,
-  Link,
 } from "@mui/material";
 import Home from "@mui/icons-material/Home";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
@@ -29,6 +28,7 @@ function Sidebar() {
   const theme = useTheme();
   const colors = colorTokens(theme.palette.mode);
   const dispatch = useDispatch();
+  const user = useSelector((state) => state.user);
   const collapsed = useSelector((state) => state.user?.collapsed);
   const [selected, setSelected] = useState("Home");
   const isSmall = useMediaQuery((theme) => theme.breakpoints.down("sm"));
@@ -124,94 +124,98 @@ function Sidebar() {
           >
             <Item
               title="Home"
-              to="/"
+              to="/home"
               icon={<Home />}
               selected={selected}
               setSelected={setSelected}
             />
-            <Typography
-              variant="h6"
-              sx={{
-                m: collapsed ? "" : "15px 0 5px 20px",
-              }}
-              align={collapsed ? "center" : "inherit"}
-            >
-              YouTube
-            </Typography>
-            <Item
-              title="Upload"
-              to="/upload-video"
-              icon={<VideoCallOutlinedIcon />}
-              selected={selected}
-              setSelected={setSelected}
-            />
-            <Item
-              title="Analytics"
-              to="/youtube-analytics"
-              icon={<TrendingUpOutlinedIcon />}
-              selected={selected}
-              setSelected={setSelected}
-            />
-            <Typography
-              variant="h6"
-              sx={{
-                m: collapsed ? "" : "15px 0 5px 20px",
-              }}
-              align={collapsed ? "center" : "inherit"}
-            >
-              Spotify
-            </Typography>
-            <Item
-              title="Add"
-              to="/add-song"
-              icon={<PlaylistAddOutlinedIcon />}
-              selected={selected}
-              setSelected={setSelected}
-            />
-            <Item
-              title="Manage"
-              to="/manage-playlist"
-              icon={<LibraryMusicOutlinedIcon />}
-              selected={selected}
-              setSelected={setSelected}
-            />
-            <Item
-              title="History"
-              to="/spotify-history"
-              icon={<ListOutlinedIcon />}
-              selected={selected}
-              setSelected={setSelected}
-            />
-            <Item
-              title="Monetization"
-              to="/monetization-tool"
-              icon={<MonetizationOnOutlinedIcon />}
-              selected={selected}
-              setSelected={setSelected}
-            />
-            <Item
-              title="Analytics"
-              to="/spotify-analytics"
-              icon={<TrendingUpOutlinedIcon />}
-              selected={selected}
-              setSelected={setSelected}
-            />
-            <Typography
-              variant="h6"
-              sx={{
-                m: collapsed ? "" : "15px 0 5px 20px",
-              }}
-              align={collapsed ? "center" : "inherit"}
-            >
-              General
-            </Typography>
-            <Item
-              title="Meetings"
-              to="/meetings"
-              icon={<GroupsOutlinedIcon />}
-              selected={selected}
-              setSelected={setSelected}
-            />
+            {user?.idToken && (
+              <>
+                <Typography
+                  variant="h6"
+                  sx={{
+                    m: collapsed ? "" : "15px 0 5px 20px",
+                  }}
+                  align={collapsed ? "center" : "inherit"}
+                >
+                  YouTube
+                </Typography>
+                <Item
+                  title="Upload"
+                  to="/upload-video"
+                  icon={<VideoCallOutlinedIcon />}
+                  selected={selected}
+                  setSelected={setSelected}
+                />
+                <Item
+                  title="Analytics"
+                  to="/youtube-analytics"
+                  icon={<TrendingUpOutlinedIcon />}
+                  selected={selected}
+                  setSelected={setSelected}
+                />
+                <Typography
+                  variant="h6"
+                  sx={{
+                    m: collapsed ? "" : "15px 0 5px 20px",
+                  }}
+                  align={collapsed ? "center" : "inherit"}
+                >
+                  Spotify
+                </Typography>
+                <Item
+                  title="Add"
+                  to="/add-song"
+                  icon={<PlaylistAddOutlinedIcon />}
+                  selected={selected}
+                  setSelected={setSelected}
+                />
+                <Item
+                  title="Manage"
+                  to="/manage-playlist"
+                  icon={<LibraryMusicOutlinedIcon />}
+                  selected={selected}
+                  setSelected={setSelected}
+                />
+                <Item
+                  title="History"
+                  to="/spotify-history"
+                  icon={<ListOutlinedIcon />}
+                  selected={selected}
+                  setSelected={setSelected}
+                />
+                <Item
+                  title="Monetization"
+                  to="/monetization-tool"
+                  icon={<MonetizationOnOutlinedIcon />}
+                  selected={selected}
+                  setSelected={setSelected}
+                />
+                <Item
+                  title="Analytics"
+                  to="/spotify-analytics"
+                  icon={<TrendingUpOutlinedIcon />}
+                  selected={selected}
+                  setSelected={setSelected}
+                />
+                <Typography
+                  variant="h6"
+                  sx={{
+                    m: collapsed ? "" : "15px 0 5px 20px",
+                  }}
+                  align={collapsed ? "center" : "inherit"}
+                >
+                  General
+                </Typography>
+                <Item
+                  title="Meetings"
+                  to="/meetings"
+                  icon={<GroupsOutlinedIcon />}
+                  selected={selected}
+                  setSelected={setSelected}
+                />
+              </>
+            )}
           </Box>
         </Menu>
       </ProSidebar>

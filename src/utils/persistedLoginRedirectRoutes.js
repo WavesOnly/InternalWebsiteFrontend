@@ -1,0 +1,4 @@
+export const persistedLoginRedirectRoutes = [
+    '/',
+    '/login'
+]

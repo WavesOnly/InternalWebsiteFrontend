@@ -51,6 +51,9 @@ function AlertUser({ alert }) {
       <Alert
         severity={messageInfo ? messageInfo.severity : undefined}
         onClose={handleClose}
+        sx={{
+          width: collapsed ? "450px" : "225px",
+        }}
       >
         {messageInfo ? messageInfo.alert : undefined}
       </Alert>

@@ -7,7 +7,6 @@ import {
   Typography,
   Modal,
   IconButton,
-  CircularProgress,
   FormControlLabel,
   Checkbox,
   Grid,
@@ -16,28 +15,36 @@ import {
   Button,
   useMediaQuery,
   Link,
-  FormControl,
   Switch,
+  Skeleton,
 } from "@mui/material";
 import ReactPlayer from "react-player";
 import AddCommentIcon from "@mui/icons-material/AddComment";
 import CloseIcon from "@mui/icons-material/Close";
 import VideoCallIcon from "@mui/icons-material/VideoCall";
-import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 
-import Header from "../../../components/Header";
 import PageInfo from "../../../components/PageInfo";
-import { getPlaylists } from "../../../slices/youtube/youtubeSlice";
+import {
+  getPlaylists,
+  uploadVideo,
+} from "../../../slices/youtube/youtubeSlice";
+import { setAlert } from "../../../slices/user/userSlice";
+import Spinner from "../../../components/Spinner";
+import { LoadingButton } from "@mui/lab";
 
 function Upload() {
   const theme = useTheme();
   const dispatch = useDispatch();
   const playlists = useSelector((state) => state.youtube.playlists);
+  const loading = useSelector((state) => state.youtube.loading);
   const [newUpload, setNewUpload] = useState({
     file: "",
     throwbackThursday: false,
     playlists: [],
     comment: "",
+  });
+  const [formValidation, setFormValidation] = useState({
+    file: false,
   });
   const [isDragActive, setIsDragActive] = useState(false);
   const [selectedFile, setSelectedFile] = useState(null);
@@ -50,13 +57,13 @@ function Upload() {
   const isLarge = useMediaQuery((theme) => theme.breakpoints.down("lg"));
 
   const handleFileSelect = (file) => {
-    cleanupPreviousVideo();
     const videoURL = URL.createObjectURL(file);
+    cleanupPreviousVideo();
     setSelectedFile(videoURL);
     setNewUpload((prevState) => {
       return {
         ...prevState,
-        file: videoURL,
+        file: file,
       };
     });
     generateThumbnail(videoURL);
@@ -164,9 +171,45 @@ function Upload() {
     }
   };
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!newUpload.file) {
+      setFormValidation({ file: true });
+      return;
+    }
+
+    try {
+      const result = await dispatch(uploadVideo(newUpload)).unwrap();
+      setThumbnail(null);
+      setSelectedFile(null);
+      setNewUpload({
+        file: "",
+        throwbackThursday: false,
+        playlists: [],
+        comment: "",
+      });
+      dispatch(setAlert({ alert: result.message, severity: "success" }));
+    } catch (err) {
+      dispatch(
+        setAlert({
+          alert: `Upload failed: ${err.message || "Unknown error"}`,
+          severity: "error",
+        })
+      );
+    }
+  };
+
   useEffect(() => {
-    dispatch(getPlaylists());
+    !playlists.length && dispatch(getPlaylists());
   }, []);
+
+  useEffect(() => {
+    setFormValidation((prevState) => ({
+      ...prevState,
+      file: newUpload.file ? false : prevState.file,
+    }));
+  }, [newUpload]);
 
   return (
     <Box mt="0px" ml="20px" mr="20px" mb="20px">
@@ -206,10 +249,11 @@ function Upload() {
                 display: "flex",
                 aspectRatio: "16 / 9",
                 width: isLarge ? "80%" : "45%",
-                border:
-                  theme.palette.mode === "dark"
-                    ? "2px dashed #2d2d2d"
-                    : "2px dashed #ccc",
+                border: formValidation.file
+                  ? "2px dashed #f44336"
+                  : theme.palette.mode === "dark"
+                  ? "2px dashed #2d2d2d"
+                  : "2px dashed #ccc",
                 boxSizing: "border-box",
                 "&:hover": {
                   cursor: "pointer",
@@ -244,6 +288,7 @@ function Upload() {
                 onChange={(event) => {
                   handleFileSelect(event.target.files[0]);
                 }}
+                disabled={loading && !playlists.length}
               />
               {selectedFile ? (
                 <>
@@ -256,6 +301,7 @@ function Upload() {
                         right: "10px",
                         zIndex: 1,
                       }}
+                      disabled={loading && playlists.length > 0 ? true : false}
                       onClick={handleRemoveFile}
                     >
                       <CloseIcon />
@@ -272,15 +318,7 @@ function Upload() {
                     }}
                   >
                     {isThumbnailLoading ? (
-                      <CircularProgress
-                        size={40}
-                        sx={{
-                          position: "absolute",
-                          top: "50%",
-                          left: "50%",
-                          transform: "translate(-50%, -50%)",
-                        }}
-                      />
+                      <Spinner />
                     ) : (
                       <img
                         src={thumbnail}
@@ -298,7 +336,9 @@ function Upload() {
                 </>
               ) : (
                 <Typography variant="h4">
-                  {isDragActive
+                  {formValidation?.file
+                    ? "Please upload a video"
+                    : isDragActive
                     ? "Drop video here"
                     : "Click or drag a video to upload"}
                 </Typography>
@@ -306,7 +346,13 @@ function Upload() {
             </Box>
           )}
         </Dropzone>
-        <Box display="flex" flexDirection="column" alignItems="center" mt={2}>
+        <Box
+          display="flex"
+          flexDirection="column"
+          alignItems="center"
+          mt={2}
+          width="100%"
+        >
           <FormControlLabel
             control={
               <Switch
@@ -314,35 +360,58 @@ function Upload() {
                 checked={newUpload?.throwbackThursday}
                 onChange={handleChange}
                 color="secondary"
+                disabled={loading && !playlists.length ? true : false}
               />
             }
             label="Throwback Thursday"
           />
           <Grid container spacing={1}>
-            {playlists.map((playlist) => (
-              <Grid
-                item
-                justifyContent="center"
-                lg={4}
-                md={6}
-                sm={6}
-                xs={12}
-                key={playlist?.id}
-              >
-                <FormControlLabel
-                  control={
-                    <Checkbox
-                      checked={newUpload?.playlists.includes(playlist?.id)}
-                      name={playlist?.id}
-                      onChange={handleChange}
-                      color="secondary"
+            {loading && !playlists.length
+              ? Array.from(new Array(14)).map((_, index) => (
+                  <Grid
+                    item
+                    justifyContent="center"
+                    lg={4}
+                    md={6}
+                    sm={6}
+                    xs={12}
+                    key={index}
+                  >
+                    <Skeleton
+                      variant="rectangular"
+                      width="100%"
+                      height="38.57px"
+                      animation="wave"
                     />
-                  }
-                  sx={{ m: "auto" }}
-                  label={playlist?.name}
-                />
-              </Grid>
-            ))}
+                  </Grid>
+                ))
+              : playlists.map((playlist) => (
+                  <Grid
+                    item
+                    justifyContent="center"
+                    alignItems="center"
+                    lg={4}
+                    md={6}
+                    sm={6}
+                    xs={12}
+                    key={playlist?.id}
+                  >
+                    <FormControlLabel
+                      control={
+                        <Checkbox
+                          checked={newUpload?.playlists.includes(playlist?.id)}
+                          name={playlist?.id}
+                          onChange={handleChange}
+                          color="secondary"
+                          disabled={
+                            loading && playlists.length > 0 ? true : false
+                          }
+                        />
+                      }
+                      label={playlist?.name}
+                    />
+                  </Grid>
+                ))}
           </Grid>
           <TextField
             name="comment"
@@ -353,6 +422,7 @@ function Upload() {
             margin="normal"
             size="small"
             color="secondary"
+            value={newUpload.comment}
             InputProps={{
               startAdornment: (
                 <InputAdornment position="start">
@@ -360,16 +430,20 @@ function Upload() {
                 </InputAdornment>
               ),
             }}
+            disabled={loading && !playlists.length ? true : false}
           />
-          <Button
+          <LoadingButton
             variant="contained"
             disableElevation
             color="secondary"
+            onClick={handleSubmit}
             startIcon={<VideoCallIcon />}
             sx={{ mt: 1, width: isLarge ? "80%" : "45%" }}
+            loading={loading && newUpload.file ? true : false}
+            disabled={loading && !playlists.length ? true : false}
           >
             Upload Video
-          </Button>
+          </LoadingButton>
         </Box>
       </Box>
       <Modal

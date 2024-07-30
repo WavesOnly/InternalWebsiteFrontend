@@ -18,7 +18,7 @@ import {
   getPlaylistFollowerHistory,
   setPlaylistFollowerHistoryId,
 } from "../../slices/spotify/spotifySlice";
-import { getAnalytics } from "../../slices/youtube/youtubeSlice";
+import { getSubscribersByDay } from "../../slices/youtube/youtubeSlice";
 import LineGraph from "../../components/LineGraph";
 import PageInfo from "../../components/PageInfo";
 import DashboardCard from "../../components/DashboardCard";
@@ -28,6 +28,8 @@ function Home() {
   const theme = useTheme();
   const dispatch = useDispatch();
   const playlists = useSelector((state) => state.spotify?.playlists);
+  const loadingSpotify = useSelector((state) => state.spotify.loading);
+  const loadingYouTube = useSelector((state) => state.youtube.loading);
   const playlistFollowerHistoryId = useSelector(
     (state) => state.spotify?.playlistFollowerHistoryId
   );
@@ -36,22 +38,14 @@ function Home() {
   );
   const analytics = useSelector((state) => state.youtube?.analytics);
 
-  useEffect(() => {
-    dispatch(getAnalytics());
-  }, []);
-
   const handleSelectChange = (event) => {
     const playlistId = event.target.value;
     dispatch(setPlaylistFollowerHistoryId(playlistId));
-    console.log(playlistId);
   };
 
   useEffect(() => {
-    dispatch(getPlaylists());
-  }, []);
-
-  useEffect(() => {
-    dispatch(getPlaylistFollowerHistory({ playlistId: null }));
+    !playlists.length && dispatch(getPlaylists());
+    dispatch(getSubscribersByDay());
   }, []);
 
   useEffect(() => {
@@ -117,6 +111,7 @@ function Home() {
                   borderColor: theme.palette.secondary.main,
                 },
               }}
+              disabled={loadingSpotify && !playlists.length}
             >
               <MenuItem value="">All Playlists</MenuItem>
               {playlists.map((playlist) => (
@@ -155,14 +150,14 @@ function Home() {
               borderRadius: "4px",
             }}
           >
-            {followerData.length > 0 ? (
+            {loadingSpotify ? (
+              <Spinner />
+            ) : (
               <LineGraph
                 data={followerData}
                 xAxisLabel="Followers"
                 yAxisLabel="Date"
               />
-            ) : (
-              <Spinner />
             )}
           </Box>
         </Grid>
@@ -187,14 +182,14 @@ function Home() {
               borderRadius: "4px",
             }}
           >
-            {analytics?.subscribersByDay?.length > 0 ? (
+            {loadingYouTube ? (
+              <Spinner />
+            ) : (
               <LineGraph
                 data={analytics?.subscribersByDay}
                 xAxisLabel="Subscribers"
                 yAxisLabel="Date"
               />
-            ) : (
-              <Spinner />
             )}
           </Box>
         </Grid>

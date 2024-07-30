@@ -10,6 +10,7 @@ import {
   Link,
   Select,
   MenuItem,
+  Skeleton,
 } from "@mui/material";
 import GroupIcon from "@mui/icons-material/Group";
 import QueueMusicIcon from "@mui/icons-material/QueueMusic";
@@ -32,13 +33,13 @@ function SpotifyAnalytics() {
   const dispatch = useDispatch();
   const analytics = useSelector((state) => state.spotify?.analytics);
   const playlists = useSelector((state) => state.spotify?.playlists);
+  const loading = useSelector((state) => state.spotify.loading);
   const playlistFollowerHistoryId = useSelector(
     (state) => state.spotify?.playlistFollowerHistoryId
   );
   const followerData = useSelector(
     (state) => state.spotify.playlistFollowerHistory
   );
-  const loading = useSelector((state) => state.spotify.loading);
 
   const handleSelectChange = (event) => {
     const playlistId = event.target.value;
@@ -46,14 +47,7 @@ function SpotifyAnalytics() {
   };
 
   useEffect(() => {
-    dispatch(getPlaylists());
-  }, []);
-
-  useEffect(() => {
-    dispatch(getPlaylistFollowerHistory({ playlistId: null }));
-  }, []);
-
-  useEffect(() => {
+    !playlists.length && dispatch(getPlaylists());
     dispatch(getAnalytics());
   }, []);
 
@@ -84,7 +78,11 @@ function SpotifyAnalytics() {
         <Grid item xs={12} sm={6} lg={3}>
           <DashboardCard
             title={
-              !loading && analytics?.playlistFollowers?.toLocaleString("en-US")
+              loading && !analytics?.playlistFollowers ? (
+                <Skeleton width="35%" />
+              ) : (
+                analytics?.playlistFollowers?.toLocaleString("en-US")
+              )
             }
             subtitle="Total Playlist Followers"
             icon={<QueueMusicIcon />}
@@ -93,7 +91,11 @@ function SpotifyAnalytics() {
         <Grid item xs={12} sm={6} lg={3}>
           <DashboardCard
             title={
-              !loading && analytics?.accountFollowers?.toLocaleString("en-US")
+              loading && !analytics?.accountFollowers ? (
+                <Skeleton width="35%" />
+              ) : (
+                analytics?.accountFollowers?.toLocaleString("en-US")
+              )
             }
             subtitle="Total Account Followers"
             icon={<GroupIcon />}
@@ -102,9 +104,12 @@ function SpotifyAnalytics() {
         <Grid item xs={12} sm={6} lg={3}>
           <DashboardCard
             title={
-              !loading &&
-              analytics?.playlistFollowersPrevious28Days?.toLocaleString(
-                "en-US"
+              loading && !analytics?.playlistFollowersPrevious28Days ? (
+                <Skeleton width="35%" />
+              ) : (
+                analytics?.playlistFollowersPrevious28Days?.toLocaleString(
+                  "en-US"
+                )
               )
             }
             subtitle="New Playlist Followers (28 days)"
@@ -114,8 +119,13 @@ function SpotifyAnalytics() {
         <Grid item xs={12} sm={6} lg={3}>
           <DashboardCard
             title={
-              !loading &&
-              analytics?.accountFollowersPrevious28Days?.toLocaleString("en-US")
+              loading && !analytics?.accountFollowersPrevious28Days ? (
+                <Skeleton width="35%" />
+              ) : (
+                analytics?.accountFollowersPrevious28Days?.toLocaleString(
+                  "en-US"
+                )
+              )
             }
             subtitle="New Account Followers (28 days)"
             icon={<PersonAddIcon />}
@@ -144,6 +154,7 @@ function SpotifyAnalytics() {
                   borderColor: theme.palette.secondary.main,
                 },
               }}
+              disabled={loading && !playlists.length}
             >
               <MenuItem value="">All Playlists</MenuItem>
               {playlists.map((playlist) => (
@@ -168,14 +179,14 @@ function SpotifyAnalytics() {
               borderRadius: "4px",
             }}
           >
-            {!loading ? (
+            {loading ? (
+              <Spinner />
+            ) : (
               <LineGraph
                 data={followerData}
                 xAxisLabel="Followers"
                 yAxisLabel="Date"
               />
-            ) : (
-              <Spinner />
             )}
           </Box>
         </Grid>

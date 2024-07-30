@@ -11,11 +11,11 @@ import {
   Box,
   InputLabel,
   FormControl,
-  Button,
   Link,
   Select,
   MenuItem,
   Checkbox,
+  Skeleton,
 } from "@mui/material";
 import { DragDropContext, Draggable, Droppable } from "@hello-pangea/dnd";
 import DragIndicatorIcon from "@mui/icons-material/DragIndicator";
@@ -24,14 +24,15 @@ import {
   getPlaylists,
   getPlaylistItems,
   setPlaylistManageId,
-  setPlaylistItems,
   updatePlaylistItems,
   deletePlaylistItems,
+  setPlaylistItems,
 } from "../../../slices/spotify/spotifySlice";
 import CheckIcon from "@mui/icons-material/Check";
 import CloseIcon from "@mui/icons-material/Close";
 import PageInfo from "../../../components/PageInfo";
 import { setAlert } from "../../../slices/user/userSlice";
+import { LoadingButton } from "@mui/lab";
 
 function ManagePlaylist() {
   const dispatch = useDispatch();
@@ -39,11 +40,11 @@ function ManagePlaylist() {
   const isMedium = useMediaQuery((theme) => theme.breakpoints.down("md"));
   const [selectedItems, setSelectedItems] = useState([]);
   const playlists = useSelector((state) => state.spotify?.playlists);
+  const loading = useSelector((state) => state.spotify.loading);
   const playlistItems = useSelector((state) => state.spotify.playlistItems);
   const playlistManageId = useSelector(
     (state) => state.spotify?.playlistManageId
   );
-  const alert = useSelector((state) => state.user?.alert);
   const colorStyle = `${
     theme.palette.mode === "dark"
       ? theme.palette.secondary.main
@@ -56,19 +57,36 @@ function ManagePlaylist() {
 
   const handleSelectChange = (event) => {
     const playlistId = event.target.value;
+    dispatch(setPlaylistItems([]));
     dispatch(setPlaylistManageId(playlistId));
   };
 
-  const handleDragEnd = (e) => {
+  const handleDragEnd = async (e) => {
     if (!e.destination) return;
     let playlistItemsCopy = Array.from(playlistItems);
     let [data] = playlistItemsCopy.splice(e.source.index, 1);
     playlistItemsCopy.splice(e.destination.index, 0, data);
-    dispatch(setPlaylistItems(playlistItemsCopy));
-    // dispatch(updatePlaylistItems(playlistItemsCopy))
-    // .then(() => dispatch(getPlaylistItems({ playlistId: playlistManageId })))
-    // .then(() => dispatch(setAlert("Playlist updated")));
-    dispatch(setAlert({ alert: "Playlist updated", severity: "success" }));
+    const songIds = playlistItemsCopy.map(({ id }) => id);
+    try {
+      dispatch(setPlaylistItems(playlistItemsCopy));
+      const result = await dispatch(
+        updatePlaylistItems({
+          playlistId: playlistManageId,
+          songIds: songIds,
+        })
+      ).unwrap();
+
+      dispatch(setAlert({ alert: result.message, severity: "success" }));
+    } catch (err) {
+      dispatch(
+        setAlert({
+          alert: `Add failed: ${err.message || "Unknown error"}`,
+          severity: "error",
+        })
+      );
+    } finally {
+      dispatch(getPlaylistItems({ playlistId: playlistManageId }));
+    }
   };
 
   const handleCheckboxClick = (e, songId) => {
@@ -79,28 +97,43 @@ function ManagePlaylist() {
         : prevState.filter((id) => id !== songId);
       return updatedSelectIems;
     });
+    console.log(selectedItems);
   };
 
-  const handleRemoveSongs = () => {
-    dispatch(deletePlaylistItems(playlistManageId, selectedItems))
-      .then(() => dispatch(getPlaylistItems({ playlistId: playlistManageId })))
-      .then(() => {
-        const countSongsDeleted = selectedItems?.length;
-        const alertText =
-          countSongsDeleted > 1
-            ? `${countSongsDeleted} songs deleted`
-            : `${countSongsDeleted} song deleted`;
-        dispatch(setAlert({ alert: alertText, severity: "info" }));
-      })
-      .then(() => setSelectedItems([]));
+  const handleRemoveSongs = async () => {
+    try {
+      await dispatch(
+        deletePlaylistItems({
+          playlistId: playlistManageId,
+          songIds: selectedItems,
+        })
+      ).unwrap();
+      const countSongsDeleted = selectedItems?.length;
+      const alertText =
+        countSongsDeleted > 1
+          ? `${countSongsDeleted} songs deleted`
+          : `${countSongsDeleted} song deleted`;
+      dispatch(setAlert({ alert: alertText, severity: "info" }));
+    } catch (err) {
+      dispatch(
+        setAlert({
+          alert: `Add failed: ${err.message || "Unknown error"}`,
+          severity: "error",
+        })
+      );
+    } finally {
+      dispatch(getPlaylistItems({ playlistId: playlistManageId }));
+      setSelectedItems([]);
+    }
   };
 
   useEffect(() => {
-    dispatch(getPlaylists());
+    !playlists.length && dispatch(getPlaylists());
   }, []);
 
   useEffect(() => {
-    dispatch(getPlaylistItems({ playlistId: playlistManageId }));
+    playlistManageId &&
+      dispatch(getPlaylistItems({ playlistId: playlistManageId }));
   }, [playlistManageId]);
 
   return (
@@ -156,6 +189,7 @@ function ManagePlaylist() {
                 borderColor: theme.palette.secondary.main,
               },
             }}
+            disabled={loading && !playlists.length}
           >
             {playlists.map((playlist) => (
               <MenuItem key={playlist?.id} value={playlist?.id}>
@@ -164,7 +198,7 @@ function ManagePlaylist() {
             ))}
           </Select>
         </FormControl>
-        <Button
+        <LoadingButton
           variant="contained"
           disableElevation
           color="secondary"
@@ -176,141 +210,270 @@ function ManagePlaylist() {
             mt: isMedium ? "10px" : "0px",
           }}
           size="medium"
+          loading={
+            loading && playlistItems.length > 0 && selectedItems.length > 0
+          }
         >
           Remove Songs
-        </Button>
+        </LoadingButton>
       </Box>
-
       <DragDropContext onDragEnd={handleDragEnd}>
         <Table
           size="small"
           sx={{
             minWidth: 650,
+
             backgroundColor: theme.palette.layer.default,
           }}
         >
           <TableHead>
             <TableRow>
               <TableCell></TableCell>
-              <TableCell align="center">Position</TableCell>
-              <TableCell align="center">Song</TableCell>
-              <TableCell align="center">Artist(s)</TableCell>
-              <TableCell align="center">Date Added</TableCell>
-              <TableCell align="center">Added By Curation</TableCell>
-              <TableCell align="center">Select</TableCell>
+              <TableCell align="center" sx={{ fontSize: ".8rem" }}>
+                Position
+              </TableCell>
+              <TableCell align="center" sx={{ fontSize: ".8rem" }}>
+                Song
+              </TableCell>
+              <TableCell align="center" sx={{ fontSize: ".8rem" }}>
+                Artist(s)
+              </TableCell>
+              <TableCell align="center" sx={{ fontSize: ".8rem" }}>
+                Date Added
+              </TableCell>
+              <TableCell align="center" sx={{ fontSize: ".8rem" }}>
+                Promotion
+              </TableCell>
+              <TableCell align="center" sx={{ fontSize: ".8rem" }}>
+                Select
+              </TableCell>
             </TableRow>
           </TableHead>
-          {playlistManageId && (
-            <Droppable droppableId="droppable">
-              {(provider) => (
-                <TableBody ref={provider.innerRef} {...provider.droppableProps}>
-                  {playlistItems &&
-                    playlistItems.map((row, index) => (
+
+          <Droppable droppableId="droppable">
+            {(provider) => (
+              <TableBody ref={provider.innerRef} {...provider.droppableProps}>
+                {loading && !playlistItems.length
+                  ? Array.from(new Array(50)).map((_, index) => (
+                      <TableRow key={index}>
+                        <TableCell sx={{ height: "45px" }}>
+                          <Skeleton
+                            variant="rectangular"
+                            width={24}
+                            height={24}
+                          />
+                        </TableCell>
+                        <TableCell align="center">
+                          <Skeleton variant="text" />
+                        </TableCell>
+                        <TableCell>
+                          <Skeleton variant="text" />
+                        </TableCell>
+                        <TableCell>
+                          <Skeleton variant="text" />
+                        </TableCell>
+                        <TableCell align="center">
+                          <Skeleton variant="text" />
+                        </TableCell>
+                        <TableCell align="center">
+                          <Box
+                            sx={{
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                            }}
+                          >
+                            <Skeleton variant="square" width={24} height={24} />
+                          </Box>
+                        </TableCell>
+                        <TableCell>
+                          <Box
+                            sx={{
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                            }}
+                          >
+                            <Skeleton variant="square" width={24} height={24} />
+                          </Box>
+                        </TableCell>
+                      </TableRow>
+                    ))
+                  : playlistItems.map((row, index) => (
                       <Draggable
-                        key={row.name}
+                        key={`${row.name}-${index}`}
                         draggableId={row.name}
                         index={index}
                       >
-                        {(provider) => (
-                          <TableRow
-                            hover
-                            key={row.name}
-                            sx={{
-                              "&:last-child td, &:last-child th": { border: 0 },
-                              "&:hover": {
-                                backgroundColor: colorStyle,
-                              },
-                            }}
-                            {...provider.draggableProps}
-                            ref={provider.innerRef}
-                          >
-                            <TableCell
-                              component="th"
-                              scope="row"
-                              {...provider.dragHandleProps}
-                            >
-                              <DragIndicatorIcon />
-                            </TableCell>
-                            <TableCell align="center" color="inherit">
-                              {index + 1}
-                            </TableCell>
-                            <TableCell>
-                              <Link
-                                href={`https://open.spotify.com/track/${row?.id}`}
-                                target="_blank"
-                                color="inherit"
-                              >
-                                {row?.name}
-                              </Link>
-                            </TableCell>
-                            <TableCell>
-                              {row?.artists.map((artist, i) => {
-                                return (
-                                  <Link
-                                    key={artist?.id}
-                                    href={`https://open.spotify.com/artist/${artist?.id}`}
-                                    target="_blank"
-                                    color="inherit"
-                                  >
-                                    {i === row?.artists?.length - 1
-                                      ? artist.name
-                                      : `${artist?.name}, `}
-                                  </Link>
-                                );
-                              })}
-                            </TableCell>
-                            <TableCell align="center">
-                              {new Date(row?.dateAdded).toLocaleString(
-                                "en-US",
-                                {
-                                  year: "numeric",
-                                  month: "long",
-                                  day: "numeric",
-                                }
-                              )}
-                            </TableCell>
-                            <TableCell align="center">
-                              {row?.addedByCuration ? (
-                                <CheckIcon />
-                              ) : (
-                                <CloseIcon />
-                              )}
-                            </TableCell>
-                            <TableCell padding="checkbox" align="center">
-                              <Box
-                                sx={{
-                                  "& .MuiCheckbox-root": {
-                                    "& .MuiSvgIcon-root": {
-                                      color:
-                                        theme.palette.mode === "dark"
-                                          ? "white"
-                                          : theme.palette.secondary.main, // Default border color
-                                    },
-                                  },
-                                }}
-                              >
-                                <Checkbox
-                                  // color={checkBoxColor}
-                                  sx={{
-                                    color: checkBoxColor,
-                                  }}
-                                  checked={selectedItems.includes(row?.id)}
-                                  onClick={(event) =>
-                                    handleCheckboxClick(event, row.id)
-                                  }
+                        {(provider) =>
+                          loading &&
+                          playlistItems.length > 0 &&
+                          selectedItems.includes(row.id) ? (
+                            <TableRow key={index}>
+                              <TableCell sx={{ height: "45px" }}>
+                                <Skeleton
+                                  variant="rectangular"
+                                  width={24}
+                                  height={24}
                                 />
-                              </Box>
-                            </TableCell>
-                          </TableRow>
-                        )}
+                              </TableCell>
+                              <TableCell align="center">
+                                <Skeleton variant="text" />
+                              </TableCell>
+                              <TableCell>
+                                <Skeleton variant="text" />
+                              </TableCell>
+                              <TableCell>
+                                <Skeleton variant="text" />
+                              </TableCell>
+                              <TableCell align="center">
+                                <Skeleton variant="text" />
+                              </TableCell>
+                              <TableCell align="center">
+                                <Box
+                                  sx={{
+                                    display: "flex",
+                                    alignItems: "center",
+                                    justifyContent: "center",
+                                  }}
+                                >
+                                  <Skeleton
+                                    variant="square"
+                                    width={24}
+                                    height={24}
+                                  />
+                                </Box>
+                              </TableCell>
+                              <TableCell>
+                                <Box
+                                  sx={{
+                                    display: "flex",
+                                    alignItems: "center",
+                                    justifyContent: "center",
+                                  }}
+                                >
+                                  <Skeleton
+                                    variant="square"
+                                    width={24}
+                                    height={24}
+                                  />
+                                </Box>
+                              </TableCell>
+                            </TableRow>
+                          ) : (
+                            <TableRow
+                              hover
+                              sx={{
+                                "&:last-child td, &:last-child th": {
+                                  border: 0,
+                                },
+                                "&:hover": {
+                                  backgroundColor: colorStyle,
+                                },
+                              }}
+                              {...provider.draggableProps}
+                              ref={provider.innerRef}
+                            >
+                              <TableCell
+                                component="th"
+                                scope="row"
+                                {...provider.dragHandleProps}
+                                sx={{ fontSize: ".8rem" }}
+                              >
+                                <DragIndicatorIcon />
+                              </TableCell>
+                              <TableCell
+                                align="center"
+                                color="inherit"
+                                sx={{ fontSize: ".8rem" }}
+                              >
+                                {index + 1}
+                              </TableCell>
+                              <TableCell sx={{ fontSize: ".8rem" }}>
+                                <Link
+                                  href={`https://open.spotify.com/track/${row?.id}`}
+                                  target="_blank"
+                                  color="inherit"
+                                >
+                                  {row?.name}
+                                </Link>
+                              </TableCell>
+                              <TableCell sx={{ fontSize: ".8rem" }}>
+                                {row?.artists.map((artist, i) => {
+                                  return (
+                                    <Link
+                                      key={artist?.id}
+                                      href={`https://open.spotify.com/artist/${artist?.id}`}
+                                      target="_blank"
+                                      color="inherit"
+                                    >
+                                      {i === row?.artists?.length - 1
+                                        ? artist.name
+                                        : `${artist?.name}, `}
+                                    </Link>
+                                  );
+                                })}
+                              </TableCell>
+                              <TableCell
+                                align="center"
+                                sx={{ fontSize: ".8rem" }}
+                              >
+                                {new Date(row?.dateAdded).toLocaleString(
+                                  "en-US",
+                                  {
+                                    year: "numeric",
+                                    month: "long",
+                                    day: "numeric",
+                                  }
+                                )}
+                              </TableCell>
+                              <TableCell
+                                align="center"
+                                sx={{ fontSize: ".8rem" }}
+                              >
+                                {row?.addedForPromotion ? (
+                                  <CheckIcon />
+                                ) : (
+                                  <CloseIcon />
+                                )}
+                              </TableCell>
+                              <TableCell
+                                padding="checkbox"
+                                align="center"
+                                sx={{ fontSize: ".8rem" }}
+                              >
+                                <Box
+                                  sx={{
+                                    "& .MuiCheckbox-root": {
+                                      "& .MuiSvgIcon-root": {
+                                        color:
+                                          theme.palette.mode === "dark"
+                                            ? "white"
+                                            : theme.palette.secondary.main,
+                                      },
+                                    },
+                                  }}
+                                >
+                                  <Checkbox
+                                    sx={{
+                                      color: checkBoxColor,
+                                    }}
+                                    checked={selectedItems.includes(row?.id)}
+                                    onClick={(event) =>
+                                      handleCheckboxClick(event, row.id)
+                                    }
+                                  />
+                                </Box>
+                              </TableCell>
+                            </TableRow>
+                          )
+                        }
                       </Draggable>
                     ))}
-
-                  {provider.placeholder}
-                </TableBody>
-              )}
-            </Droppable>
-          )}
+                {provider.placeholder}
+              </TableBody>
+            )}
+          </Droppable>
         </Table>
       </DragDropContext>
     </Box>
