@@ -63,9 +63,19 @@ function ManagePlaylist() {
 
   const handleDragEnd = async (e) => {
     if (!e.destination) return;
+
     let playlistItemsCopy = Array.from(playlistItems);
+
     let [data] = playlistItemsCopy.splice(e.source.index, 1);
     playlistItemsCopy.splice(e.destination.index, 0, data);
+
+    const playlistItemsString = JSON.stringify(playlistItems);
+    const playlistItemsCopyString = JSON.stringify(playlistItemsCopy);
+
+    if (playlistItemsString === playlistItemsCopyString) {
+      return;
+    }
+
     const songIds = playlistItemsCopy.map(({ id }) => id);
     try {
       dispatch(setPlaylistItems(playlistItemsCopy));
@@ -75,7 +85,6 @@ function ManagePlaylist() {
           songIds: songIds,
         })
       ).unwrap();
-
       dispatch(setAlert({ alert: result.message, severity: "success" }));
     } catch (err) {
       dispatch(
