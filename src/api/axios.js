@@ -2,7 +2,7 @@ import axios from 'axios';
 import { refreshIdToken } from '../slices/user/userSlice';
 
 let store;
-export const baseURL = 'http://localhost:8000';
+export const baseURL = 'https://internalwebsitebackend.onrender.com/';
 
 export const injectApiStore = realStore => { store = realStore };
 
