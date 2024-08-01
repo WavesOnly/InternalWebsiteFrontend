@@ -11,11 +11,12 @@ import {
   FormGroup,
   FormLabel,
   FormControlLabel,
-  Checkbox,
   Link,
   FormHelperText,
   FormControl,
   Skeleton,
+  Paper,
+  Typography,
 } from "@mui/material";
 import LoadingButton from "@mui/lab/LoadingButton";
 import MusicNoteIcon from "@mui/icons-material/MusicNote";
@@ -49,13 +50,14 @@ function Add() {
 
   const handleCheckboxChange = (e) => {
     const { name, checked } = e.target;
-    if (e.nativeEvent.ctrlKey || e.nativeEvent.metaKey) {
+    if (e?.nativeEvent?.ctrlKey || e?.nativeEvent?.metaKey) {
       openExternalLink(`https://open.spotify.com/playlist/${name}`);
     } else {
       updatePlaylists(name, checked);
     }
   };
 
+  console.log(isMedium);
   const handleInputChange = (name, value) => {
     setNewSong((prevState) => ({
       ...prevState,
@@ -84,7 +86,6 @@ function Add() {
 
   const handleChange = (e) => {
     const { name, type, value } = e.target;
-
     switch (type) {
       case "radio":
         handleRadioChange(value);
@@ -94,6 +95,21 @@ function Add() {
         break;
       default:
         handleInputChange(name, value);
+    }
+  };
+
+  const handlePaperClick = (event, playlistId) => {
+    if (event.ctrlKey || event.metaKey) {
+      openExternalLink(`https://open.spotify.com/playlist/${playlistId}`);
+    } else {
+      const changeEvent = {
+        target: {
+          name: playlistId,
+          type: "checkbox",
+          checked: !newSong.playlists.some((item) => item.id === playlistId),
+        },
+      };
+      handleChange(changeEvent);
     }
   };
 
@@ -160,7 +176,14 @@ function Add() {
   }, [newSong]);
 
   return (
-    <Box mt="0px" ml="20px" mr="20px" mb="20px">
+    <Box
+      mt="0px"
+      ml="20px"
+      mr="20px"
+      mb="20px"
+      display="flex"
+      flexDirection="column"
+    >
       <PageInfo
         title="Add Song"
         subTitle="Add a song to any of your Spotify playlists"
@@ -176,7 +199,10 @@ function Add() {
           </Link>
         )}
       />
-      <form onSubmit={handleSubmit}>
+      <form
+        onSubmit={handleSubmit}
+        style={{ display: "flex", flexDirection: "column", flexGrow: 1 }}
+      >
         <FormGroup>
           <Box display="flex" alignItems="center">
             <TextField
@@ -311,11 +337,38 @@ function Add() {
           )}
           <FormControl component="fieldset" error={formValidation.playlists}>
             <FormLabel sx={{ mt: 1, mb: 2 }}>Select Playlist(s)</FormLabel>
-            <Grid container spacing={2} width="100%">
+            <Grid container spacing={2}>
               {loading && !playlists.length
                 ? Array.from(new Array(9)).map((_, index) => (
-                    <Grid item xs={12} sm={6} md={6} lg={4} xl={2} key={index}>
-                      <Skeleton variant="square" height="215px" />
+                    <Grid
+                      item
+                      xs={12}
+                      sm={6}
+                      md={6}
+                      lg={4}
+                      xl={2}
+                      key={index}
+                      alignItems="center"
+                      justifyContent="center"
+                    >
+                      <Box
+                        sx={{
+                          width: "100%",
+                          paddingTop: !isMedium ? `calc(100%)` : "90%",
+                          position: "relative",
+                        }}
+                      >
+                        <Skeleton
+                          variant="rectangular"
+                          sx={{
+                            position: "absolute",
+                            top: 0,
+                            left: 0,
+                            width: "100%",
+                            height: "100%",
+                          }}
+                        />
+                      </Box>
                     </Grid>
                   ))
                 : playlists.map((playlist) => (
@@ -327,30 +380,38 @@ function Add() {
                       lg={4}
                       xl={2}
                       key={playlist.id}
+                      alignItems="center"
+                      justifyContent="center"
                     >
-                      <Box display="flex" flexDirection="column">
-                        <FormControlLabel
-                          control={
-                            <Checkbox
-                              checked={newSong.playlists.some(
-                                (item) => item.id === playlist.id
-                              )}
-                              onChange={handleChange}
-                              name={playlist.id}
-                              color="secondary"
-                              sx={{ visibility: "hidden" }}
-                              type="checkbox"
-                            />
-                          }
-                          label={
-                            <PlaylistLabel
-                              playlist={playlist}
-                              newSong={newSong}
-                              handleSelectChange={handleSelectChange}
-                            />
-                          }
+                      <Paper
+                        elevation={0}
+                        sx={{
+                          backgroundColor: newSong.playlists.some(
+                            (item) => item.id === playlist.id
+                          )
+                            ? theme.palette.secondary.main
+                            : theme.palette.layer.default,
+                          padding: "10px",
+                          cursor: "pointer",
+                          border:
+                            theme.palette.mode === "dark"
+                              ? "1px solid #2d2d2d"
+                              : "1px solid #ccc",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          height: "100%",
+                        }}
+                        onClick={(event) =>
+                          handlePaperClick(event, playlist?.id)
+                        }
+                      >
+                        <PlaylistLabel
+                          playlist={playlist}
+                          newSong={newSong}
+                          handleSelectChange={handleSelectChange}
                         />
-                      </Box>
+                      </Paper>
                     </Grid>
                   ))}
             </Grid>
@@ -364,9 +425,12 @@ function Add() {
             disableElevation
             color="secondary"
             fullWidth
+            sx={{
+              minWidth: "150px",
+              display: loading && !playlists.length ? "none" : "",
+            }}
             startIcon={<PlaylistAddIcon />}
             onClick={handleSubmit}
-            sx={{ minWidth: "150px" }}
           >
             Add Song
           </LoadingButton>

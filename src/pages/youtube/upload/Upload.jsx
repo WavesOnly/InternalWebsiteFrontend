@@ -122,9 +122,10 @@ function Upload() {
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
+    console.log(name);
     const playlistId = "PLgksssmjuag7v25rbAmD7wFdsrcsoFaWV";
 
-    if (name === "throwbackThursday") {
+    if (name === playlistId) {
       setNewUpload((prevState) => {
         const updatedPlaylists = !prevState?.throwbackThursday
           ? [...prevState.playlists, playlistId]
@@ -172,9 +173,20 @@ function Upload() {
     }
   };
 
+  const handlePaperClick = (playlistId) => {
+    const event = {
+      target: {
+        name: playlistId,
+        type: "checkbox",
+        checked: !newUpload.playlists.includes(playlistId),
+      },
+    };
+    handleChange(event);
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    console.log(newUpload.throwbackThursday);
     if (!newUpload.file) {
       setFormValidation({ file: true });
       return;
@@ -182,14 +194,7 @@ function Upload() {
 
     try {
       const result = await dispatch(uploadVideo(newUpload)).unwrap();
-      setThumbnail(null);
-      setSelectedFile(null);
-      setNewUpload({
-        file: "",
-        throwbackThursday: false,
-        playlists: [],
-        comment: "",
-      });
+      cleanupAfterSubmit();
       dispatch(setAlert({ alert: result.message, severity: "success" }));
     } catch (err) {
       dispatch(
@@ -199,6 +204,20 @@ function Upload() {
         })
       );
     }
+  };
+
+  const cleanupAfterSubmit = () => {
+    setThumbnail(null);
+    setSelectedFile(null);
+    setNewUpload({
+      file: "",
+      throwbackThursday: false,
+      playlists: [],
+      comment: "",
+    });
+    setIsDragActive(false);
+    setFormValidation({ file: false });
+    inputRef.current.value = "";
   };
 
   useEffect(() => {
@@ -212,18 +231,6 @@ function Upload() {
     }));
   }, [newUpload]);
 
-  const labels = [
-    "Short label",
-    "A bit longer label for testing purposes",
-    "This is a significantly longer label that should still be centered properly in the grid item",
-    "Another short label",
-    "Yet another label with some length",
-    "A medium length label example",
-    "Short",
-    "Medium length label here",
-    "A very long label that will test the wrapping behavior in the grid item",
-    "Last label in the list",
-  ];
   return (
     <Box mt="0px" ml="20px" mr="20px" mb="20px">
       <PageInfo
@@ -273,7 +280,6 @@ function Upload() {
                   backgroundColor:
                     theme.palette.mode === "dark" ? "#2d2d2d" : "#ccc",
                 },
-
                 flexDirection: "column",
                 justifyContent: "center",
                 alignItems: "center",
@@ -284,10 +290,10 @@ function Upload() {
                   theme.palette.mode === "dark"
                     ? isDragActive
                       ? "#2d2d2d"
-                      : "#1d1d1d"
+                      : theme.palette.layer.default
                     : isDragActive
                     ? "#ccc"
-                    : "#fafafa",
+                    : theme.palette.layer.default,
                 borderRadius: "4px",
                 position: "relative",
               }}
@@ -363,24 +369,12 @@ function Upload() {
           display="flex"
           flexDirection="column"
           alignItems="center"
-          mt={1}
+          mt={2}
           width="100%"
         >
-          <FormControlLabel
-            control={
-              <Switch
-                name="throwbackThursday"
-                checked={newUpload?.throwbackThursday}
-                onChange={handleChange}
-                color="secondary"
-                disabled={loading && !playlists.length ? true : false}
-              />
-            }
-            label="Throwback Thursday"
-          />
           <Grid
             container
-            spacing={1}
+            spacing={2}
             justifyContent="center"
             alignItems="center"
           >
@@ -398,14 +392,33 @@ function Upload() {
                     <Skeleton
                       variant="rectangular"
                       width="100%"
-                      height="48.57px"
+                      height="41.656px"
                       animation="wave"
                     />
                   </Grid>
                 ))
               : playlists.map((playlist) => (
                   <Grid item lg={4} md={6} sm={6} xs={12} key={playlist?.id}>
-                    <Paper elevation={3} style={{ padding: "5px" }}>
+                    <Paper
+                      elevation={0}
+                      sx={{
+                        backgroundColor: newUpload?.playlists.includes(
+                          playlist?.id
+                        )
+                          ? theme.palette.secondary.main
+                          : theme.palette.layer.default,
+                        padding: "10px",
+                        cursor: "pointer",
+                        color: newUpload?.playlists.includes(playlist?.id)
+                          ? "white"
+                          : "",
+                        border:
+                          theme.palette.mode === "dark"
+                            ? "1px solid #2d2d2d"
+                            : "1px solid #ccc",
+                      }}
+                      onClick={() => handlePaperClick(playlist?.id)}
+                    >
                       <FormControlLabel
                         control={
                           <Checkbox
@@ -418,6 +431,7 @@ function Upload() {
                             disabled={
                               loading && playlists.length > 0 ? true : false
                             }
+                            sx={{ display: "none" }}
                           />
                         }
                         sx={{ ml: 0.5 }}
@@ -425,27 +439,19 @@ function Upload() {
                       />
                     </Paper>
                   </Grid>
-                  // <Grid
-                  //   item
-                  //   justifyContent="center"
-                  //   alignItems="center"
-                  //   lg={4}
-                  //   md={6}
-                  //   sm={6}
-                  //   xs={12}
-                  //   key={playlist?.id}
-                  // >
-
-                  // </Grid>
                 ))}
           </Grid>
           <TextField
             name="comment"
             label="Comment"
             multiline
-            onChange={handleChange}
-            sx={{ width: isLarge ? "80%" : "45%" }}
             margin="normal"
+            onChange={handleChange}
+            sx={{
+              width: isLarge ? "80%" : "45%",
+              mt: 2,
+              backgroundColor: theme.palette.layer.default,
+            }}
             size="small"
             color="secondary"
             value={newUpload.comment}

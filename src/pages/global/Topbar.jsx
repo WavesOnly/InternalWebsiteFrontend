@@ -101,7 +101,7 @@ function Topbar(props) {
           <SearchIcon />
         </IconButton>
       </Box>
-      <Box display="flex">
+      <Box display="flex" alignItems="center">
         <IconButton onClick={toggleColorMode} sx={{ p: 1 }}>
           {theme.palette.mode === "dark" ? (
             <LightModeOutlined />
@@ -109,21 +109,31 @@ function Topbar(props) {
             <DarkModeOutlined />
           )}
         </IconButton>
-
+        <IconButton
+          type="button"
+          sx={{ p: 1 }}
+          onClick={handleClick}
+          disabled={!user?.idToken ? true : false}
+        >
+          <SettingsOutlined />
+        </IconButton>
         {user?.idToken && (
-          <>
-            <IconButton type="button" sx={{ p: 1 }} onClick={handleClick}>
-              <SettingsOutlined />
-            </IconButton>
-            <Menu
-              id="settings-menu"
-              anchorEl={anchorEl}
-              open={open}
-              onClose={handleClose}
-            >
-              <MenuItem onClick={logout}>Logout</MenuItem>
-            </Menu>
-          </>
+          <Menu
+            id="settings-menu"
+            anchorEl={anchorEl}
+            open={open}
+            onClose={handleClose}
+            anchorOrigin={{
+              vertical: "bottom",
+              horizontal: "center",
+            }}
+            transformOrigin={{
+              vertical: "top",
+              horizontal: "center",
+            }}
+          >
+            <MenuItem onClick={logout}>Logout</MenuItem>
+          </Menu>
         )}
       </Box>
     </Box>

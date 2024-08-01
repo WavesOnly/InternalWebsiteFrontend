@@ -46,6 +46,9 @@ function PlaylistLabel(props) {
                 : `2px solid ${theme.palette.secondary.main}`
               : "",
           }}
+          onClick={(e) => {
+            handleSelectChange(playlist.id, "selected", !isPlaylistSelected);
+          }}
         />
       </Tooltip>
       <Box
@@ -54,8 +57,6 @@ function PlaylistLabel(props) {
         alignItems="center"
         justifyContent="center"
         mt="10px"
-        rowGap={isPlaylistSelected ? "10px" : "5px"}
-        columnGap="10px"
         sx={{
           color: theme.palette.mode === "dark" ? "white" : "black",
           textAlign: "center",
@@ -69,12 +70,44 @@ function PlaylistLabel(props) {
           />
         ) : (
           !isMedium && (
-            <>
-              <Typography>
+            <Box
+              display="flex"
+              flexDirection="column"
+              justifyContent="center"
+              rowGap="10px"
+            >
+              <Typography
+                variant="h5"
+                sx={{
+                  overflow: "hidden",
+                  textOverflow: "ellipsis",
+                  whiteSpace: "nowrap",
+                }}
+              >
                 Followers: {playlist?.followers.toLocaleString("en-US")}
               </Typography>
-              <Typography>Tracks: {playlist?.trackCount}</Typography>
-            </>
+              <Typography
+                variant="h5"
+                sx={{
+                  overflow: "hidden",
+                  textOverflow: "ellipsis",
+                  whiteSpace: "nowrap",
+                }}
+              >
+                Tracks: {playlist?.trackCount}
+              </Typography>
+              <Typography
+                variant="h5"
+                sx={{
+                  overflow: "hidden",
+                  textOverflow: "ellipsis",
+                  whiteSpace: "nowrap",
+                }}
+              >
+                Average Growth:{" "}
+                {playlist?.averageGrowth.toLocaleString("en-US")}
+              </Typography>
+            </Box>
           )
         )}
       </Box>

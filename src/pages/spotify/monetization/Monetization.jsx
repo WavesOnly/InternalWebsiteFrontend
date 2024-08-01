@@ -92,7 +92,7 @@ function Monetization() {
             type="text"
             autoComplete="off"
             size="small"
-            disabled={loading ? true : false}
+            disabled={true}
             fullWidth
             value={newMonetization?.link}
             margin="normal"
@@ -128,6 +128,7 @@ function Monetization() {
             endIcon={<MusicVideoIcon />}
             onClick={handleSubmit}
             sx={{ minWidth: 200 }}
+            disabled={true}
           >
             Create Videos
           </LoadingButton>
