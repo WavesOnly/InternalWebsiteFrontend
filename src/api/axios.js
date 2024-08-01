@@ -2,7 +2,7 @@ import axios from 'axios';
 import { refreshIdToken } from '../slices/user/userSlice';
 
 let store;
-const baseURL = 'http://localhost:8000';
+export const baseURL = 'http://localhost:8000';
 
 export const injectApiStore = realStore => { store = realStore };
 

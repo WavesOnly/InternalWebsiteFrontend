@@ -17,6 +17,7 @@ import {
   Link,
   Switch,
   Skeleton,
+  Paper,
 } from "@mui/material";
 import ReactPlayer from "react-player";
 import AddCommentIcon from "@mui/icons-material/AddComment";
@@ -211,6 +212,18 @@ function Upload() {
     }));
   }, [newUpload]);
 
+  const labels = [
+    "Short label",
+    "A bit longer label for testing purposes",
+    "This is a significantly longer label that should still be centered properly in the grid item",
+    "Another short label",
+    "Yet another label with some length",
+    "A medium length label example",
+    "Short",
+    "Medium length label here",
+    "A very long label that will test the wrapping behavior in the grid item",
+    "Last label in the list",
+  ];
   return (
     <Box mt="0px" ml="20px" mr="20px" mb="20px">
       <PageInfo
@@ -350,7 +363,7 @@ function Upload() {
           display="flex"
           flexDirection="column"
           alignItems="center"
-          mt={2}
+          mt={1}
           width="100%"
         >
           <FormControlLabel
@@ -365,7 +378,12 @@ function Upload() {
             }
             label="Throwback Thursday"
           />
-          <Grid container spacing={1}>
+          <Grid
+            container
+            spacing={1}
+            justifyContent="center"
+            alignItems="center"
+          >
             {loading && !playlists.length
               ? Array.from(new Array(14)).map((_, index) => (
                   <Grid
@@ -380,37 +398,45 @@ function Upload() {
                     <Skeleton
                       variant="rectangular"
                       width="100%"
-                      height="38.57px"
+                      height="48.57px"
                       animation="wave"
                     />
                   </Grid>
                 ))
               : playlists.map((playlist) => (
-                  <Grid
-                    item
-                    justifyContent="center"
-                    alignItems="center"
-                    lg={4}
-                    md={6}
-                    sm={6}
-                    xs={12}
-                    key={playlist?.id}
-                  >
-                    <FormControlLabel
-                      control={
-                        <Checkbox
-                          checked={newUpload?.playlists.includes(playlist?.id)}
-                          name={playlist?.id}
-                          onChange={handleChange}
-                          color="secondary"
-                          disabled={
-                            loading && playlists.length > 0 ? true : false
-                          }
-                        />
-                      }
-                      label={playlist?.name}
-                    />
+                  <Grid item lg={4} md={6} sm={6} xs={12} key={playlist?.id}>
+                    <Paper elevation={3} style={{ padding: "5px" }}>
+                      <FormControlLabel
+                        control={
+                          <Checkbox
+                            checked={newUpload?.playlists.includes(
+                              playlist?.id
+                            )}
+                            name={playlist?.id}
+                            onChange={handleChange}
+                            color="secondary"
+                            disabled={
+                              loading && playlists.length > 0 ? true : false
+                            }
+                          />
+                        }
+                        sx={{ ml: 0.5 }}
+                        label={playlist?.name}
+                      />
+                    </Paper>
                   </Grid>
+                  // <Grid
+                  //   item
+                  //   justifyContent="center"
+                  //   alignItems="center"
+                  //   lg={4}
+                  //   md={6}
+                  //   sm={6}
+                  //   xs={12}
+                  //   key={playlist?.id}
+                  // >
+
+                  // </Grid>
                 ))}
           </Grid>
           <TextField

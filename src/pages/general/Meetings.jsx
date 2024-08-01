@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { Box, Link } from "@mui/material";
 import PageInfo from "../../components/PageInfo";
+import Spinner from "../../components/Spinner";
 
 function Meetings() {
+  const [loading, setLoading] = useState(true);
+
+  const handleLoad = () => {
+    setLoading(false);
+  };
+
   return (
     <Box mt="0px" ml="20px" mr="20px" mb="20px">
       <PageInfo
@@ -20,6 +27,7 @@ function Meetings() {
           </Link>
         )}
       />
+      {loading && <Spinner />}
       <Box
         sx={{
           width: "100%",
@@ -32,6 +40,7 @@ function Meetings() {
       >
         <iframe
           src="https://docs.google.com/document/d/e/2PACX-1vSReMzqJ83slKVkq6AV6NiYWFZfBHDYotQxr0W1fBgD2d1v5IwoBUZPU8Efk-vc5BxVpD_V6YRs_t8B/pub?embedded=true"
+          onLoad={handleLoad}
           style={{
             height: "100%",
             minWidth: "100%",
