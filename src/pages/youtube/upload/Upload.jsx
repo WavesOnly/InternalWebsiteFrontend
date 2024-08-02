@@ -462,7 +462,7 @@ function Upload() {
                 </InputAdornment>
               ),
             }}
-            disabled={loading && !playlists.length ? true : false}
+            disabled={loading && playlists.length > 0 ? true : false}
           />
           <LoadingButton
             variant="contained"
@@ -471,8 +471,12 @@ function Upload() {
             onClick={handleSubmit}
             startIcon={<VideoCallIcon />}
             sx={{ mt: 1, width: isLarge ? "80%" : "45%" }}
-            loading={loading && newUpload.file ? true : false}
-            disabled={loading && !playlists.length ? true : false}
+            loading={
+              (loading && newUpload.file) || (loading && !playlists.length)
+                ? true
+                : false
+            }
+            disabled={loading && playlists.length > 0 ? true : false}
           >
             Upload Video
           </LoadingButton>

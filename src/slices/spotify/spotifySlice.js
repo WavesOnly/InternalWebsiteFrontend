@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { axiosPrivate, axiosPublic } from '../../api/axios';
+import { axiosPrivate } from '../../api/axios';
 
 
 const initialState = {
