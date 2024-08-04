@@ -57,7 +57,6 @@ function Add() {
     }
   };
 
-  console.log(isMedium);
   const handleInputChange = (name, value) => {
     setNewSong((prevState) => ({
       ...prevState,
@@ -139,7 +138,6 @@ function Add() {
     if (isFormValid) {
       try {
         const result = await dispatch(addSong(newSong)).unwrap();
-        console.log(result);
         setNewSong({ link: "", type: "", playlists: [], comment: "" });
         dispatch(setAlert({ alert: result.message, severity: "success" }));
       } catch (err) {

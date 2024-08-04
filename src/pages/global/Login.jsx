@@ -18,7 +18,6 @@ function Login() {
   });
 
   const login = (response) => {
-    console.log(response);
     dispatch(loginUser({ code: response?.code }))
       .unwrap()
       .then(() => {
@@ -44,13 +43,6 @@ function Login() {
         >
           Login with Google
         </Button>
-        {/* <GoogleLogin
-          flow="implicit"
-          onSuccess={(response) => login(response)}
-          onError={(error) => console.log("Login Failed:", error)}
-          size="medium"
-          width={310}
-        /> */}
       </Box>
     </Box>
   );

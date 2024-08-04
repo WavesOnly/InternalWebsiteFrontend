@@ -81,7 +81,6 @@ export const updatePlaylistItems = createAsyncThunk('spotify/updatePlaylistItems
 
 export const deletePlaylistItems = createAsyncThunk('spotify/deletePlaylistItems', async ({ playlistId, songIds }) => {
     try {
-        console.log(songIds)
         const response = await axiosPrivate.delete(`spotify/playlist/${playlistId}/songs?ids=${songIds.join(",")}`);
         return response.data
     } catch (error) {

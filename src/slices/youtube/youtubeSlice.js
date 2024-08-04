@@ -68,7 +68,6 @@ export const youtubeSlice = createSlice({
                 state.loading = true
             })
             .addCase(uploadVideo.fulfilled, (state) => {
-                console.log("Uploaded")
                 state.loading = false
             })
             .addCase(uploadVideo.rejected, (state) => {

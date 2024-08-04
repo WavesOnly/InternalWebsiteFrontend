@@ -68,7 +68,6 @@ export const userSlice = createSlice({
                 }
             })
             .addCase(loginUser.rejected, (state, action) => {
-                console.log(action)
                 state.loading = false
                 state.alert = {
                     "alert": action.payload?.detail,
@@ -105,7 +104,6 @@ export const userSlice = createSlice({
                 state.loading = false
             })
             .addCase(refreshIdToken.rejected, (state) => {
-                console.log("Rejected")
                 state.loading = false
             })
     }

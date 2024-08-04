@@ -2,7 +2,6 @@ import axios from 'axios';
 import { refreshIdToken } from '../slices/user/userSlice';
 
 let store;
-console.log(`Environment is ${import.meta.env.REACT_APP_ENVIRONMENT}`)
 export const baseURL = "https://internalwebsitebackend.onrender.com/"
 
 export const injectApiStore = realStore => { store = realStore };

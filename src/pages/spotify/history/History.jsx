@@ -60,42 +60,54 @@ function History() {
           </Link>
         )}
       />
-      {loading ? (
-        <Skeleton
-          variant="rectangular"
-          width="100%"
-          height={rowsPerPage * 51.297 + 52 + 53.063}
-          animation="wave"
-        />
-      ) : (
-        <Table
-          sx={{
-            minWidth: 650,
-            backgroundColor: theme.palette.layer.default,
-          }}
-        >
-          <TableHead>
-            <TableRow>
-              <TableCell align="center" sx={{ fontSize: ".8rem" }}>
-                Song
-              </TableCell>
-              <TableCell align="center" sx={{ fontSize: ".8rem" }}>
-                Artist(s)
-              </TableCell>
-              <TableCell align="center" sx={{ fontSize: ".8rem" }}>
-                Playlist
-              </TableCell>
-              <TableCell align="center" sx={{ fontSize: ".8rem" }}>
-                Date Added
-              </TableCell>
-              <TableCell align="center" sx={{ fontSize: ".8rem" }}>
-                Comment
-              </TableCell>
-            </TableRow>
-          </TableHead>
 
-          <TableBody>
-            {songHistory.length > 0 &&
+      <Table
+        sx={{
+          minWidth: 650,
+          backgroundColor: theme.palette.layer.default,
+        }}
+      >
+        <TableHead>
+          <TableRow>
+            <TableCell align="center" sx={{ fontSize: ".8rem" }}>
+              Song
+            </TableCell>
+            <TableCell align="center" sx={{ fontSize: ".8rem" }}>
+              Artist(s)
+            </TableCell>
+            <TableCell align="center" sx={{ fontSize: ".8rem" }}>
+              Playlist
+            </TableCell>
+            <TableCell align="center" sx={{ fontSize: ".8rem" }}>
+              Date Added
+            </TableCell>
+            <TableCell align="center" sx={{ fontSize: ".8rem" }}>
+              Comment
+            </TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {loading && !songHistory.length
+            ? Array.from(new Array(rowsPerPage)).map((_, index) => (
+                <TableRow key={index}>
+                  <TableCell align="center">
+                    <Skeleton variant="text" />
+                  </TableCell>
+                  <TableCell align="center">
+                    <Skeleton variant="text" />
+                  </TableCell>
+                  <TableCell align="center">
+                    <Skeleton variant="text" />
+                  </TableCell>
+                  <TableCell align="center">
+                    <Skeleton variant="text" />
+                  </TableCell>
+                  <TableCell align="center">
+                    <Skeleton variant="text" />
+                  </TableCell>
+                </TableRow>
+              ))
+            : songHistory.length > 0 &&
               (rowsPerPage > 0
                 ? songHistory.slice(
                     page * rowsPerPage,
@@ -163,32 +175,31 @@ function History() {
                   </TableCell>
                 </TableRow>
               ))}
-          </TableBody>
+        </TableBody>
 
-          <TableFooter>
-            <TableRow>
-              <TablePagination
-                rowsPerPageOptions={[10, 20, 30]}
-                colSpan={6}
-                count={songHistory.length}
-                rowsPerPage={rowsPerPage}
-                page={page}
-                slotProps={{
-                  select: {
-                    inputProps: {
-                      "aria-label": "rows per page",
-                    },
-                    native: true,
+        <TableFooter>
+          <TableRow>
+            <TablePagination
+              rowsPerPageOptions={[10, 20, 30]}
+              colSpan={6}
+              count={songHistory.length}
+              rowsPerPage={rowsPerPage}
+              page={page}
+              slotProps={{
+                select: {
+                  inputProps: {
+                    "aria-label": "rows per page",
                   },
-                }}
-                onPageChange={handleChangePage}
-                onRowsPerPageChange={handleChangeRowsPerPage}
-                ActionsComponent={TablePaginationActions}
-              />
-            </TableRow>
-          </TableFooter>
-        </Table>
-      )}
+                  native: true,
+                },
+              }}
+              onPageChange={handleChangePage}
+              onRowsPerPageChange={handleChangeRowsPerPage}
+              ActionsComponent={TablePaginationActions}
+            />
+          </TableRow>
+        </TableFooter>
+      </Table>
     </Box>
   );
 }

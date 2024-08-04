@@ -106,7 +106,6 @@ function ManagePlaylist() {
         : prevState.filter((id) => id !== songId);
       return updatedSelectIems;
     });
-    console.log(selectedItems);
   };
 
   const handleRemoveSongs = async () => {
@@ -258,7 +257,6 @@ function ManagePlaylist() {
               </TableCell>
             </TableRow>
           </TableHead>
-
           <Droppable droppableId="droppable">
             {(provider) => (
               <TableBody ref={provider.innerRef} {...provider.droppableProps}>

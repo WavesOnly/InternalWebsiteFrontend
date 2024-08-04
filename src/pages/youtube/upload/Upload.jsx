@@ -122,7 +122,6 @@ function Upload() {
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
-    console.log(name);
     const playlistId = "PLgksssmjuag7v25rbAmD7wFdsrcsoFaWV";
 
     if (name === playlistId) {
@@ -186,7 +185,6 @@ function Upload() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(newUpload.throwbackThursday);
     if (!newUpload.file) {
       setFormValidation({ file: true });
       return;
@@ -408,7 +406,7 @@ function Upload() {
                           ? theme.palette.secondary.main
                           : theme.palette.layer.default,
                         padding: "10px",
-                        cursor: "pointer",
+                        cursor: loading ? "not-allowed" : "pointer",
                         color: newUpload?.playlists.includes(playlist?.id)
                           ? "white"
                           : "",
@@ -417,26 +415,13 @@ function Upload() {
                             ? "1px solid #2d2d2d"
                             : "1px solid #ccc",
                       }}
-                      onClick={() => handlePaperClick(playlist?.id)}
-                    >
-                      <FormControlLabel
-                        control={
-                          <Checkbox
-                            checked={newUpload?.playlists.includes(
-                              playlist?.id
-                            )}
-                            name={playlist?.id}
-                            onChange={handleChange}
-                            color="secondary"
-                            disabled={
-                              loading && playlists.length > 0 ? true : false
-                            }
-                            sx={{ display: "none" }}
-                          />
+                      onClick={() => {
+                        if (!loading) {
+                          handlePaperClick(playlist?.id);
                         }
-                        sx={{ ml: 0.5 }}
-                        label={playlist?.name}
-                      />
+                      }}
+                    >
+                      <Typography sx={{ ml: 0.5 }}>{playlist?.name}</Typography>
                     </Paper>
                   </Grid>
                 ))}
