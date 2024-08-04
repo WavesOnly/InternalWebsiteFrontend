@@ -20,7 +20,7 @@ function PlaylistLabel(props) {
   return (
     <Box display="flex" alignItems="center" flexDirection="column">
       <Tooltip
-        title="Command click to open playlist on Spotify"
+        title="Command click to open on Spotify"
         slotProps={{
           popper: {
             modifiers: [

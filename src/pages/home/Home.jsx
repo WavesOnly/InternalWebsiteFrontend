@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   useTheme,
+  useMediaQuery,
   Box,
   Grid,
   FormControl,
@@ -37,6 +38,7 @@ function Home() {
     (state) => state.spotify.playlistFollowerHistory
   );
   const analytics = useSelector((state) => state.youtube?.analytics);
+  const isSmall = useMediaQuery((theme) => theme.breakpoints.down("sm"));
 
   const handleSelectChange = (event) => {
     const playlistId = event.target.value;
@@ -71,7 +73,6 @@ function Home() {
             navigateUrl="https://submithub.com"
           />
         </Grid>
-
         <Grid item xs={12} sm={4}>
           <DashboardCard
             title="Open YouTube Studio"
@@ -88,8 +89,12 @@ function Home() {
             navigateUrl="https://open.spotify.com/user/w5sxze6rmcbs22r6w22ks8zme"
           />
         </Grid>
-        <Grid item xs={12} sm={6} lg={3}>
-          <FormControl sx={{ minWidth: 250 }} size="small">
+        <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+          <FormControl
+            sx={{ minWidth: 250 }}
+            size="small"
+            fullWidth={isSmall ? true : false}
+          >
             <InputLabel
               id="playlist-select"
               sx={{
@@ -122,7 +127,6 @@ function Home() {
             </Select>
           </FormControl>
         </Grid>
-        <Grid item xs={0} sm={6} lg={9}></Grid>
         <Grid
           item
           xs={12}

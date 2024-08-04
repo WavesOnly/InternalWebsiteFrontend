@@ -11,7 +11,7 @@ function BarGraph(props) {
       data={data}
       keys={["value"]}
       indexBy="month"
-      margin={{ top: 10, right: 110, bottom: 50, left: 75 }}
+      margin={{ top: 10, right: 75, bottom: 50, left: 75 }}
       padding={0.3}
       valueScale={{ type: "linear" }}
       indexScale={{ type: "band", round: true }}

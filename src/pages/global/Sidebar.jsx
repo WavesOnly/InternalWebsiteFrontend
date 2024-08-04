@@ -39,187 +39,189 @@ function Sidebar() {
   }, [isMedium, dispatch]);
 
   return (
-    <Box
-      sx={{
-        "& .pro-inner-item": {
-          padding: "5px 35px 5px 20px !important",
-        },
-        "& .pro-icon-wrapper": {
-          color:
-            theme.palette.mode === "dark" ? colors.grey[100] : colors.grey[900],
-          backgroundColor: "transparent !important",
-        },
-        "& .pro-menu-item.active": {
-          color: `${colors.greenAccent[100]} !important`,
-        },
-        position: "sticky",
-        top: 0,
-        height: "100vh",
-      }}
-    >
-      <ProSidebar collapsed={collapsed}>
-        <Menu iconShape="square">
-          <MenuItem
-            onClick={() => dispatch(setCollapsed(!collapsed))}
-            sx={{
-              color: "white",
-            }}
-            icon={
-              isSmall ? undefined : collapsed ? <MenuOutlinedIcon /> : undefined
-            }
-          >
-            {!collapsed && (
-              <Box
-                display="flex"
-                justifyContent="space-evenly"
-                alignItems="center"
-                ml="15px"
-              >
-                <Typography
-                  variant="h3"
-                  color={
-                    theme.palette.mode === "dark"
-                      ? colors.grey[100]
-                      : colors.grey[900]
-                  }
+    !isSmall && (
+      <Box
+        sx={{
+          "& .pro-inner-item": {
+            padding: "5px 35px 5px 20px !important",
+          },
+          "& .pro-icon-wrapper": {
+            color:
+              theme.palette.mode === "dark"
+                ? colors.grey[100]
+                : colors.grey[900],
+            backgroundColor: "transparent !important",
+          },
+          "& .pro-menu-item.active": {
+            color: `${colors.greenAccent[100]} !important`,
+          },
+          position: "sticky",
+          top: 0,
+          height: "100vh",
+        }}
+      >
+        <ProSidebar collapsed={collapsed}>
+          <Menu iconShape="square">
+            <MenuItem
+              onClick={() => dispatch(setCollapsed(!collapsed))}
+              sx={{
+                color: "white",
+              }}
+              icon={collapsed ? <MenuOutlinedIcon /> : undefined}
+            >
+              {!collapsed && (
+                <Box
+                  display="flex"
+                  justifyContent="space-evenly"
+                  alignItems="center"
+                  ml="15px"
                 >
-                  WavesOnly
-                </Typography>
-                <IconButton
-                  sx={{
-                    color:
+                  <Typography
+                    variant="h3"
+                    color={
                       theme.palette.mode === "dark"
                         ? colors.grey[100]
-                        : colors.grey[900],
-                  }}
-                  onClick={() => dispatch(setCollapsed(!collapsed))}
-                >
-                  <MenuOutlinedIcon />
-                </IconButton>
+                        : colors.grey[900]
+                    }
+                  >
+                    WavesOnly
+                  </Typography>
+                  <IconButton
+                    sx={{
+                      color:
+                        theme.palette.mode === "dark"
+                          ? colors.grey[100]
+                          : colors.grey[900],
+                    }}
+                    onClick={() => dispatch(setCollapsed(!collapsed))}
+                  >
+                    <MenuOutlinedIcon />
+                  </IconButton>
+                </Box>
+              )}
+            </MenuItem>
+            {!collapsed && (
+              <Box
+                mt="20px"
+                mb="20px"
+                display="flex"
+                justifyContent="center"
+                alignItems="center"
+              >
+                <img
+                  alt="WavesOnly Logo"
+                  width="150"
+                  height="150"
+                  src={Logo}
+                  style={{ cursor: "pointer", borderRadius: "50%" }}
+                />
               </Box>
             )}
-          </MenuItem>
-          {!collapsed && (
             <Box
-              mt="20px"
-              mb="20px"
+              paddingLeft={collapsed ? undefined : "10%"}
               display="flex"
+              flexDirection="column"
               justifyContent="center"
-              alignItems="center"
             >
-              <img
-                alt="WavesOnly Logo"
-                width="150"
-                height="150"
-                src={Logo}
-                style={{ cursor: "pointer", borderRadius: "50%" }}
+              <Item
+                title="Home"
+                to="/home"
+                icon={<Home />}
+                selected={selected}
+                setSelected={setSelected}
               />
+              {user?.idToken && (
+                <>
+                  <Typography
+                    variant="h6"
+                    sx={{
+                      m: collapsed ? "" : "15px 0 5px 20px",
+                    }}
+                    align={collapsed ? "center" : "inherit"}
+                  >
+                    YouTube
+                  </Typography>
+                  <Item
+                    title="Upload"
+                    to="/upload-video"
+                    icon={<VideoCallOutlinedIcon />}
+                    selected={selected}
+                    setSelected={setSelected}
+                  />
+                  <Item
+                    title="Analytics"
+                    to="/youtube-analytics"
+                    icon={<TrendingUpOutlinedIcon />}
+                    selected={selected}
+                    setSelected={setSelected}
+                  />
+                  <Typography
+                    variant="h6"
+                    sx={{
+                      m: collapsed ? "" : "15px 0 5px 20px",
+                    }}
+                    align={collapsed ? "center" : "inherit"}
+                  >
+                    Spotify
+                  </Typography>
+                  <Item
+                    title="Add"
+                    to="/add-song"
+                    icon={<PlaylistAddOutlinedIcon />}
+                    selected={selected}
+                    setSelected={setSelected}
+                  />
+                  <Item
+                    title="Manage"
+                    to="/manage-playlist"
+                    icon={<LibraryMusicOutlinedIcon />}
+                    selected={selected}
+                    setSelected={setSelected}
+                  />
+                  <Item
+                    title="History"
+                    to="/spotify-history"
+                    icon={<ListOutlinedIcon />}
+                    selected={selected}
+                    setSelected={setSelected}
+                  />
+                  <Item
+                    title="Monetization"
+                    to="/monetization-tool"
+                    icon={<MonetizationOnOutlinedIcon />}
+                    selected={selected}
+                    setSelected={setSelected}
+                  />
+                  <Item
+                    title="Analytics"
+                    to="/spotify-analytics"
+                    icon={<TrendingUpOutlinedIcon />}
+                    selected={selected}
+                    setSelected={setSelected}
+                  />
+                  <Typography
+                    variant="h6"
+                    sx={{
+                      m: collapsed ? "" : "15px 0 5px 20px",
+                    }}
+                    align={collapsed ? "center" : "inherit"}
+                  >
+                    General
+                  </Typography>
+                  <Item
+                    title="Meetings"
+                    to="/meetings"
+                    icon={<GroupsOutlinedIcon />}
+                    selected={selected}
+                    setSelected={setSelected}
+                  />
+                </>
+              )}
             </Box>
-          )}
-          <Box
-            paddingLeft={collapsed ? undefined : "10%"}
-            display="flex"
-            flexDirection="column"
-            justifyContent="center"
-          >
-            <Item
-              title="Home"
-              to="/home"
-              icon={<Home />}
-              selected={selected}
-              setSelected={setSelected}
-            />
-            {user?.idToken && (
-              <>
-                <Typography
-                  variant="h6"
-                  sx={{
-                    m: collapsed ? "" : "15px 0 5px 20px",
-                  }}
-                  align={collapsed ? "center" : "inherit"}
-                >
-                  YouTube
-                </Typography>
-                <Item
-                  title="Upload"
-                  to="/upload-video"
-                  icon={<VideoCallOutlinedIcon />}
-                  selected={selected}
-                  setSelected={setSelected}
-                />
-                <Item
-                  title="Analytics"
-                  to="/youtube-analytics"
-                  icon={<TrendingUpOutlinedIcon />}
-                  selected={selected}
-                  setSelected={setSelected}
-                />
-                <Typography
-                  variant="h6"
-                  sx={{
-                    m: collapsed ? "" : "15px 0 5px 20px",
-                  }}
-                  align={collapsed ? "center" : "inherit"}
-                >
-                  Spotify
-                </Typography>
-                <Item
-                  title="Add"
-                  to="/add-song"
-                  icon={<PlaylistAddOutlinedIcon />}
-                  selected={selected}
-                  setSelected={setSelected}
-                />
-                <Item
-                  title="Manage"
-                  to="/manage-playlist"
-                  icon={<LibraryMusicOutlinedIcon />}
-                  selected={selected}
-                  setSelected={setSelected}
-                />
-                <Item
-                  title="History"
-                  to="/spotify-history"
-                  icon={<ListOutlinedIcon />}
-                  selected={selected}
-                  setSelected={setSelected}
-                />
-                <Item
-                  title="Monetization"
-                  to="/monetization-tool"
-                  icon={<MonetizationOnOutlinedIcon />}
-                  selected={selected}
-                  setSelected={setSelected}
-                />
-                <Item
-                  title="Analytics"
-                  to="/spotify-analytics"
-                  icon={<TrendingUpOutlinedIcon />}
-                  selected={selected}
-                  setSelected={setSelected}
-                />
-                <Typography
-                  variant="h6"
-                  sx={{
-                    m: collapsed ? "" : "15px 0 5px 20px",
-                  }}
-                  align={collapsed ? "center" : "inherit"}
-                >
-                  General
-                </Typography>
-                <Item
-                  title="Meetings"
-                  to="/meetings"
-                  icon={<GroupsOutlinedIcon />}
-                  selected={selected}
-                  setSelected={setSelected}
-                />
-              </>
-            )}
-          </Box>
-        </Menu>
-      </ProSidebar>
-    </Box>
+          </Menu>
+        </ProSidebar>
+      </Box>
+    )
   );
 }
 
