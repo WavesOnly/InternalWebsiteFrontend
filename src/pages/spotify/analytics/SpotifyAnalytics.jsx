@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-
 import {
   useTheme,
+  useMediaQuery,
   Box,
   InputLabel,
   FormControl,
@@ -34,6 +34,7 @@ function SpotifyAnalytics() {
   const analytics = useSelector((state) => state.spotify?.analytics);
   const playlists = useSelector((state) => state.spotify?.playlists);
   const loading = useSelector((state) => state.spotify.loading);
+  const isSmall = useMediaQuery((theme) => theme.breakpoints.down("sm"));
   const playlistFollowerHistoryId = useSelector(
     (state) => state.spotify?.playlistFollowerHistoryId
   );
@@ -131,8 +132,12 @@ function SpotifyAnalytics() {
             icon={<PersonAddIcon />}
           />
         </Grid>
-        <Grid item xs={12} sm={6} lg={3}>
-          <FormControl sx={{ minWidth: 250 }} size="small">
+        <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+          <FormControl
+            sx={{ minWidth: 250 }}
+            size="small"
+            fullWidth={isSmall ? true : false}
+          >
             <InputLabel
               id="playlist-select"
               sx={{
@@ -165,7 +170,6 @@ function SpotifyAnalytics() {
             </Select>
           </FormControl>
         </Grid>
-        <Grid item xs={0} sm={6} lg={9}></Grid>
         <Grid item xs={12} sx={{ height: "50vh", p: 0, mb: "20px" }}>
           <Box
             sx={{
