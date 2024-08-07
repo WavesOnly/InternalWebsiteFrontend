@@ -2,7 +2,8 @@ import axios from 'axios';
 import { refreshIdToken } from '../slices/user/userSlice';
 
 let store;
-export const baseURL = "https://internalwebsitebackend.onrender.com/"
+// export const baseURL = "https://internalwebsitebackend.onrender.com/"
+export const baseURL = "https://internalwebsitebackend.azurewebsites.net/"
 
 export const injectApiStore = realStore => { store = realStore };
 
