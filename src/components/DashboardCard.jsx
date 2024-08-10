@@ -13,6 +13,7 @@ const DashboardCard = (props) => {
   return (
     <Box
       p="15px"
+      width="100%"
       sx={{
         backgroundColor: theme.palette.layer.default,
         border:
@@ -27,7 +28,7 @@ const DashboardCard = (props) => {
       }}
       onClick={handleClick}
     >
-      <Box display="flex" justifyContent="space-between">
+      <Box display="flex" justifyContent="space-between" width="100%">
         <Box width="100%">
           {icon}
           <Typography
@@ -45,7 +46,17 @@ const DashboardCard = (props) => {
         </Box>
       </Box>
       <Box display="flex" justifyContent="space-between" mt="2px">
-        <Typography variant="h5">{subtitle}</Typography>
+        <Typography
+          variant="h5"
+          sx={{
+            width: "100%",
+            whiteSpace: "nowrap",
+            overflow: "hidden",
+            textOverflow: "ellipsis",
+          }}
+        >
+          {subtitle}
+        </Typography>
       </Box>
     </Box>
   );

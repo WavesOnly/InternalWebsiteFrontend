@@ -96,6 +96,8 @@ export const youtubeSlice = createSlice({
                     subscribersCountPrevious28Days: action.payload?.subscribersCountPrevious28Days,
                     estimatedRevenuePrevious28Days: action.payload?.estimatedRevenuePrevious28Days,
                     watchTimePrevious28Days: action.payload?.watchTimePrevious28Days,
+                    averageSubscriberGrowthPrevious28Days: action.payload?.averageSubscriberGrowthPrevious28Days,
+                    averageEstimatedRevenuePrevious28Days: action.payload?.averageEstimatedRevenuePrevious28Days,
                     revenueByMonth: action.payload?.revenueByMonth,
                     subscribersByDay: [
                         {

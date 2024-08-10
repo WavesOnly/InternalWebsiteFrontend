@@ -7,12 +7,13 @@ function LineGraph(props) {
   const { data, xAxisLabel, yAxisLabel } = props;
   const theme = useTheme();
   const isSmall = useMediaQuery((theme) => theme.breakpoints.down("sm"));
+  const isMedium = useMediaQuery((theme) => theme.breakpoints.down("md"));
   const formatTime = timeFormat("%b %d");
 
   return (
     <ResponsiveLine
       data={data}
-      margin={{ top: 10, right: 25, bottom: 50, left: 75 }}
+      margin={{ top: 10, right: 25, bottom: 75, left: 75 }}
       xScale={{
         type: "time",
         format: "%Y-%m-%d",
@@ -33,9 +34,9 @@ function LineGraph(props) {
       axisBottom={{
         tickSize: 5,
         tickPadding: 5,
-        tickRotation: isSmall ? 45 : 0, // Rotate labels on small screens
+        tickRotation: isMedium ? 45 : 0, // Rotate labels on small screens
         legend: yAxisLabel,
-        legendOffset: 36,
+        legendOffset: 50,
         legendPosition: "middle",
         format: (value) => {
           if (isSmall) {
@@ -63,6 +64,10 @@ function LineGraph(props) {
       enableTouchCrosshair={true}
       useMesh={true}
       theme={{
+        text: {
+          fontSize: 12,
+          fill: "white",
+        },
         axis: {
           ticks: {
             line: {
@@ -76,6 +81,7 @@ function LineGraph(props) {
           legend: {
             text: {
               fill: theme.palette.mode === "dark" ? "white" : "",
+              fontSize: 12,
             },
           },
         },

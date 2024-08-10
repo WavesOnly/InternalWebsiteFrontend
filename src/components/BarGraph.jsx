@@ -1,17 +1,18 @@
 import React from "react";
+import { useTheme, useMediaQuery } from "@mui/material";
 import { ResponsiveBar } from "@nivo/bar";
-import { useTheme } from "@mui/material";
 
 function BarGraph(props) {
   const { data, xAxisLabel, yAxisLabel } = props;
   const theme = useTheme();
+  const isMedium = useMediaQuery((theme) => theme.breakpoints.down("md"));
 
   return (
     <ResponsiveBar
       data={data}
       keys={["value"]}
       indexBy="month"
-      margin={{ top: 10, right: 75, bottom: 50, left: 75 }}
+      margin={{ top: 10, right: 25, bottom: 75, left: 75 }}
       padding={0.3}
       valueScale={{ type: "linear" }}
       indexScale={{ type: "band", round: true }}
@@ -21,11 +22,16 @@ function BarGraph(props) {
       axisBottom={{
         tickSize: 5,
         tickPadding: 5,
-        tickRotation: 0,
+        tickRotation: isMedium ? 45 : 0,
         legend: xAxisLabel,
+        legendOffset: 50,
         legendPosition: "middle",
-        legendOffset: 45,
-        truncateTickAt: 0,
+        format: (value) => {
+          if (isMedium) {
+            return value.substring(0, 3) + ".";
+          }
+          return value;
+        },
       }}
       axisLeft={{
         tickSize: 5,
@@ -45,7 +51,7 @@ function BarGraph(props) {
       }
       theme={{
         text: {
-          fontSize: 14,
+          fontSize: 12,
           fill: "white",
         },
         axis: {
@@ -61,6 +67,7 @@ function BarGraph(props) {
           legend: {
             text: {
               fill: theme.palette.mode === "dark" ? "white" : "",
+              fontSize: 12,
             },
           },
         },

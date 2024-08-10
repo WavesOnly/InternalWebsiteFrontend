@@ -16,6 +16,8 @@ import GroupIcon from "@mui/icons-material/Group";
 import QueueMusicIcon from "@mui/icons-material/QueueMusic";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
 import PlaylistAddIcon from "@mui/icons-material/PlaylistAdd";
+import TrendingUpIcon from "@mui/icons-material/TrendingUp";
+import UpdateIcon from "@mui/icons-material/Update";
 
 import {
   getPlaylists,
@@ -40,6 +42,9 @@ function SpotifyAnalytics() {
   );
   const followerData = useSelector(
     (state) => state.spotify.playlistFollowerHistory
+  );
+  const playlistObject = playlists.find(
+    (playlist) => playlist.id === playlistFollowerHistoryId
   );
 
   const handleSelectChange = (event) => {
@@ -76,7 +81,7 @@ function SpotifyAnalytics() {
         )}
       />
       <Grid container spacing={2}>
-        <Grid item xs={12} sm={6} lg={3}>
+        <Grid item xs={12} sm={6} md={6} lg={3} xl={3}>
           <DashboardCard
             title={
               loading && !analytics?.playlistFollowers ? (
@@ -89,7 +94,7 @@ function SpotifyAnalytics() {
             icon={<QueueMusicIcon />}
           />
         </Grid>
-        <Grid item xs={12} sm={6} lg={3}>
+        <Grid item xs={12} sm={6} md={6} lg={3} xl={3}>
           <DashboardCard
             title={
               loading && !analytics?.accountFollowers ? (
@@ -102,7 +107,7 @@ function SpotifyAnalytics() {
             icon={<GroupIcon />}
           />
         </Grid>
-        <Grid item xs={12} sm={6} lg={3}>
+        <Grid item xs={12} sm={6} md={6} lg={3} xl={3}>
           <DashboardCard
             title={
               loading && !analytics?.playlistFollowersPrevious28Days ? (
@@ -117,7 +122,7 @@ function SpotifyAnalytics() {
             icon={<PlaylistAddIcon />}
           />
         </Grid>
-        <Grid item xs={12} sm={6} lg={3}>
+        <Grid item xs={12} sm={6} md={6} lg={3} xl={3}>
           <DashboardCard
             title={
               loading && !analytics?.accountFollowersPrevious28Days ? (
@@ -194,6 +199,60 @@ function SpotifyAnalytics() {
             )}
           </Box>
         </Grid>
+        {playlistFollowerHistoryId && (
+          <>
+            <Grid item xs={12} sm={4} md={4} lg={4} xl={4}>
+              <DashboardCard
+                title={
+                  loading && !followerData ? (
+                    <Skeleton width="35%" />
+                  ) : (
+                    followerData[0]["data"][
+                      followerData[0]["data"].length - 1
+                    ]?.y?.toLocaleString("en-US")
+                  )
+                }
+                subtitle="Follower Count"
+                icon={<QueueMusicIcon />}
+              />
+            </Grid>
+            <Grid item xs={12} sm={4} md={4} lg={4} xl={4}>
+              <DashboardCard
+                title={
+                  loading && !followerData ? (
+                    <Skeleton width="35%" />
+                  ) : (
+                    playlistObject?.averageGrowth
+                      .toFixed(2)
+                      ?.toLocaleString("en-us")
+                  )
+                }
+                subtitle="Avg. Growth per Day"
+                icon={<TrendingUpIcon />}
+              />
+            </Grid>
+            <Grid item xs={12} sm={4} md={4} lg={4} xl={4}>
+              <DashboardCard
+                title={
+                  loading && !followerData ? (
+                    <Skeleton width="35%" />
+                  ) : (
+                    new Date(playlistObject?.lastUpdated).toLocaleString(
+                      "en-US",
+                      {
+                        year: "numeric",
+                        month: "long",
+                        day: "numeric",
+                      }
+                    )
+                  )
+                }
+                subtitle="Last Updated"
+                icon={<UpdateIcon />}
+              />
+            </Grid>
+          </>
+        )}
       </Grid>
     </Box>
   );

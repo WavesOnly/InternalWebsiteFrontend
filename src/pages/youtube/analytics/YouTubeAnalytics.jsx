@@ -5,6 +5,7 @@ import { useTheme, Box, Grid, Link, Skeleton } from "@mui/material";
 import GroupIcon from "@mui/icons-material/Group";
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 import HourglassBottomIcon from "@mui/icons-material/HourglassBottom";
+import CalculateIcon from "@mui/icons-material/Calculate";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 
 import { getAnalytics } from "../../../slices/youtube/youtubeSlice";
@@ -42,7 +43,7 @@ function YouTubeAnalytics() {
         )}
       />
       <Grid container spacing={2}>
-        <Grid item xs={12} sm={6} lg={3}>
+        <Grid item xs={6} sm={6} md={6} lg={4} xl={4}>
           <DashboardCard
             title={
               loading && !analytics?.viewCountPrevious28Days ? (
@@ -55,7 +56,7 @@ function YouTubeAnalytics() {
             icon={<YouTubeIcon />}
           />
         </Grid>
-        <Grid item xs={12} sm={6} lg={3}>
+        <Grid item xs={6} sm={6} md={6} lg={4} xl={4}>
           <DashboardCard
             title={
               loading && !analytics?.subscribersCountPrevious28Days ? (
@@ -70,22 +71,22 @@ function YouTubeAnalytics() {
             icon={<GroupIcon />}
           />
         </Grid>
-        <Grid item xs={12} sm={6} lg={3}>
+        <Grid item xs={6} sm={6} md={6} lg={4} xl={4}>
           <DashboardCard
             title={
               loading && !analytics?.estimatedRevenuePrevious28Days ? (
                 <Skeleton width="35%" />
               ) : (
-                `$${analytics?.estimatedRevenuePrevious28Days?.toLocaleString(
-                  "en-US"
-                )}`
+                `$${analytics?.estimatedRevenuePrevious28Days
+                  ?.toFixed(2)
+                  ?.toLocaleString("en-US")}`
               )
             }
             subtitle="Revenue (28 days)"
             icon={<AttachMoneyIcon />}
           />
         </Grid>
-        <Grid item xs={12} sm={6} lg={3}>
+        <Grid item xs={6} sm={6} md={6} lg={4} xl={4}>
           <DashboardCard
             title={
               loading && !analytics?.watchTimePrevious28Days ? (
@@ -98,7 +99,36 @@ function YouTubeAnalytics() {
             icon={<HourglassBottomIcon />}
           />
         </Grid>
-
+        <Grid item xs={6} sm={6} md={6} lg={4} xl={4}>
+          <DashboardCard
+            title={
+              loading && !analytics?.averageSubscriberGrowthPrevious28Days ? (
+                <Skeleton width="35%" />
+              ) : (
+                analytics?.averageSubscriberGrowthPrevious28Days
+                  ?.toFixed(2)
+                  ?.toLocaleString("en-US")
+              )
+            }
+            subtitle="Avg. Subscriber Growth per Day (28 days)"
+            icon={<CalculateIcon />}
+          />
+        </Grid>
+        <Grid item xs={6} sm={6} md={6} lg={4} xl={4}>
+          <DashboardCard
+            title={
+              loading && !analytics?.averageEstimatedRevenuePrevious28Days ? (
+                <Skeleton width="35%" />
+              ) : (
+                `$${analytics?.averageEstimatedRevenuePrevious28Days
+                  ?.toFixed(2)
+                  ?.toLocaleString("en-US")}`
+              )
+            }
+            subtitle="Avg. Revenue per Day (28 days)"
+            icon={<AttachMoneyIcon />}
+          />
+        </Grid>
         <Grid
           item
           xs={12}
@@ -163,7 +193,7 @@ function YouTubeAnalytics() {
             )}
           </Box>
         </Grid>
-        <Grid item xs={12} sm={6} lg={6}>
+        <Grid item xs={6} sm={6} md={6} lg={6} xl={6}>
           <DashboardCard
             title={
               loading && !analytics?.viewCount ? (
@@ -176,7 +206,7 @@ function YouTubeAnalytics() {
             icon={<YouTubeIcon />}
           />
         </Grid>
-        <Grid item xs={12} sm={6} lg={6}>
+        <Grid item xs={6} sm={6} md={6} lg={6} xl={6}>
           <DashboardCard
             title={
               loading && !analytics?.subscriberCount ? (

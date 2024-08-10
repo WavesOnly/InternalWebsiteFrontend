@@ -15,7 +15,6 @@ import MusicVideoIcon from "@mui/icons-material/MusicVideo";
 import { useDispatch } from "react-redux";
 import { triggerMonetizationPipeline } from "../../../slices/spotify/spotifySlice";
 import { setAlert } from "../../../slices/user/userSlice";
-
 import PageInfo from "../../../components/PageInfo";
 
 function Monetization() {

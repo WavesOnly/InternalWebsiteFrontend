@@ -18,7 +18,7 @@ function PlaylistLabel(props) {
   );
 
   return (
-    <Box display="flex" alignItems="center" flexDirection="column">
+    <Box display="flex" alignItems="center" flexDirection="column" width="100%">
       <Tooltip
         title="Command click to open on Spotify"
         slotProps={{
@@ -57,6 +57,7 @@ function PlaylistLabel(props) {
         alignItems="center"
         justifyContent="center"
         mt="10px"
+        width="100%"
         sx={{
           color: theme.palette.mode === "dark" ? "white" : "black",
           textAlign: "center",
@@ -75,6 +76,7 @@ function PlaylistLabel(props) {
               flexDirection="column"
               justifyContent="center"
               rowGap="10px"
+              width="100%"
             >
               <Typography
                 variant="h5"
@@ -104,8 +106,12 @@ function PlaylistLabel(props) {
                   whiteSpace: "nowrap",
                 }}
               >
-                Average Growth:{" "}
-                {playlist?.averageGrowth.toLocaleString("en-US")}
+                Last Updated:{" "}
+                {new Date(playlist?.lastUpdated).toLocaleString("en-US", {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                })}
               </Typography>
             </Box>
           )

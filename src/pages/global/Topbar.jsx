@@ -33,7 +33,6 @@ const pages = [
 function Topbar(props) {
   const { toggleColorMode } = props;
   const theme = useTheme();
-  const colors = colorTokens(theme.palette.mode);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user);

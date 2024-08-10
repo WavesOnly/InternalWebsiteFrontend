@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { Outlet, useLocation, Navigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { Box } from "@mui/material";
 
 import { refreshIdToken } from "../slices/user/userSlice";
 import { persistedLoginRedirectRoutes } from "../utils/persistedLoginRedirectRoutes";
