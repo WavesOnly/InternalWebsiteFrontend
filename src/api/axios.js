@@ -3,8 +3,8 @@ import { refreshIdToken } from '../slices/user/userSlice';
 
 let store;
 // export const baseURL = "https://internalwebsitebackend.onrender.com/"
-export const baseURL = "http://127.0.0.1:8000/"
-// export const baseURL = "https://internalwebsitebackend.azurewebsites.net/"
+// export const baseURL = "http://127.0.0.1:8000/"
+export const baseURL = "https://internalwebsitebackend.azurewebsites.net/"
 
 export const injectApiStore = realStore => { store = realStore };
 
