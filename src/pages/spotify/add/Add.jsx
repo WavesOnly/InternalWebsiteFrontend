@@ -146,6 +146,8 @@ function Add() {
             severity: "error",
           })
         );
+      } finally {
+        dispatch(getPlaylists());
       }
     }
   };
@@ -183,7 +185,7 @@ function Add() {
     >
       <PageInfo
         title="Add Song"
-        subTitle="Add a song to any of your Spotify playlists"
+        subTitle="Add a song to any of the WavesOnly playlists"
         buttonWidth="200px"
         LinkComponent={() => (
           <Link

@@ -7,8 +7,8 @@ import { persistedLoginRedirectRoutes } from "../utils/persistedLoginRedirectRou
 import Spinner from "../components/Spinner";
 
 const PersistLogin = () => {
-  const location = useLocation();
   const dispatch = useDispatch();
+  const location = useLocation();
   const user = useSelector((state) => state.user);
   const [isLoading, setIsLoading] = useState(true);
 
