@@ -144,6 +144,7 @@ function Home() {
         >
           <Box
             sx={{
+              borderRadius: "8px",
               height: "100%",
               p: "15px",
               backgroundColor: theme?.palette.layer.default,
@@ -151,7 +152,6 @@ function Home() {
                 theme.palette.mode === "dark"
                   ? ""
                   : "1px solid rgba(0, 0, 0, 0.23);",
-              borderRadius: "4px",
             }}
           >
             {loadingSpotify ? (
@@ -176,6 +176,8 @@ function Home() {
         >
           <Box
             sx={{
+              borderRadius: "8px",
+
               height: "100%",
               p: "15px",
               backgroundColor: theme?.palette.layer.default,
@@ -183,7 +185,6 @@ function Home() {
                 theme.palette.mode === "dark"
                   ? ""
                   : "1px solid rgba(0, 0, 0, 0.23);",
-              borderRadius: "4px",
             }}
           >
             {loadingYouTube ? (

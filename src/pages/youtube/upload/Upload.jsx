@@ -289,7 +289,7 @@ function Upload() {
                     : isDragActive
                     ? "#ccc"
                     : theme.palette.layer.default,
-                borderRadius: "4px",
+                borderRadius: "8px",
                 position: "relative",
               }}
               onClick={handleBoxClick}
@@ -341,7 +341,7 @@ function Upload() {
                           width: "100%",
                           height: "100%",
                           margin: 0,
-                          borderRadius: "4px",
+                          borderRadius: "8px",
                         }}
                         onClick={() => setIsVideoPlaying(true)}
                       />

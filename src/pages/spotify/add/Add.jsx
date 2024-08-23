@@ -383,8 +383,9 @@ function Add() {
                       justifyContent="center"
                     >
                       <Paper
-                        elevation={0}
+                        // elevation={0}
                         sx={{
+                          borderRadius: "8px",
                           backgroundColor: newSong.playlists.some(
                             (item) => item.id === playlist.id
                           )

@@ -18,7 +18,7 @@ const DashboardCard = (props) => {
         backgroundColor: theme.palette.layer.default,
         border:
           theme.palette.mode === "dark" ? "" : "1px solid rgba(0, 0, 0, 0.23);",
-        borderRadius: "4px",
+        borderRadius: "8px",
         cursor: navigateUrl ? "pointer" : "inherit",
         "&:hover": {
           backgroundColor: navigateUrl ? theme.palette.secondary.main : "",

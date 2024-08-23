@@ -178,6 +178,7 @@ function SpotifyAnalytics() {
         <Grid item xs={12} sx={{ height: "50vh", p: 0, mb: "20px" }}>
           <Box
             sx={{
+              borderRadius: "8px",
               height: "50vh",
               p: "15px",
               backgroundColor: theme?.palette.layer.default,
@@ -185,7 +186,6 @@ function SpotifyAnalytics() {
                 theme.palette.mode === "dark"
                   ? ""
                   : "1px solid rgba(0, 0, 0, 0.23);",
-              borderRadius: "4px",
             }}
           >
             {loading ? (

@@ -140,6 +140,7 @@ function YouTubeAnalytics() {
         >
           <Box
             sx={{
+              borderRadius: "8px",
               height: "100%",
               p: "15px",
               backgroundColor: theme?.palette.layer.default,
@@ -147,7 +148,6 @@ function YouTubeAnalytics() {
                 theme.palette.mode === "dark"
                   ? ""
                   : "1px solid rgba(0, 0, 0, 0.23);",
-              borderRadius: "4px",
             }}
           >
             {analytics?.subscribersByDay?.length > 0 ? (
@@ -172,6 +172,8 @@ function YouTubeAnalytics() {
         >
           <Box
             sx={{
+              borderRadius: "8px",
+
               height: "100%",
               p: "15px",
               backgroundColor: theme?.palette.layer.default,
@@ -179,7 +181,6 @@ function YouTubeAnalytics() {
                 theme.palette.mode === "dark"
                   ? ""
                   : "1px solid rgba(0, 0, 0, 0.23);",
-              borderRadius: "4px",
             }}
           >
             {analytics?.revenueByMonth?.length > 0 ? (
