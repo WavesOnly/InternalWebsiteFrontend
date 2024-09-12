@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { axiosPublic, axiosPrivate } from '../../api/axios';
 
 const initialState = {
-    status: 'idle',
+    loading: false,
     idToken: "",
     user: {},
     alert: null,

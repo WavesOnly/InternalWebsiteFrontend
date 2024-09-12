@@ -1,16 +1,18 @@
 import React from "react";
 import { useGoogleLogin } from "@react-oauth/google";
-import { Box, Button } from "@mui/material";
+import { Box } from "@mui/material";
+import LoadingButton from "@mui/lab/LoadingButton";
 import GoogleIcon from "@mui/icons-material/Google";
 
 import PageInfo from "../../components/PageInfo";
 import { loginUser, setPersistLogin } from "../../slices/user/userSlice";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 function Login() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const loading = useSelector((state) => state.user?.loading);
 
   const handleClick = useGoogleLogin({
     onSuccess: (response) => login(response),
@@ -33,16 +35,17 @@ function Login() {
     <Box mt="0px" ml="20px" mr="20px" mb="20px">
       <PageInfo title="Login" subTitle="" buttonWidth="" LinkComponent={null} />
       <Box sx={{ width: "100%" }}>
-        <Button
+        <LoadingButton
           variant="contained"
           disableElevation
           color="secondary"
           fullWidth
+          loading={loading}
           startIcon={<GoogleIcon />}
           onClick={handleClick}
         >
           Login with Google
-        </Button>
+        </LoadingButton>
       </Box>
     </Box>
   );
