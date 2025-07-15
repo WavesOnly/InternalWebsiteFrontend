@@ -46,7 +46,10 @@ export const uploadVideo = createAsyncThunk('youtube/uploadVideo', async (newUpl
         formData.append('throwbackThursday', newUpload.throwbackThursday);
         formData.append('playlists', newUpload.playlists);
         formData.append('comment', newUpload.comment);
-        const response = await axiosPrivate.post('/youtube/upload', formData, { headers: { 'Content-Type': 'multipart/form-data' } });
+        const response = await axiosPrivate.post('/youtube/upload', formData, {
+            headers: { 'Content-Type': 'multipart/form-data' },
+            noTimeout: true, 
+        });
         return response.data;
     } catch (err) {
         if (!err.response) {

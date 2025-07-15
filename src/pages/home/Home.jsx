@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   useTheme,
@@ -9,6 +9,7 @@ import {
   InputLabel,
   Select,
   MenuItem,
+  Typography
 } from "@mui/material";
 import HubIcon from "@mui/icons-material/Hub";
 import LibraryMusicIcon from "@mui/icons-material/LibraryMusic";
@@ -157,12 +158,22 @@ function Home() {
             {loadingSpotify ? (
               <Spinner />
             ) : (
+            followerData.length > 0 && followerData[0].data.length > 0 ? (
               <LineGraph
                 data={followerData}
                 xAxisLabel="Followers"
                 yAxisLabel="Date"
               />
-            )}
+            ) :
+            <Typography
+              align="center"
+              variant="h4"
+              fontWeight="bold"
+              sx={{ mt: "5px", mb: "5px" }}
+            >
+              Error Fetching Spotify Growth Data
+            </Typography>
+          )}
           </Box>
         </Grid>
         <Grid
@@ -190,11 +201,20 @@ function Home() {
             {loadingYouTube ? (
               <Spinner />
             ) : (
+                analytics?.subscribersByDay && analytics?.subscribersByDay[0].data.length > 0 ? (
               <LineGraph
                 data={analytics?.subscribersByDay}
                 xAxisLabel="Subscribers"
                 yAxisLabel="Date"
               />
+            ) : <Typography
+                  align="center"
+                  variant="h4"
+                  fontWeight="bold"
+                  sx={{ mt: "5px", mb: "5px" }}
+                >
+                  Error Fetching YouTube Subscriber Data
+              </Typography>
             )}
           </Box>
         </Grid>

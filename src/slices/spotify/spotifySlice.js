@@ -43,7 +43,6 @@ export const getPlaylistFollowerHistory = createAsyncThunk('spotify/getPlaylistF
     }
 });
 
-
 export const addSong = createAsyncThunk('spotify/addSong', async (newSong, { rejectWithValue }) => {
     try {
         const songData = { ...newSong };
@@ -171,6 +170,12 @@ export const spotifySlice = createSlice({
             })
             .addCase(getPlaylistFollowerHistory.rejected, (state) => {
                 state.loading = false
+                state.playlistFollowerHistory = [
+                    {
+                        id: "Followers",
+                        data: []
+                    }
+                ]
             })
 
             .addCase(getPlaylistItems.pending, (state) => {

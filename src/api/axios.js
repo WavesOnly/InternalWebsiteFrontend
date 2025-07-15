@@ -16,6 +16,7 @@ export const axiosPublic = axios.create({
 
 export const axiosPrivate = axios.create({
     baseURL: baseURL,
+    timeout: 7500,
     withCredentials: true
 });
 
@@ -28,6 +29,15 @@ axiosPrivate.interceptors.request.use(config => {
         config.headers['Content-Type'] = 'application/json';
     }
     return config;
+});
+
+axiosPrivate.interceptors.request.use((config) => {
+    if (config.noTimeout) {
+        delete config.timeout;
+    }
+    return config;
+}, (error) => {
+    return Promise.reject(error);
 });
 
 axiosPrivate.interceptors.response.use(
