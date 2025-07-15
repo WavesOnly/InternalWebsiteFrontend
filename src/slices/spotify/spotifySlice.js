@@ -9,6 +9,7 @@ const initialState = {
     followerHistory: [],
     playlistFollowerHistory: [],
     playlistFollowerHistoryId: "",
+    playlistFollowerHistoryPrevious28Days: true,
     playlistManageId: "",
     playlistItems: [],
     analytics: {},
@@ -34,9 +35,9 @@ export const getAnalytics = createAsyncThunk('spotify/getAnalytics', async () =>
     }
 });
 
-export const getPlaylistFollowerHistory = createAsyncThunk('spotify/getPlaylistFollowerHistory', async ({ playlistId }) => {
+export const getPlaylistFollowerHistory = createAsyncThunk('spotify/getPlaylistFollowerHistory', async ({ playlistId, timePeriod28Days }) => {
     try {
-        const response = await axiosPrivate.get(`/spotify/playlists/history/${playlistId}`);
+        const response = await axiosPrivate.get(`/spotify/playlists/history/${playlistId}?28days=${timePeriod28Days}`);
         return response.data;
     } catch (error) {
         throw error;
@@ -112,6 +113,9 @@ export const spotifySlice = createSlice({
     reducers: {
         setPlaylistFollowerHistoryId: (state, action) => {
             state.playlistFollowerHistoryId = action.payload
+        },
+        setPlaylistFollowerHistoryPrevious28Days: (state, action) => {
+            state.playlistFollowerHistoryPrevious28Days = action.payload
         },
         setPlaylistManageId: (state, action) => {
             state.playlistManageId = action.payload
@@ -231,6 +235,6 @@ export const spotifySlice = createSlice({
     }
 });
 
-export const { setPlaylistFollowerHistoryId, setPlaylistManageId, setPlaylistItems } = spotifySlice.actions;
+export const { setPlaylistFollowerHistoryId, setPlaylistFollowerHistoryPrevious28Days, setPlaylistManageId, setPlaylistItems } = spotifySlice.actions;
 
 export default spotifySlice.reducer;

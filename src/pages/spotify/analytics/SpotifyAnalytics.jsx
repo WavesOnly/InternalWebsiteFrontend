@@ -6,11 +6,13 @@ import {
   Box,
   InputLabel,
   FormControl,
+  FormControlLabel,
   Grid,
   Link,
   Select,
   MenuItem,
   Skeleton,
+  Switch,
 } from "@mui/material";
 import GroupIcon from "@mui/icons-material/Group";
 import QueueMusicIcon from "@mui/icons-material/QueueMusic";
@@ -23,6 +25,7 @@ import {
   getPlaylists,
   getPlaylistFollowerHistory,
   setPlaylistFollowerHistoryId,
+  setPlaylistFollowerHistoryPrevious28Days,
   getAnalytics,
 } from "../../../slices/spotify/spotifySlice";
 import PageInfo from "../../../components/PageInfo";
@@ -40,6 +43,9 @@ function SpotifyAnalytics() {
   const playlistFollowerHistoryId = useSelector(
     (state) => state.spotify?.playlistFollowerHistoryId
   );
+  const playlistFollowerHistoryPrevious28Days = useSelector(
+    (state) => state.spotify?.playlistFollowerHistoryPrevious28Days
+  );
   const followerData = useSelector(
     (state) => state.spotify.playlistFollowerHistory
   );
@@ -47,9 +53,17 @@ function SpotifyAnalytics() {
     (playlist) => playlist.id === playlistFollowerHistoryId
   );
 
-  const handleSelectChange = (event) => {
-    const playlistId = event.target.value;
-    dispatch(setPlaylistFollowerHistoryId(playlistId));
+  const handleChange = (event) => {
+    if (event?.target?.name === "timePeriodSwitch") {
+      dispatch(
+        setPlaylistFollowerHistoryPrevious28Days(
+          !playlistFollowerHistoryPrevious28Days
+        )
+      );
+    } else if (event?.target?.name === "playlistSelect") {
+      const playlistId = event.target.value;
+      dispatch(setPlaylistFollowerHistoryId(playlistId));
+    }
   };
 
   useEffect(() => {
@@ -59,9 +73,12 @@ function SpotifyAnalytics() {
 
   useEffect(() => {
     dispatch(
-      getPlaylistFollowerHistory({ playlistId: playlistFollowerHistoryId })
+      getPlaylistFollowerHistory({
+        playlistId: playlistFollowerHistoryId,
+        timePeriod28Days: playlistFollowerHistoryPrevious28Days,
+      })
     );
-  }, [playlistFollowerHistoryId]);
+  }, [playlistFollowerHistoryId, playlistFollowerHistoryPrevious28Days]);
 
   return (
     <Box mt="0px" ml="20px" mr="20px" mb="20px">
@@ -137,7 +154,7 @@ function SpotifyAnalytics() {
             icon={<PersonAddIcon />}
           />
         </Grid>
-        <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+        <Grid item xs={12} sm={6} md={6} lg={6} xl={6}>
           <FormControl
             sx={{ minWidth: 250 }}
             size="small"
@@ -156,8 +173,9 @@ function SpotifyAnalytics() {
             <Select
               labelId="playlist-select"
               value={playlistFollowerHistoryId}
-              onChange={handleSelectChange}
+              onChange={handleChange}
               label="Playlist"
+              name="playlistSelect"
               sx={{
                 backgroundColor: theme.palette.layer.default,
                 "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
@@ -174,6 +192,21 @@ function SpotifyAnalytics() {
               ))}
             </Select>
           </FormControl>
+        </Grid>
+        <Grid item xs={12} sm={6} md={6} lg={6} xl={6}>
+          <Box display="flex" justifyContent={isSmall ? "center" : "flex-end"}>
+            <FormControlLabel
+              control={
+                <Switch
+                  color="secondary"
+                  name="timePeriodSwitch"
+                  checked={playlistFollowerHistoryPrevious28Days}
+                  onChange={handleChange}
+                />
+              }
+              label="Last 28 days"
+            />
+          </Box>
         </Grid>
         <Grid item xs={12} sx={{ height: "50vh", p: 0, mb: "20px" }}>
           <Box
