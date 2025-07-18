@@ -338,7 +338,7 @@ function Add() {
             <FormLabel sx={{ mt: 1, mb: 2 }}>Select Playlist(s)</FormLabel>
             <Grid container spacing={2}>
               {loading && !playlists.length
-                ? Array.from(new Array(9)).map((_, index) => (
+                ? Array.from(new Array(playlists.length)).map((_, index) => (
                     <Grid
                       item
                       xs={12}
@@ -383,7 +383,6 @@ function Add() {
                       justifyContent="center"
                     >
                       <Paper
-                        // elevation={0}
                         sx={{
                           borderRadius: "8px",
                           backgroundColor: newSong.playlists.some(
@@ -415,26 +414,30 @@ function Add() {
                     </Grid>
                   ))}
             </Grid>
+            <Box>
+              <LoadingButton
+                disabled={loading && !playlists.length}
+                loading={
+                  loading && playlists.length && newSong.link ? true : false
+                }
+                variant="contained"
+                disableElevation
+                color="secondary"
+                fullWidth
+                sx={{
+                  minWidth: "150px",
+                  display: loading && !playlists.length ? "none" : "",
+                  mt: 2,
+                  mb: 2,
+                }}
+                endIcon={<PlaylistAddIcon />}
+                onClick={handleSubmit}
+              >
+                Add Song
+              </LoadingButton>
+            </Box>
           </FormControl>
         </FormGroup>
-        <Box display="flex" mt={2} mb={2}>
-          <LoadingButton
-            disabled={loading && !playlists.length}
-            loading={loading && playlists.length && newSong.link ? true : false}
-            variant="contained"
-            disableElevation
-            color="secondary"
-            fullWidth
-            sx={{
-              minWidth: "150px",
-              display: loading && !playlists.length ? "none" : "",
-            }}
-            startIcon={<PlaylistAddIcon />}
-            onClick={handleSubmit}
-          >
-            Add Song
-          </LoadingButton>
-        </Box>
       </form>
     </Box>
   );

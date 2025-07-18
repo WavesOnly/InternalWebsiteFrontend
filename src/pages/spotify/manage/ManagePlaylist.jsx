@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -15,7 +15,7 @@ import {
   Select,
   MenuItem,
   Checkbox,
-  Skeleton,
+  Skeleton
 } from "@mui/material";
 import { DragDropContext, Draggable, Droppable } from "@hello-pangea/dnd";
 import DragIndicatorIcon from "@mui/icons-material/DragIndicator";
@@ -27,9 +27,11 @@ import {
   updatePlaylistItems,
   deletePlaylistItems,
   setPlaylistItems,
+  syncPlaylists,
 } from "../../../slices/spotify/spotifySlice";
 import CheckIcon from "@mui/icons-material/Check";
 import CloseIcon from "@mui/icons-material/Close";
+import SyncIcon from '@mui/icons-material/Sync';
 import PageInfo from "../../../components/PageInfo";
 import { setAlert } from "../../../slices/user/userSlice";
 import { LoadingButton } from "@mui/lab";
@@ -38,6 +40,7 @@ function ManagePlaylist() {
   const dispatch = useDispatch();
   const theme = useTheme();
   const isMedium = useMediaQuery((theme) => theme.breakpoints.down("md"));
+  const isLarge = useMediaQuery((theme) => theme.breakpoints.down("lg"));
   const [selectedItems, setSelectedItems] = useState([]);
   const playlists = useSelector((state) => state.spotify?.playlists);
   const loading = useSelector((state) => state.spotify.loading);
@@ -135,6 +138,22 @@ function ManagePlaylist() {
     }
   };
 
+  const handleSyncPlaylists = async () => {
+    try {
+      dispatch(syncPlaylists());
+      dispatch(setAlert({ alert: "Syncing your playlists", severity: "info" }));
+    } catch (err) {
+      dispatch(
+        setAlert({
+          alert: `Sync failed: ${err.message || "Unknown error"}`,
+          severity: "error",
+        })
+      );
+    } finally {
+      dispatch(getPlaylists());
+    }
+  };
+
   useEffect(() => {
     !playlists.length && dispatch(getPlaylists());
   }, []);
@@ -170,8 +189,8 @@ function ManagePlaylist() {
       <Box
         display="flex"
         justifyContent="space-between"
-        alignItems={isMedium ? "flex-start" : "center"}
-        flexDirection={isMedium ? "column" : "row"}
+        alignItems={isLarge ? "flex-start" : "center"}
+        flexDirection={isLarge ? "column" : "row"}
         mb="10px"
       >
         <FormControl sx={{ minWidth: 250 }} size="small">
@@ -206,6 +225,26 @@ function ManagePlaylist() {
             ))}
           </Select>
         </FormControl>
+        <Box
+          display="flex"
+        >
+
+        <LoadingButton
+          variant="contained"
+          disableElevation
+          color="secondary"
+   
+          endIcon={<SyncIcon />}
+          onClick={handleSyncPlaylists}
+          sx={{
+            minWidth: isMedium ? 335 : 200,
+            mt: isLarge ? "10px" : "0px",
+            mr: "10px"
+          }}
+          size="medium"
+        >
+          Sync Playlists
+        </LoadingButton>
         <LoadingButton
           variant="contained"
           disableElevation
@@ -215,15 +254,16 @@ function ManagePlaylist() {
           onClick={handleRemoveSongs}
           sx={{
             minWidth: isMedium ? 335 : 200,
-            mt: isMedium ? "10px" : "0px",
+            mt: isLarge ? "10px" : "0px",
           }}
           size="medium"
           loading={
             loading && playlistItems.length > 0 && selectedItems.length > 0
           }
         >
-          Remove Songs
+          Remove Song(s)
         </LoadingButton>
+       </Box>
       </Box>
       <DragDropContext onDragEnd={handleDragEnd}>
         <Table

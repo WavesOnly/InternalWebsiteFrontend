@@ -100,6 +100,7 @@ export const userSlice = createSlice({
                 state.loading = true
             })
             .addCase(refreshIdToken.fulfilled, (state, action) => {
+                state.user = action.payload?.user
                 state.idToken = action.payload?.idToken
                 state.loading = false
             })

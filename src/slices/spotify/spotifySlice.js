@@ -25,6 +25,15 @@ export const getPlaylists = createAsyncThunk('spotify/getPlaylists', async () =>
     }
 });
 
+export const syncPlaylists = createAsyncThunk('spotify/syncPlaylists', async () => {
+    try {
+        const response = await axiosPrivate.post('/spotify/playlists');
+        return response.data;
+    } catch (error) {
+        throw error;
+    }
+});
+
 export const getAnalytics = createAsyncThunk('spotify/getAnalytics', async () => {
     try {
         const response = await axiosPrivate.get('/spotify/analytics');
@@ -117,6 +126,9 @@ export const spotifySlice = createSlice({
         },
         setPlaylistItems: (state, action) => {
             state.playlistItems = action.payload
+        },
+        setPlaylists: (state, action) => {
+            state.playlists = action.payload
         }
     },
     extraReducers(builder) {
@@ -151,7 +163,15 @@ export const spotifySlice = createSlice({
             .addCase(getPlaylists.rejected, (state) => {
                 state.loading = false
             })
-
+            .addCase(syncPlaylists.pending, (state) => {
+                state.loading = true
+            })
+            .addCase(syncPlaylists.fulfilled, (state) => {
+                state.loading = false
+            })
+            .addCase(syncPlaylists.rejected, (state) => {
+                state.loading = false
+            })
             .addCase(getPlaylistFollowerHistory.pending, (state) => {
                 state.loading = true
             })
@@ -177,7 +197,6 @@ export const spotifySlice = createSlice({
                     }
                 ]
             })
-
             .addCase(getPlaylistItems.pending, (state) => {
                 state.loading = true
             })
@@ -236,6 +255,6 @@ export const spotifySlice = createSlice({
     }
 });
 
-export const { setPlaylistFollowerHistoryId, setPlaylistManageId, setPlaylistItems } = spotifySlice.actions;
+export const { setPlaylistFollowerHistoryId, setPlaylistManageId, setPlaylistItems, setPlaylists } = spotifySlice.actions;
 
 export default spotifySlice.reducer;

@@ -207,9 +207,9 @@ function SpotifyAnalytics() {
                   loading && !followerData ? (
                     <Skeleton width="35%" />
                   ) : (
-                    followerData[0]["data"][
-                      followerData[0]["data"].length - 1
-                    ]?.y?.toLocaleString("en-US")
+                      followerData[0]["data"][0]
+                        ? followerData[0]["data"][followerData[0]["data"].length - 1 ]?.y?.toLocaleString("en-US")
+                        : "N/A"
                   )
                 }
                 subtitle="Follower Count"
@@ -221,10 +221,12 @@ function SpotifyAnalytics() {
                 title={
                   loading && !followerData ? (
                     <Skeleton width="35%" />
-                  ) : (
+                  ) : playlistObject?.averageGrowth ? (
                     playlistObject?.averageGrowth
                       .toFixed(2)
                       ?.toLocaleString("en-us")
+                  ) : (
+                    "N/A"
                   )
                 }
                 subtitle="Avg. Growth per Day"

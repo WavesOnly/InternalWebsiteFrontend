@@ -29,6 +29,7 @@ function Sidebar() {
   const colors = colorTokens(theme.palette.mode);
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
+  console.log(user)
   const collapsed = useSelector((state) => state.user?.collapsed);
   const [selected, setSelected] = useState("Home");
   const isSmall = useMediaQuery((theme) => theme.breakpoints.down("sm"));
@@ -84,7 +85,12 @@ function Sidebar() {
                         : colors.grey[900]
                     }
                   >
-                    WavesOnly
+                    {
+                      user.loading
+                        ? ""
+                        : user?.user?.username
+                          ? user.user.username
+                          : "Spotify Manager"}
                   </Typography>
                   <IconButton
                     sx={{
@@ -109,7 +115,7 @@ function Sidebar() {
                 alignItems="center"
               >
                 <img
-                  alt="WavesOnly Logo"
+                  alt="Logo"
                   width="150"
                   height="150"
                   src={Logo}
@@ -132,89 +138,104 @@ function Sidebar() {
               />
               {user?.idToken && (
                 <>
-                  <Typography
-                    variant="h6"
-                    sx={{
-                      m: collapsed ? "" : "15px 0 5px 20px",
-                    }}
-                    align={collapsed ? "center" : "inherit"}
-                  >
-                    YouTube
-                  </Typography>
-                  <Item
-                    title="Upload"
-                    to="/upload-video"
-                    icon={<VideoCallOutlinedIcon />}
-                    selected={selected}
-                    setSelected={setSelected}
-                  />
-                  <Item
-                    title="Analytics"
-                    to="/youtube-analytics"
-                    icon={<TrendingUpOutlinedIcon />}
-                    selected={selected}
-                    setSelected={setSelected}
-                  />
-                  <Typography
-                    variant="h6"
-                    sx={{
-                      m: collapsed ? "" : "15px 0 5px 20px",
-                    }}
-                    align={collapsed ? "center" : "inherit"}
-                  >
-                    Spotify
-                  </Typography>
-                  <Item
-                    title="Add"
-                    to="/add-song"
-                    icon={<PlaylistAddOutlinedIcon />}
-                    selected={selected}
-                    setSelected={setSelected}
-                  />
-                  <Item
-                    title="Manage"
-                    to="/manage-playlist"
-                    icon={<LibraryMusicOutlinedIcon />}
-                    selected={selected}
-                    setSelected={setSelected}
-                  />
-                  <Item
-                    title="History"
-                    to="/spotify-history"
-                    icon={<ListOutlinedIcon />}
-                    selected={selected}
-                    setSelected={setSelected}
-                  />
-                  <Item
-                    title="Monetization"
-                    to="/monetization-tool"
-                    icon={<MonetizationOnOutlinedIcon />}
-                    selected={selected}
-                    setSelected={setSelected}
-                  />
-                  <Item
-                    title="Analytics"
-                    to="/spotify-analytics"
-                    icon={<TrendingUpOutlinedIcon />}
-                    selected={selected}
-                    setSelected={setSelected}
-                  />
-                  <Typography
-                    variant="h6"
-                    sx={{
-                      m: collapsed ? "" : "15px 0 5px 20px",
-                    }}
-                    align={collapsed ? "center" : "inherit"}
-                  >
-                    General
-                  </Typography>
-                  <Item
-                    title="Meetings"
-                    to="/meetings"
-                    icon={<GroupsOutlinedIcon />}
-                    selected={selected}
-                    setSelected={setSelected}
-                  />
+                  {
+                    user?.user?.roles.includes("YouTube") &&
+                    <>
+                      <Typography
+                        variant="h6"
+                        sx={{
+                          m: collapsed ? "" : "15px 0 5px 20px",
+                        }}
+                        align={collapsed ? "center" : "inherit"}
+                      >
+                        YouTube
+                      </Typography>
+                      <Item
+                        title="Upload"
+                        to="/upload-video"
+                        icon={<VideoCallOutlinedIcon />}
+                        selected={selected}
+                        setSelected={setSelected}
+                      />
+                      <Item
+                        title="Analytics"
+                        to="/youtube-analytics"
+                        icon={<TrendingUpOutlinedIcon />}
+                        selected={selected}
+                        setSelected={setSelected}
+                        />
+                        
+                    </>
+                  }
+                  {
+                    user?.user?.roles.includes("Spotify") &&
+                    <>
+                      <Typography
+                        variant="h6"
+                        sx={{
+                          m: collapsed ? "" : "15px 0 5px 20px",
+                        }}
+                        align={collapsed ? "center" : "inherit"}
+                      >
+                        Spotify
+                      </Typography>
+                      <Item
+                        title="Add"
+                        to="/add-song"
+                        icon={<PlaylistAddOutlinedIcon />}
+                        selected={selected}
+                        setSelected={setSelected}
+                      />
+                      <Item
+                        title="Manage"
+                        to="/manage-playlist"
+                        icon={<LibraryMusicOutlinedIcon />}
+                        selected={selected}
+                        setSelected={setSelected}
+                      />
+                      <Item
+                        title="History"
+                        to="/spotify-history"
+                        icon={<ListOutlinedIcon />}
+                        selected={selected}
+                        setSelected={setSelected}
+                      />
+                      <Item
+                        title="Monetization"
+                        to="/monetization-tool"
+                        icon={<MonetizationOnOutlinedIcon />}
+                        selected={selected}
+                        setSelected={setSelected}
+                      />
+                      <Item
+                        title="Analytics"
+                        to="/spotify-analytics"
+                        icon={<TrendingUpOutlinedIcon />}
+                        selected={selected}
+                        setSelected={setSelected}
+                      />
+                    </>
+                  }
+                  {user?.user?.roles.includes("Meetings") &&
+                    <>
+                      <Typography
+                      variant="h6"
+                      sx={{
+                        m: collapsed ? "" : "15px 0 5px 20px",
+                      }}
+                      align={collapsed ? "center" : "inherit"}
+                      >
+                        General
+                      </Typography>
+                      <Item
+                        title="Meetings"
+                        to="/meetings"
+                        icon={<GroupsOutlinedIcon />}
+                        selected={selected}
+                        setSelected={setSelected}
+                      />
+                    </>
+                  }
                 </>
               )}
             </Box>

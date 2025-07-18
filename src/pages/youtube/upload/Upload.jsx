@@ -451,7 +451,7 @@ function Upload() {
             disableElevation
             color="secondary"
             onClick={handleSubmit}
-            startIcon={<VideoCallIcon />}
+            endIcon={<VideoCallIcon />}
             sx={{ mt: 1, width: isLarge ? "80%" : "45%" }}
             loading={
               (loading && newUpload.file) || (loading && !playlists.length)

@@ -8,7 +8,6 @@ import {
   Menu,
   MenuItem,
 } from "@mui/material";
-import { colorTokens } from "../../theme";
 import { useDispatch, useSelector } from "react-redux";
 import SearchIcon from "@mui/icons-material/Search";
 import LightModeOutlined from "@mui/icons-material/LightModeOutlined";
@@ -17,6 +16,10 @@ import SettingsOutlined from "@mui/icons-material/SettingsOutlined";
 import { useNavigate } from "react-router-dom";
 import { googleLogout } from "@react-oauth/google";
 import { logoutUser, setPersistLogin } from "../../slices/user/userSlice";
+import {
+  setPlaylistFollowerHistoryId, setPlaylistManageId, setPlaylistItems, setPlaylists
+} from "../../slices/spotify/spotifySlice"
+
 
 const pages = [
   { name: "Home", to: "/home" },
@@ -52,6 +55,10 @@ function Topbar(props) {
   const logout = () => {
     googleLogout();
     dispatch(logoutUser());
+    dispatch(setPlaylists([]));
+    dispatch(setPlaylistItems([]));
+    dispatch(setPlaylistManageId(""));
+    dispatch(setPlaylistFollowerHistoryId(""));
     dispatch(setPersistLogin(false));
   };
 

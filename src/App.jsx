@@ -1,4 +1,3 @@
-import React from "react";
 import { useDisplayMode } from "./theme";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { Routes, Route } from "react-router-dom";
@@ -6,6 +5,7 @@ import { useSelector } from "react-redux";
 
 import PersistLogin from "./auth/PersistLogin";
 import RequireAuth from "./auth/RequireAuth";
+import RequireRole from "./auth/RequireRole";
 import Sidebar from "./pages/global/Sidebar";
 import Topbar from "./pages/global/Topbar";
 import Home from "./pages/home/Home";
@@ -37,20 +37,20 @@ function App() {
             <Route element={<PersistLogin />}>
               <Route element={<RequireAuth />}>
                 <Route path="/home" element={<Home />} />
-                <Route path="/upload-video" element={<Upload />} />
-                <Route
-                  path="/youtube-analytics"
-                  element={<YouTubeAnalytics />}
-                />
-                <Route path="/add-song" element={<Add />} />
-                <Route path="/manage-playlist" element={<ManagePlaylist />} />
-                <Route path="/spotify-history" element={<History />} />
-                <Route path="/monetization-tool" element={<Monetization />} />
-                <Route
-                  path="/spotify-analytics"
-                  element={<SpotifyAnalytics />}
-                />
-                <Route path="/meetings" element={<Meetings />} />
+                <Route element={<RequireRole requiredRoles={['YouTube']} />}>
+                  <Route path="/upload-video" element={<Upload />} />
+                  <Route path="/youtube-analytics" element={<YouTubeAnalytics />} />
+                </Route>
+                <Route element={<RequireRole requiredRoles={['Spotify']} />}>
+                  <Route path="/add-song" element={<Add />} />
+                  <Route path="/manage-playlist" element={<ManagePlaylist />} />
+                  <Route path="/spotify-history" element={<History />} />
+                  <Route path="/monetization-tool" element={<Monetization />} />
+                  <Route path="/spotify-analytics" element={<SpotifyAnalytics />} />
+                </Route>
+                <Route element={<RequireRole requiredRoles={['Meetings']} />}>
+                  <Route path="/meetings" element={<Meetings />} />
+                </Route>
               </Route>
               <Route path="/" element={<Login />} />
               <Route path="/login" element={<Login />} />
