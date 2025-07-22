@@ -16,7 +16,7 @@ export const axiosPublic = axios.create({
 
 export const axiosPrivate = axios.create({
     baseURL: baseURL,
-    timeout: 7500,
+    timeout: 15000,
     withCredentials: true
 });
 
