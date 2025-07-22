@@ -250,7 +250,6 @@ function ManagePlaylist() {
           variant="contained"
           disableElevation
           color="secondary"
-   
           endIcon={<RestoreIcon />}
           onClick={handleRefreshPlaylistDates}
           sx={{
@@ -259,6 +258,7 @@ function ManagePlaylist() {
             mr: "10px"
           }}
           size="medium"
+          disabled={loading}
         >
           Refresh Playlist
         </LoadingButton>
@@ -266,7 +266,6 @@ function ManagePlaylist() {
           variant="contained"
           disableElevation
           color="secondary"
-   
           endIcon={<SyncIcon />}
           onClick={handleSyncPlaylists}
           sx={{
@@ -275,6 +274,7 @@ function ManagePlaylist() {
             mr: "10px"
           }}
           size="medium"
+          disabled={loading}
         >
           Sync Playlists
         </LoadingButton>
@@ -303,7 +303,6 @@ function ManagePlaylist() {
           size="small"
           sx={{
             minWidth: 650,
-
             backgroundColor: theme.palette.layer.default,
           }}
         >
@@ -333,7 +332,7 @@ function ManagePlaylist() {
           <Droppable droppableId="droppable">
             {(provider) => (
               <TableBody ref={provider.innerRef} {...provider.droppableProps}>
-                {loading && !playlistItems.length
+                {loading && !playlistItems.length && playlistManageId
                   ? Array.from(new Array(50)).map((_, index) => (
                       <TableRow key={index}>
                         <TableCell sx={{ height: "45px" }}>

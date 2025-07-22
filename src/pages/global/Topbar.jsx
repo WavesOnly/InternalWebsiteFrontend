@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import {
   Box,
   IconButton,
@@ -8,6 +8,7 @@ import {
   Menu,
   MenuItem,
 } from "@mui/material";
+import { rolePagesMap } from "../../utils/rolePagesMap";
 import { useDispatch, useSelector } from "react-redux";
 import SearchIcon from "@mui/icons-material/Search";
 import LightModeOutlined from "@mui/icons-material/LightModeOutlined";
@@ -20,18 +21,6 @@ import {
   setPlaylistFollowerHistoryId, setPlaylistManageId, setPlaylistItems, setPlaylists
 } from "../../slices/spotify/spotifySlice"
 
-
-const pages = [
-  { name: "Home", to: "/home" },
-  { name: "Add", to: "/add-song" },
-  { name: "Spotify Analytics", to: "/spotify-analytics" },
-  { name: "History", to: "/spotify-history" },
-  { name: "Manage", to: "/manage-playlist" },
-  { name: "Monetization", to: "/monetization-tool" },
-  { name: "Meetings", to: "/meetings" },
-  { name: "Upload", to: "/upload-video" },
-  { name: "YouTube Analytics", to: "/youtube-analytics" },
-];
 
 function Topbar(props) {
   const { toggleColorMode } = props;
@@ -50,6 +39,17 @@ function Topbar(props) {
 
   const handleClose = () => {
     setAnchorEl(null);
+  };
+
+  const getPagesByRole = (roles) => {
+    const pages = [{ name: "Home", to: "/home" }];
+
+    roles.forEach(role => {
+      if (rolePagesMap[role]) {
+        pages.push(...rolePagesMap[role]);
+      }
+    });
+    return pages;
   };
 
   const logout = () => {
@@ -80,7 +80,7 @@ function Topbar(props) {
       >
         <Autocomplete
           id="search-bar"
-          options={user?.idToken ? pages : []}
+          options={user?.idToken ? getPagesByRole(user.user.roles) : []}
           getOptionLabel={(option) => option.name}
           value={value}
           onChange={handleOptionChange}

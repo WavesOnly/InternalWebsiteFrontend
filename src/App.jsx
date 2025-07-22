@@ -45,7 +45,6 @@ function App() {
                   <Route path="/add-song" element={<Add />} />
                   <Route path="/manage-playlist" element={<ManagePlaylist />} />
                   <Route path="/spotify-history" element={<History />} />
-                  <Route path="/monetization-tool" element={<Monetization />} />
                   <Route path="/spotify-analytics" element={<SpotifyAnalytics />} />
                 </Route>
                 <Route element={<RequireRole requiredRoles={['Meetings']} />}>

@@ -29,7 +29,7 @@ function Sidebar() {
   const colors = colorTokens(theme.palette.mode);
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
-  console.log(user)
+  const playlists = useSelector((state) => state.spotify.playlists);
   const collapsed = useSelector((state) => state.user?.collapsed);
   const [selected, setSelected] = useState("Home");
   const isSmall = useMediaQuery((theme) => theme.breakpoints.down("sm"));
@@ -73,25 +73,28 @@ function Sidebar() {
               {!collapsed && (
                 <Box
                   display="flex"
-                  justifyContent="space-evenly"
+                  justifyContent="center"
                   alignItems="center"
                   ml="15px"
                 >
-                  <Typography
-                    variant="h3"
-                    color={
-                      theme.palette.mode === "dark"
-                        ? colors.grey[100]
-                        : colors.grey[900]
-                    }
-                  >
-                    {
-                      user.loading
-                        ? ""
-                        : user?.user?.username
+                  {
+                    !user.loading &&
+                    <Typography
+                        variant="h3"
+                        mr="15px"
+                      color={
+                        theme.palette.mode === "dark"
+                          ? colors.grey[100]
+                          : colors.grey[900]
+                      }
+                    >
+                      {
+                        user?.user?.username
                           ? user.user.username
-                          : "Spotify Manager"}
-                  </Typography>
+                          : "Spotify Manager"
+                      }
+                    </Typography>
+                  }
                   <IconButton
                     sx={{
                       color:
@@ -119,6 +122,7 @@ function Sidebar() {
                   width="150"
                   height="150"
                   src={Logo}
+                  // src={playlists[0].imageUrl}
                   style={{ cursor: "pointer", borderRadius: "50%" }}
                 />
               </Box>
@@ -200,13 +204,13 @@ function Sidebar() {
                         selected={selected}
                         setSelected={setSelected}
                       />
-                      <Item
+                      {/* <Item
                         title="Monetization"
                         to="/monetization-tool"
                         icon={<MonetizationOnOutlinedIcon />}
                         selected={selected}
                         setSelected={setSelected}
-                      />
+                      /> */}
                       <Item
                         title="Analytics"
                         to="/spotify-analytics"
