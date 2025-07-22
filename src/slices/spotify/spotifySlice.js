@@ -114,6 +114,15 @@ export const triggerMonetizationPipeline = createAsyncThunk('spotify/triggerMone
     }
 })
 
+export const refreshPlaylistDates = createAsyncThunk('spotify/refreshPlaylistDates', async ({ playlistId }) => {
+    try {
+        const response = await axiosPrivate.put(`/spotify/playlist/${playlistId}/refresh`, { playlistId })
+        return response.data
+    } catch (error) {
+        throw error;
+    }
+})
+
 export const spotifySlice = createSlice({
     name: 'spotify',
     initialState,
@@ -207,7 +216,15 @@ export const spotifySlice = createSlice({
             .addCase(getPlaylistItems.rejected, (state) => {
                 state.loading = false
             })
-
+            .addCase(refreshPlaylistDates.pending, (state) => {
+                state.loading = true
+            })
+            .addCase(refreshPlaylistDates.fulfilled, (state) => {
+                state.loading = false
+            })
+            .addCase(refreshPlaylistDates.rejected, (state) => {
+                state.loading = false
+            })
             .addCase(getAnalytics.pending, (state) => {
                 state.loading = true
             })

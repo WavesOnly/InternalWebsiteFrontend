@@ -20,6 +20,7 @@ import {
 import { DragDropContext, Draggable, Droppable } from "@hello-pangea/dnd";
 import DragIndicatorIcon from "@mui/icons-material/DragIndicator";
 import PlaylistRemoveIcon from "@mui/icons-material/PlaylistRemove";
+import RestoreIcon from '@mui/icons-material/Restore';
 import {
   getPlaylists,
   getPlaylistItems,
@@ -28,6 +29,7 @@ import {
   deletePlaylistItems,
   setPlaylistItems,
   syncPlaylists,
+  refreshPlaylistDates
 } from "../../../slices/spotify/spotifySlice";
 import CheckIcon from "@mui/icons-material/Check";
 import CloseIcon from "@mui/icons-material/Close";
@@ -40,7 +42,7 @@ function ManagePlaylist() {
   const dispatch = useDispatch();
   const theme = useTheme();
   const isMedium = useMediaQuery((theme) => theme.breakpoints.down("md"));
-  const isLarge = useMediaQuery((theme) => theme.breakpoints.down("lg"));
+  const isExtraLarge = useMediaQuery((theme) => theme.breakpoints.down("xl"));
   const [selectedItems, setSelectedItems] = useState([]);
   const playlists = useSelector((state) => state.spotify?.playlists);
   const loading = useSelector((state) => state.spotify.loading);
@@ -154,6 +156,22 @@ function ManagePlaylist() {
     }
   };
 
+  const handleRefreshPlaylistDates = async () => {
+    try {
+      dispatch(refreshPlaylistDates({ playlistId: playlistManageId }));
+      dispatch(setAlert({ alert: "Refreshing dates for old songs", severity: "info" }));
+    } catch (err) {
+      dispatch(
+        setAlert({
+          alert: `Refresh failed: ${err.message || "Unknown error"}`,
+          severity: "error",
+        })
+      );
+    } finally {
+      dispatch(getPlaylistItems({ playlistId: playlistManageId }));
+    }
+  };
+
   useEffect(() => {
     !playlists.length && dispatch(getPlaylists());
   }, []);
@@ -189,8 +207,8 @@ function ManagePlaylist() {
       <Box
         display="flex"
         justifyContent="space-between"
-        alignItems={isLarge ? "flex-start" : "center"}
-        flexDirection={isLarge ? "column" : "row"}
+        alignItems={isExtraLarge ? "flex-start" : "center"}
+        flexDirection={isExtraLarge ? "column" : "row"}
         mb="10px"
       >
         <FormControl sx={{ minWidth: 250 }} size="small">
@@ -228,7 +246,22 @@ function ManagePlaylist() {
         <Box
           display="flex"
         >
-
+        <LoadingButton
+          variant="contained"
+          disableElevation
+          color="secondary"
+   
+          endIcon={<RestoreIcon />}
+          onClick={handleRefreshPlaylistDates}
+          sx={{
+            minWidth: isMedium ? 335 : 200,
+            mt: isExtraLarge ? "10px" : "0px",
+            mr: "10px"
+          }}
+          size="medium"
+        >
+          Refresh Playlist
+        </LoadingButton>
         <LoadingButton
           variant="contained"
           disableElevation
@@ -238,7 +271,7 @@ function ManagePlaylist() {
           onClick={handleSyncPlaylists}
           sx={{
             minWidth: isMedium ? 335 : 200,
-            mt: isLarge ? "10px" : "0px",
+            mt: isExtraLarge ? "10px" : "0px",
             mr: "10px"
           }}
           size="medium"
@@ -254,7 +287,7 @@ function ManagePlaylist() {
           onClick={handleRemoveSongs}
           sx={{
             minWidth: isMedium ? 335 : 200,
-            mt: isLarge ? "10px" : "0px",
+            mt: isExtraLarge ? "10px" : "0px",
           }}
           size="medium"
           loading={
