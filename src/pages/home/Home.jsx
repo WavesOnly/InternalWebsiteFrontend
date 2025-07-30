@@ -52,7 +52,7 @@ function Home() {
 
   useEffect(() => {
     dispatch(
-      getPlaylistFollowerHistory({ playlistId: playlistFollowerHistoryId })
+      getPlaylistFollowerHistory({ playlistId: playlistFollowerHistoryId, timePeriod: 60 })
     );
   }, [playlistFollowerHistoryId]);
 
@@ -127,7 +127,6 @@ function Home() {
             </Select>
           </FormControl>
         </Grid>
-        {user?.user?.roles.includes("Spotify") &&
         <Grid
           item
           xs={12}
@@ -176,7 +175,6 @@ function Home() {
           )}
           </Box>
           </Grid>
-        }
         {user?.user?.roles.includes("YouTube") &&
           <Grid
             item

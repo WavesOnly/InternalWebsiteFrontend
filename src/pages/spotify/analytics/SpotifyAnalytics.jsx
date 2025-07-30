@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   useTheme,
@@ -11,6 +11,7 @@ import {
   Select,
   MenuItem,
   Skeleton,
+  Slider,
 } from "@mui/material";
 import GroupIcon from "@mui/icons-material/Group";
 import QueueMusicIcon from "@mui/icons-material/QueueMusic";
@@ -29,6 +30,7 @@ import PageInfo from "../../../components/PageInfo";
 import DashboardCard from "../../../components/DashboardCard";
 import LineGraph from "../../../components/LineGraph";
 import Spinner from "../../../components/Spinner";
+import { timePeriods } from "./timePeriods";
 
 function SpotifyAnalytics() {
   const theme = useTheme();
@@ -46,10 +48,15 @@ function SpotifyAnalytics() {
   const playlistObject = playlists.find(
     (playlist) => playlist.id === playlistFollowerHistoryId
   );
+  const [timePeriod, setTimePeriod] = useState(60);
 
   const handleSelectChange = (event) => {
     const playlistId = event.target.value;
     dispatch(setPlaylistFollowerHistoryId(playlistId));
+  };
+
+  const handleTimePeriodChange = (event) => {
+    setTimePeriod(event.target.value);
   };
 
   useEffect(() => {
@@ -59,9 +66,12 @@ function SpotifyAnalytics() {
 
   useEffect(() => {
     dispatch(
-      getPlaylistFollowerHistory({ playlistId: playlistFollowerHistoryId })
+      getPlaylistFollowerHistory({
+        playlistId: playlistFollowerHistoryId,
+        timePeriod,
+      })
     );
-  }, [playlistFollowerHistoryId]);
+  }, [playlistFollowerHistoryId, timePeriod]);
 
   return (
     <Box mt="0px" ml="20px" mr="20px" mb="20px">
@@ -137,9 +147,9 @@ function SpotifyAnalytics() {
             icon={<PersonAddIcon />}
           />
         </Grid>
-        <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+        <Grid item xs={12} sm={12} md={12} lg={6} xl={6}>
           <FormControl
-            sx={{ minWidth: 250 }}
+            sx={{ minWidth: "100%" }}
             size="small"
             fullWidth={isSmall ? true : false}
           >
@@ -170,6 +180,43 @@ function SpotifyAnalytics() {
               {playlists.map((playlist) => (
                 <MenuItem key={playlist?.id} value={playlist?.id}>
                   {playlist?.name}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+        </Grid>
+        <Grid item xs={12} sm={12} md={12} lg={6} xl={6}>
+          <FormControl
+            sx={{ minWidth: "100%" }}
+            size="small"
+            fullWidth={isSmall ? true : false}
+          >
+           <InputLabel
+              id="playlist-select"
+              sx={{
+                "&.Mui-focused": {
+                  color: theme.palette.mode === "dark" ? "white" : "",
+                },
+              }}
+            >
+              Time Period
+            </InputLabel>
+            <Select
+              labelId="playlist-select"
+              value={timePeriod}
+              onChange={handleTimePeriodChange}
+              label="Time Period"
+              sx={{
+                backgroundColor: theme.palette.layer.default,
+                "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                  borderColor: theme.palette.secondary.main,
+                },
+              }}
+              disabled={loading && !playlists.length}
+            >
+              {[{text: "Last 30 Days", value: 30}, {text: "Last 60 Days", value: 60}, {text: "Last 120 Days", value: 120}, {text: "All", value: "All"}].map((period) => (
+                <MenuItem key={period?.value} value={period?.value}>
+                  {period?.text}
                 </MenuItem>
               ))}
             </Select>
@@ -206,10 +253,12 @@ function SpotifyAnalytics() {
                 title={
                   loading && !followerData ? (
                     <Skeleton width="35%" />
+                  ) : followerData[0]["data"][0] ? (
+                    followerData[0]["data"][
+                      followerData[0]["data"].length - 1
+                    ]?.y?.toLocaleString("en-US")
                   ) : (
-                      followerData[0]["data"][0]
-                        ? followerData[0]["data"][followerData[0]["data"].length - 1 ]?.y?.toLocaleString("en-US")
-                        : "N/A"
+                    "N/A"
                   )
                 }
                 subtitle="Follower Count"

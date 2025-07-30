@@ -43,9 +43,9 @@ export const getAnalytics = createAsyncThunk('spotify/getAnalytics', async () =>
     }
 });
 
-export const getPlaylistFollowerHistory = createAsyncThunk('spotify/getPlaylistFollowerHistory', async ({ playlistId }) => {
+export const getPlaylistFollowerHistory = createAsyncThunk('spotify/getPlaylistFollowerHistory', async ({ playlistId, timePeriod }) => {
     try {
-        const response = await axiosPrivate.get(`/spotify/playlists/history/${playlistId}`);
+        const response = await axiosPrivate.get(`/spotify/playlists/history/${playlistId}?days=${timePeriod}`);
         return response.data;
     } catch (error) {
         throw error;
