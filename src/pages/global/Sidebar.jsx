@@ -23,13 +23,13 @@ import { colorTokens } from "../../theme";
 import { setCollapsed } from "../../slices/user/userSlice";
 import Logo from "../../assets/Logo.png";
 import Item from "../../components/Item";
+import { logoMapper } from "../../utils/logoMapper";
 
 function Sidebar() {
   const theme = useTheme();
   const colors = colorTokens(theme.palette.mode);
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
-  const playlists = useSelector((state) => state.spotify.playlists);
   const collapsed = useSelector((state) => state.user?.collapsed);
   const [selected, setSelected] = useState("Home");
   const isSmall = useMediaQuery((theme) => theme.breakpoints.down("sm"));
@@ -121,8 +121,7 @@ function Sidebar() {
                   alt="Logo"
                   width="150"
                   height="150"
-                  src={Logo}
-                  // src={playlists[0].imageUrl}
+                  src={user?.user?.email ? logoMapper[user?.user?.email] : Logo}
                   style={{ cursor: "pointer", borderRadius: "50%" }}
                 />
               </Box>
